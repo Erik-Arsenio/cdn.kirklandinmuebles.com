@@ -83,5 +83,29 @@
 				modal.find(".form-content").append(html);
 			});
 	});
-    
+
+    //Capture add/edit form submit event and replace it by an AJAX call
+	$(".form-add-edit").submit(function (event) {
+		//Globals
+		event.preventDefault();
+		let uriSubmit = $(this).attr('action');
+		let modal = $(this).closest('.modal');
+
+		$.post(uriSubmit, $(this).serialize())
+			.done(function (data) {
+				if (data == 0) {
+					location.reload();
+				}
+				else {
+					modal.find('.form-content').empty().append(data);
+				}
+			});
+	});
 })(jQuery);
+
+//Show toast message window if proceed
+var toastMsg = document.getElementById('msg-toast');
+if (toastMsg != null) {
+	var toast = new bootstrap.Toast(toastMsg);
+	toast.show();
+}
