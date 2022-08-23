@@ -13,7 +13,7 @@
     
     
     // Initiate the wowjs
-    new WOW().init();
+    // new WOW().init();
 
 
     // Sticky Navbar
@@ -60,5 +60,28 @@
     //         }
     //     }
     // });
+
+    //Set some values on load add/edit modal
+	$(".add-edit-modal").on('show.bs.modal', function (event) {
+		//Globals
+		let modal = $(this);
+		let button = $(event.relatedTarget);
+		let uriLoadForm = button.data('uri-load-form');
+		let elementId = button.data('element-id') != undefined ? button.data('element-id') : null;
+		let modalTitle = button.data('modal-title') != undefined ? button.data('modal-title') : null;
+		modal.find(".form-content").empty();
+		modal.find('.modal-title').empty().html(modalTitle);
+
+		//Load corresponding form
+		$.ajax({
+			url: uriLoadForm + '/' + elementId,
+			headers: {
+				'X-Requested-With': 'XMLHttpRequest'
+			}
+		})
+			.done(function (html) {
+				modal.find(".form-content").append(html);
+			});
+	});
     
 })(jQuery);
