@@ -97,7 +97,7 @@ $(document).ready(function(){
                 {"id": 77, "status":"No Disponible" ,"price": "Por M2 Desde $5,065 MXN", "financ": "Hasta 48MSI", "enganche": "10%", "type": "estandar", "description": ""}
             ]}
             `);
-        } else if (($('#image_site').contents()[0].baseURI).search("marela") >= 1){
+        } else if (($('#image_site').contents()[0].baseURI).search("celestun") >= 1){
             data = JSON.parse(`
             {
                 "labels": {
