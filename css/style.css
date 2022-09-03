@@ -516,3 +516,13 @@ a:hover {
     background-color:#01e3ae;
     /* background-color:var(--bs-dropdown-link-active-color); */
 }
+
+.bg-sold {
+    background-color: rgba(228, 22, 66);
+}
+.bg-available {
+    background-color: rgba(86, 179, 35);
+}
+.bg-reserved {
+    background-color: rgba(57, 249, 230);
+}
