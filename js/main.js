@@ -1,5 +1,6 @@
 (function ($) {
     "use strict";
+    selectLinked();
 
     // Spinner
     var spinner = function () {
@@ -101,6 +102,39 @@
 				}
 			});
 	});
+
+    //Run events after ajax finishes
+	$(document).ajaxComplete(function () {
+		selectLinked();
+	});
+
+    //Populated a target select based on a select controller
+    function selectLinked() {
+        $("select.select-linked").on("change", function () {
+            //Globals
+            let selectVal = $(this).val();
+            let selectTarget = $(this).attr('data-target');
+            let selectUri = $(this).attr('data-uri');
+
+            //Load the content and display it
+            if (selectTarget && selectUri) {
+                $.ajax({
+                    url: selectUri + "/" + selectVal,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    },
+                    dataType: "html"
+                }).done(function (data) {
+                    if (data !== '') {
+                        $(selectTarget).empty().append(data).prop('disabled', false);
+                    }
+                    else {
+                        $(selectTarget).empty().prop('disabled', true);
+                    }
+                });
+            }
+        });
+    }
 })(jQuery);
 
 //Show toast message window if proceed
