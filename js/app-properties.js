@@ -547,6 +547,187 @@ $(document).ready(function(){
                 {"id": 187,  "area":"360.96", "status":"Disponible" ,"price": 418, "financ": "Hasta 60 MSI", "enganche": "10%", "type": "premium", "description": ""}
             ]}
             `)
+        
+        } else if (($('#image_site').contents()[0].baseURI).search("lakuun") >= 1){
+            $(document).prop('title', 'Lakuun');
+            data = JSON.parse(`
+            {
+                "labels": {
+                    "available": "Disponible",
+                    "not_available": "Vendido",
+                    "reserved": "Reservado",
+                    "type": "Tipo",
+                    "status":  "Estatus",
+                    "area": "Área",
+                    "price": "Precio",
+                    "financing": "Financiamiento",
+                    "hitch": "Enganche",
+                    "description": "Descripción"
+                },
+                "properties": [
+                {"id": 1,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "premium", "description": ""},
+                {"id": 2,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 3,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 4,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 5,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 6,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 7,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 8,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 9,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 10,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 11,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 12,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 13,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 14,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 15,  "area":"303.52", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 16,  "area":"314.04", "status":"Vendido" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "premium", "description": ""},
+                {"id": 17,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 18,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 19,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 20,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 21,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 22,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 23,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 24,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 25,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 26,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 27,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "premium", "description": ""},
+                {"id": 28,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 29,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 30,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 31,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 32,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 33,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 34,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 35,  "area":"303.52", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 36,  "area":"314.04", "status":"Vendido" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "premium", "description": ""},
+                {"id": 37,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 38,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 39,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 40,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 41,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 42,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 43,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 44,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "premium", "description": ""},
+                {"id": 45,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 46,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 47,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 48,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 49,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 50,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 51,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 52,  "area":"303.52", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 53,  "area":"630.49", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 54,  "area":"630.22", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 55,  "area":"630.76", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 56,  "area":"508.46", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 57,  "area":"508.93", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 58,  "area":"508.95", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 59,  "area":"508.96", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 60,  "area":"508.98", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 61,  "area":"508.99", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 62,  "area":"509.01", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 63,  "area":"528.79", "status":"Vendido" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 64,  "area":"311.57", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 65,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 66,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 67,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 68,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 69,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 70,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 71,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 72,  "area":"314.04", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 73,  "area":"314.04", "status":"Vendido" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "premium", "description": ""},
+                {"id": 74,  "area":"300", "status":"Vendido" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "premium", "description": ""},
+                {"id": 75,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 76,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 77,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 78,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 79,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 80,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 81,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 82,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 83,  "area":"295.6", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 84,  "area":"295.99", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 85,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 86,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 87,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 88,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 89,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 90,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 91,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 92,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 93,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 94,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 95,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 96,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 97,  "area":"300", "status":"Vendido" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "premium", "description": ""},
+                {"id": 98,  "area":"293.28", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 99,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 100,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 101,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 102,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 103,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 104,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 105,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 106,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 107,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 108,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 109,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 110,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 111,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 112,  "area":"295.99", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 113,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 114,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 115,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 116,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 117,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 118,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 119,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 120,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 121,  "area":"300", "status":"Vendido" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "premium", "description": ""},
+                {"id": 122,  "area":"293.28", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 123,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 124,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 125,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 126,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 127,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 128,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 129,  "area":"300", "status":"Vendido" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 130,  "area":"299.79", "status":"Vendido" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "premium", "description": ""},
+                {"id": 131,  "area":"295.99", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 132,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 133,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 134,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 135,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 136,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 137,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 138,  "area":"300", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "estandar", "description": ""},
+                {"id": 139,  "area":"297.85", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "premium", "description": ""},
+                {"id": 140,  "area":"299.46", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 141,  "area":"299.41", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 142,  "area":"299.36", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 143,  "area":"299.31", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 144,  "area":"299.27", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 145,  "area":"299.22", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 146,  "area":"299.17", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 147,  "area":"299.13", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 148,  "area":"299.08", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 149,  "area":"299.03", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 150,  "area":"298.98", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 151,  "area":"298.94", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 152,  "area":"298.89", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 153,  "area":"298.84", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 154,  "area":"298.80", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 155,  "area":"298.75", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 156,  "area":"298.70", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 157,  "area":"298.65", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 158,  "area":"298.61", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 159,  "area":"298.56", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 160,  "area":"298.51", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""},
+                {"id": 161,  "area":"298.47", "status":"Disponible" ,"price": 2850, "financ": "Hasta 80 MSI", "enganche": "10%", "type": "plus", "description": ""}
+            ]}
+            `)
         }
         let colorNotAvailable = "";
         let colorAvailable = "";
@@ -559,13 +740,13 @@ $(document).ready(function(){
             colorAvailable= "fill: rgba(60, 219, 34, 0.16); stroke: rgba(255, 255, 255, 0.48); stroke-width: 1.41935px;"
             colorReserved = "fill: rgba(57, 249, 230, 0.6); stroke: rgba(255, 255, 255, 0.8); stroke-width: 1.41935px;"
         } else if (($('#image_site').contents()[0].baseURI).search("anthia") >= 1 || ($('#image_site').contents()[0].baseURI).search("lakuun") >= 1) {
-            colorNotAvailable = "fill: rgba(228, 22, 66); stroke: rgba(255, 255, 255); stroke-width: 3.6883px;";
-            colorAvailablePremium = "fill: rgba(5, 110, 57); stroke: rgba(255, 255, 255); stroke-width: 3.6883px;";
-            colorAvailablePlus = "fill: rgba(136, 194, 117); stroke: rgba(255, 255, 255); stroke-width: 3.6883px;";
-            colorAvailable = "fill: rgba(135, 198, 116); stroke: rgba(255, 255, 255); stroke-width: 3.6883px;";
+            colorNotAvailable = "fill: rgba(228, 22, 66); stroke: rgba(23, 149, 83); stroke-width: 1.97368px;";
+            colorAvailablePremium = "fill: rgba(5, 110, 57); stroke: rgba(23, 149, 83); stroke-width: 1.97368px;";
+            colorAvailablePlus = "fill: rgba(47, 172, 102); stroke: rgba(23, 149, 83); stroke-width: 1.97368px;";
+            colorAvailable = "fill: rgba(136, 194, 117); stroke: rgba(23, 149, 83); stroke-width: 1.97368px;";
         }
 
-        let lots = [];
+        // let lots = [];
 
         $('.mapsvg-region').each(function(){
             let ids = $(this).attr('id');
@@ -573,7 +754,7 @@ $(document).ready(function(){
             let title = $(this).attr("title");
             let key = searchIndexId(data, id);
             let popoverContent = ``;
-            lots.push({id: id, area: Number(title.replace(" M2", "")), price: parseInt((Number(title.replace(" M2", ""))) * 2770).toLocaleString('en-EN') });
+            // lots.push({id: id, area: Number(title.replace(" m2", "")), price: parseInt((Number(title.replace(" m2", ""))) * 2850).toLocaleString('en-EN') });
             if (data.properties[key].status === data.labels.not_available) {
                 $(this).attr('style', colorNotAvailable);
                 $(this).addClass(' mapsvg-disabled');
@@ -586,6 +767,8 @@ $(document).ready(function(){
                 $(this).attr('data-bs-html', " ").attr('data-bs-html', "true" );
                 if (data.properties[key].type === "premium") {
                     $(this).attr('style', colorAvailablePremium);
+                } else if (data.properties[key].type === "plus") {
+                    $(this).attr('style', colorAvailablePlus);
                 } else {
                     $(this).attr('style', colorAvailable);
                 }
@@ -622,8 +805,8 @@ $(document).ready(function(){
                 
             } 
         });
-        let lots_orde = lots.sort(((a, b) => a.id - b.id));
-        console.table(lots_orde);
+        // let lots_orde = lots.sort(((a, b) => a.id - b.id));
+        // console.table(lots_orde);
         $('[data-bs-toggle="popover"]').popover();
         $(".loader-container").addClass('d-none');
         $("#image_site").removeClass('d-none');
