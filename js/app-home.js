@@ -14,7 +14,7 @@ $(document).ready(function(){
     
     // });
     
-    $(".carousel-inner img, .btn-investments").on("click", function(e) {
+    $(".btn-investments").on("click", function(e) {
         // Globals
         e.stopImmediatePropagation();
         let url_page = '';
