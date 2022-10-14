@@ -526,3 +526,7 @@ a:hover {
 .bg-reserved {
     background-color: rgba(57, 249, 230);
 }
+
+.accordion {
+    --bs-accordion-active-bg: #bcffef;
+}
