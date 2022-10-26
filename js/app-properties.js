@@ -1,51 +1,12 @@
 $(document).ready(function(){
 
     // detectmob();
-    // function detectmob() {
-    //     if(window.innerWidth <= 800 || window.innerHeight <= 600) {
-    //         $('[data-toggle="popover"]').popover("dispose");
-    //     } else {
-    //         return false;
-    //     }
+    // if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { 
+    //     $('.className').popover('disable'); 
+    //     console.log("En Moviles");
     // }
+    // function detectmob() {
 
-    $("a.input-button-clear").on("click", function() {
-        // Globals
-        // $('[data-toggle="popover"]').popover('disable');
-        $("[data-toggle='popover']").popover('toggle');  
-        // $('[data-toggle="popover"]').popover("hide");
-
-
-        let svg_stages = Number($(this).closest("g").prop("id").substr(15));
-        // let id_padre= $(this).closest("g").prop("id").substr(15);
-        let name_svg = $(this).attr('data-modal-id');
-        let btnClass = $(this).attr('class');
-        let tradeDetailsContainer = $("#trade-details-container");
-        console.log("Name Lote- " + name_svg);
-        console.log("id_stage- " + svg_stages);
-        // let svg_stages = id_padre;
-        let index = searchIndexId(data, name_svg, svg_stages);
-        console.log("Position- " + index);
-        console.log(data.properties[index].category_name);
-        console.log(data.properties[index].status_name);
-
-        $("#property_name").text(name_svg);
-        $("#category_name").text(data.properties[index].category_name);
-        $("#status_name").text(data.properties[index].status_name);
-        $("#property_area").text(data.properties[index].area );
-        $("#property_price_m2").text(parseInt(data.properties[index].price).toLocaleString('en-EN') + " MXN");
-        $("#property_price_final").text((parseInt((Number(data.properties[index].area) * data.properties[index].price))).toLocaleString('en-EN') + " MXN");
-        $("#property_financing").text(data.properties[index].financ );
-        $("#property_hitch").text(data.properties[index].enganche );
-
-
-
-
-        // $(".popover").removeClass('show');
-        
-        $("#modalLote").modal('show');
-
-    });
 
     $(".accordion-header").on("click", function() {
         // Globals
@@ -56,40 +17,7 @@ $(document).ready(function(){
         console.log("hola- " + btnId);
 
     });
-    $("#select_plan").on('change', function() {
-        console.log($("#select_plan").val());
-        if($("#select_plan").val() == 24) {
-            $('#porcentaje_descuento').val(0.00);
-            $('#cant_descuento').val(0.00);
-            $('#porcentaje_enganche').val(20);
-            $('#cantidad_enganche').val("760,480.00");
-            $('#porcentaje_financiar').val(80);
-            $('#cantidad_financiar').val("3,041,920.00");
-            $('#num_mensualidad').val(24);
-            $('#cant_mensualidad').val("126,745.66");
-
-        } else if ($("#select_plan").val() == 12) {
-            $('#porcentaje_descuento').val(0.00);
-            $('#cant_descuento').val(0.00);
-            $('#porcentaje_enganche').val(20);
-            $('#cantidad_enganche').val("760,480.00");
-            $('#porcentaje_financiar').val(80);
-            $('#cantidad_financiar').val("3,041,920.00");
-            $('#num_mensualidad').val(12);
-            $('#cant_mensualidad').val("253,493.33");
-            
-        } else if ($("#select_plan").val() == 1) {
-            $('#porcentaje_descuento').val(0.00);
-            $('#cant_descuento').val(0.00);
-            $('#porcentaje_enganche').val(100);
-            $('#cantidad_enganche').val("3,802,400.00");
-            $('#porcentaje_financiar').val(0);
-            $('#cantidad_financiar').val("0");
-            $('#num_mensualidad').val(0);
-            $('#cant_mensualidad').val("0");
-            
-        }
-    });
+ 
 
         console.time('Load');
         // console.timeEnd('Load');
@@ -123,7 +51,7 @@ $(document).ready(function(){
                 {"stage": 1, "name": "L-6",  "area":"280",     "status_id": 2  ,"status_name":"Vendido" ,   "price": 13580, "financ": "Hasta 24 MSI", "enganche": "20%", "category_id": 4 ,"category_name": "Frente al mar", "description": ""},
                 {"stage": 1, "name": "L-7",  "area":"280",     "status_id": 2  ,"status_name":"Vendido" ,   "price": 13580, "financ": "Hasta 24 MSI", "enganche": "20%", "category_id": 4 ,"category_name": "Frente al mar", "description": ""},
                 {"stage": 1, "name": "L-8",  "area":"280",     "status_id": 1  ,"status_name":"Disponible" ,"price": 13580, "financ": "Hasta 24 MSI", "enganche": "20%", "category_id": 4 ,"category_name": "Frente al mar", "description": ""},
-                {"stage": 1, "name": "L-9",  "area":"280",     "status_id": 2  ,"status_name":"Vendido" ,   "price": 13580, "financ": "Hasta 24 MSI", "enganche": "20%", "category_id": 4 ,"category_name": "Frente al mar", "description": ""},
+                {"stage": 1, "name": "L-9",  "area":"280",     "status_id": 1  ,"status_name":"Disponible" ,   "price": 13580, "financ": "Hasta 24 MSI", "enganche": "20%", "category_id": 4 ,"category_name": "Frente al mar", "description": ""},
                 {"stage": 1, "name": "L-10",  "area":"280",    "status_id": 1  ,"status_name":"Disponible" ,"price": 13580, "financ": "Hasta 24 MSI", "enganche": "20%", "category_id": 4 ,"category_name": "Frente al mar", "description": ""},
                 {"stage": 1, "name": "L-11",  "area":"280",    "status_id": 1  ,"status_name":"Disponible" ,"price": 13580, "financ": "Hasta 24 MSI", "enganche": "20%", "category_id": 4 ,"category_name": "Frente al mar", "description": ""},
                 {"stage": 1, "name": "L-12",  "area":"280",    "status_id": 1  ,"status_name":"Disponible" ,"price": 13580, "financ": "Hasta 24 MSI", "enganche": "20%", "category_id": 4 ,"category_name": "Frente al mar", "description": ""},
@@ -146,7 +74,7 @@ $(document).ready(function(){
                 {"stage": 1, "name": "L-29",  "area":"160",    "status_id": 2  ,"status_name":"Vendido" ,   "price": 5065,  "financ": "Hasta 48 MSI", "enganche": "10%", "category_id": 6 ,"category_name": "Segunda fila", "description": ""},
                 {"stage": 1, "name": "L-30",  "area":"117.81", "status_id": 2  ,"status_name":"Vendido" ,   "price": 5065,  "financ": "Hasta 48 MSI", "enganche": "10%", "category_id": 6 ,"category_name": "Segunda fila", "description": ""},
                 {"stage": 1, "name": "L-31",  "area":"218.89", "status_id": 2  ,"status_name":"Vendido" ,   "price": 5065,  "financ": "Hasta 48 MSI", "enganche": "10%", "category_id": 5 ,"category_name": "Segunda fila plus", "description": ""},
-                {"stage": 1, "name": "L-32",  "area":"172",    "status_id": 3  ,"status_name":"Reservado" , "price": 5065,  "financ": "Hasta 48 MSI", "enganche": "10%", "category_id": 5 ,"category_name": "Segunda fila plus", "description": ""},
+                {"stage": 1, "name": "L-32",  "area":"172",    "status_id": 2  ,"status_name":"Vendido" , "price": 5065,  "financ": "Hasta 48 MSI", "enganche": "10%", "category_id": 5 ,"category_name": "Segunda fila plus", "description": ""},
                 {"stage": 1, "name": "L-33",  "area":"172",    "status_id": 2  ,"status_name":"Vendido" ,   "price": 5065,  "financ": "Hasta 48 MSI", "enganche": "10%", "category_id": 5 ,"category_name": "Segunda fila plus", "description": ""},
                 {"stage": 1, "name": "L-34",  "area":"172",    "status_id": 1  ,"status_name":"Disponible" ,"price": 5065,  "financ": "Hasta 48 MSI", "enganche": "10%", "category_id": 5 ,"category_name": "Segunda fila plus", "description": ""},
                 {"stage": 1, "name": "L-35",  "area":"172",    "status_id": 1  ,"status_name":"Disponible" ,"price": 5065,  "financ": "Hasta 48 MSI", "enganche": "10%", "category_id": 5 ,"category_name": "Segunda fila plus", "description": ""},
@@ -212,170 +140,170 @@ $(document).ready(function(){
                     "description": "Descripción"
                 },
                 "properties": [
-                {"stage": 1, "name": "M-1",  "area":"260.22", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-2",  "area":"222.09", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-3",  "area":"239.48", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-4",  "area":"349.24", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-5",  "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-6",  "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-7",  "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-8",  "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-9",  "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-10",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-11",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-12",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-13",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-14",  "area":"247",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-15",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-16",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-17",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-18",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-19",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-20",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-21",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-22",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-23",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-24",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-25",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-26",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-27",  "area":"247",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-28",  "area":"312",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-29",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-30",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-31",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-32",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-33",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-34",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-35",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-36",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-37",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-38",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-39",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-40",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-41",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-42",  "area":"312",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-43",  "area":"312",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-44",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-45",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-46",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-47",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-48",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-49",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-50",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-51",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-52",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-53",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-54",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-55",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-56",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-57",  "area":"312",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-58",  "area":"247",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-59",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-60",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-61",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-62",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-63",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-64",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-65",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-66",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-67",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-68",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-69",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-70",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-71",  "area":"247",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-72",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-73",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-74",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-75",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-76",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-77",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-78",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-79",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-80",  "area":"257.61","status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-81",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-82",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-83",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-84",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-85",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-86",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-87",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-88",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-89",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-90",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-91",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-92",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-93",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-94",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-95",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-96",  "area":"361.14", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-97",  "area":"288.59", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-98",  "area":"223.82", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-1",  "area":"260.22", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-2",  "area":"222.09", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-3",  "area":"239.48", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-4",  "area":"349.24", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-5",  "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-6",  "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-7",  "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-8",  "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-9",  "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-10",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-11",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-12",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-13",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-14",  "area":"247",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-15",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-16",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-17",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-18",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-19",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-20",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-21",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-22",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-23",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-24",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-25",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-26",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-27",  "area":"247",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-28",  "area":"312",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-29",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-30",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-31",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-32",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-33",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-34",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-35",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-36",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-37",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-38",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-39",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-40",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-41",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-42",  "area":"312",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-43",  "area":"312",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-44",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-45",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-46",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-47",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-48",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-49",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-50",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-51",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-52",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-53",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-54",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-55",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-56",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-57",  "area":"312",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-58",  "area":"247",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-59",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-60",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-61",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-62",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-63",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-64",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-65",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-66",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-67",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-68",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-69",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-70",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-71",  "area":"247",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-72",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-73",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-74",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-75",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-76",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-77",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-78",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-79",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-80",  "area":"257.61","status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-81",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-82",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-83",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-84",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-85",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-86",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-87",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-88",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-89",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-90",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-91",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-92",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-93",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-94",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-95",  "area":"208",   "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-96",  "area":"361.14", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-97",  "area":"288.59", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-98",  "area":"223.82", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-99",  "area":"223.82", "status_id": 1  ,"status_name":"Disponible" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-100", "area":"242.01", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-101", "area":"250.68", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-102", "area":"259.36", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-103", "area":"268.03", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-104", "area":"276.7", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%",  "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-105", "area":"285.38", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-106", "area":"294.05", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-107", "area":"379.77", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-108", "area":"320",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-109", "area":"256",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-110", "area":"256",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-111", "area":"256",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-112", "area":"256",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-113", "area":"256",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-114", "area":"256",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-115", "area":"256",    "status_id": 1  ,"status_name":"Disponible" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-100", "area":"242.01", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-101", "area":"250.68", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-102", "area":"259.36", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-103", "area":"268.03", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-104", "area":"276.7",  "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",  "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-105", "area":"285.38", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-106", "area":"294.05", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-107", "area":"379.77", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-108", "area":"320",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-109", "area":"256",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-110", "area":"256",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-111", "area":"256",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-112", "area":"256",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-113", "area":"256",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-114", "area":"256",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-115", "area":"256",    "status_id": 1  ,"status_name":"Disponible" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-116", "area":"256",    "status_id": 1  ,"status_name":"Disponible" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-117", "area":"256",    "status_id": 1  ,"status_name":"Disponible" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-118", "area":"395.75", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-119", "area":"349.91", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-118", "area":"395.75", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-119", "area":"349.91", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-120", "area":"208",    "status_id": 1  ,"status_name":"Disponible" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-121", "area":"208",    "status_id": 1  ,"status_name":"Disponible" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-122", "area":"208",    "status_id": 1  ,"status_name":"Disponible" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-123", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-123", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-124", "area":"208",    "status_id": 1  ,"status_name":"Disponible" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-125", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-126", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-127", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-128", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-129", "area":"260",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-130", "area":"260",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-131", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-132", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-125", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-126", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-127", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-128", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-129", "area":"260",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-130", "area":"260",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-131", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-132", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-133", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-134", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-135", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-136", "area":"208",    "status_id": 1  ,"status_name":"Disponible" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-137", "area":"208",    "status_id": 1  ,"status_name":"Disponible" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-138", "area":"208",    "status_id": 1  ,"status_name":"Disponible" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-139", "area":"204.08", "status_id": 1  ,"status_name":"Disponible" ,"price": "565,302 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-140", "area":"295.33", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%",  "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-141", "area":"235.43", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%",  "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-142", "area":"204.34", "status_id": 1  ,"status_name":"Disponible" ,"price": "566,022 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-139", "area":"204.08", "status_id": 2  ,"status_name":"Vendido" ,"price":  2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-140", "area":"295.33", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",  "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-141", "area":"235.43", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",  "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-142", "area":"204.34", "status_id": 1  ,"status_name":"Disponible" ,"price":  2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-143", "area":"208",    "status_id": 1  ,"status_name":"Disponible" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-144", "area":"208",    "status_id": 1  ,"status_name":"Disponible" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-145", "area":"208",    "status_id": 1  ,"status_name":"Disponible" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-146", "area":"208",    "status_id": 1  ,"status_name":"Disponible" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-147", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-148", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-148", "area":"208",    "status_id": 1  ,"status_name":"Disponible" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-149", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",          "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-150", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-151", "area":"260",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-152", "area":"260",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-153", "area":"208",    "status_id": 1  ,"status_name":"Disponible" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id":3   ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-154", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-155", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-156", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-157", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-150", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-151", "area":"260",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-152", "area":"260",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-153", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id":3   ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-154", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-155", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-156", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-157", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-158", "area":"208",    "status_id": 1  ,"status_name":"Disponible" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-159", "area":"208",    "status_id": 1  ,"status_name":"Disponible" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-160", "area":"280",    "status_id": 1  ,"status_name":"Disponible" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-161", "area":"206.52", "status_id": 1  ,"status_name":"Disponible" ,"price": "807,095 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-162", "area":"245.8",  "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-163", "area":"291.37", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-164", "area":"205.77", "status_id": 1  ,"status_name":"Disponible" ,"price": "569,983 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3   ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-161", "area":"206.52", "status_id": 1  ,"status_name":"Disponible" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-162", "area":"245.8",  "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-163", "area":"291.37", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-164", "area":"205.77", "status_id": 1  ,"status_name":"Disponible" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3   ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-165", "area":"208",    "status_id": 1  ,"status_name":"Disponible" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-166", "area":"208",    "status_id": 1  ,"status_name":"Disponible" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-167", "area":"208",    "status_id": 1  ,"status_name":"Disponible" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
@@ -383,10 +311,10 @@ $(document).ready(function(){
                 {"stage": 1, "name": "M-169", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-170", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",          "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-171", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",          "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-172", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-173", "area":"286",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-174", "area":"286",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-175", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-172", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-173", "area":"286",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-174", "area":"286",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-175", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-176", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-177", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-178", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
@@ -394,48 +322,48 @@ $(document).ready(function(){
                 {"stage": 1, "name": "M-180", "area":"208",    "status_id": 1  ,"status_name":"Disponible" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-181", "area":"208",    "status_id": 1  ,"status_name":"Disponible" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-182", "area":"208",    "status_id": 1  ,"status_name":"Disponible" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-183", "area":"205.53", "status_id": 1  ,"status_name":"Disponible" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-184", "area":"289.74", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-185", "area":"246.96", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-186", "area":"207.2",  "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-183", "area":"205.53", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-184", "area":"289.74", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-185", "area":"246.96", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-186", "area":"207.2",  "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-187", "area":"208",    "status_id": 1  ,"status_name":"Disponible" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-188", "area":"208",    "status_id": 1  ,"status_name":"Disponible" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-189", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-190", "area":"244",    "status_id": 1  ,"status_name":"Disponible" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-191", "area":"244",    "status_id": 1  ,"status_name":"Disponible" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-192", "area":"244",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-193", "area":"244",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-194", "area":"244",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-195", "area":"305",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-196", "area":"346.51", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-197", "area":"263.39", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-198", "area":"251.11", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-199", "area":"238.83", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-200", "area":"226.55", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-201", "area":"214.27", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-202", "area":"237.99", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-203", "area":"225.71", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-204", "area":"213.43", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-205", "area":"195.51", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-206", "area":"201.13", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-207", "area":"301.2",  "status_id":  2 ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-208", "area":"207.61", "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-192", "area":"244",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-193", "area":"244",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-194", "area":"244",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-195", "area":"305",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-196", "area":"346.51", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-197", "area":"263.39", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-198", "area":"251.11", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-199", "area":"238.83", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-200", "area":"226.55", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-201", "area":"214.27", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-202", "area":"237.99", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-203", "area":"225.71", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-204", "area":"213.43", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-205", "area":"195.51", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-206", "area":"201.13", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-207", "area":"301.2",  "status_id":  2 ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-208", "area":"207.61", "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
                 {"stage": 1, "name": "M-209", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%",       "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-210", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-211", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-212", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-213", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-214", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-215", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-216", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-217", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-218", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-219", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-220", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-221", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-222", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-223", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
-                {"stage": 1, "name": "M-224", "area":"312",    "status_id": 2  ,"status_name":"Vendido" ,"price": "775.600 MXN", "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""}
+                {"stage": 1, "name": "M-210", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-211", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-212", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-213", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-214", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-215", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-216", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-217", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-218", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-219", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-220", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-221", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-222", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-223", "area":"208",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""},
+                {"stage": 1, "name": "M-224", "area":"312",    "status_id": 2  ,"status_name":"Vendido" ,"price": 2770, "financ": "Hasta 60 MSI", "enganche": "10%", "category_id": 3  ,"category_name": "estandar", "description": ""}
             ]}
             `);
         } else if (($('#image_site').contents()[0].baseURI).search("anthia") >= 1){
@@ -1249,27 +1177,15 @@ $(document).ready(function(){
             ]}
             `)
         }
-        let colorNotAvailable = "";
-        let colorAvailable = "";
-        let colorReserved = "";
-        let colorAvailablePremium = "";
-        let colorAvailablePlus = "";
+ 
         let selectionContainer = "";
-        // console.log(data.properties);
-        // if (($('#image_site').contents()[0].baseURI).search("beach") >= 1 || ($('#image_site').contents()[0].baseURI).search("marela") >= 1) {
-        //     colorNotAvailable = "fill: rgba(228, 22, 66, 0.52); stroke: rgba(255, 255, 255, 0.80); stroke-width: 1.41935px;";
-        //     colorAvailable= "fill: rgba(60, 219, 34, 0.16); stroke: rgba(255, 255, 255, 0.48); stroke-width: 1.41935px;"
-        //     colorReserved = "fill: rgba(57, 249, 230, 0.6); stroke: rgba(255, 255, 255, 0.8); stroke-width: 1.41935px;"
-        // } else if (($('#image_site').contents()[0].baseURI).search("anthia") >= 1 || ($('#image_site').contents()[0].baseURI).search("lakuun") >= 1) {
-            colorNotAvailable = "fill: rgba(228, 22, 66); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
-            colorAvailablePremium = "fill: rgba(5, 110, 57); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
-            colorAvailablePlus = "fill: rgba(47, 172, 102); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
-            colorAvailable = "fill: rgba(136, 194, 117); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
-            colorReserved = "fill: rgba(57, 249, 230); stroke: rgba(255, 255, 255); stroke-width: 1.2px;"
-        // }
-
-        // let lots = [];
+        let colorNotAvailable = "fill: rgba(228, 22, 66); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
+        let colorAvailablePremium = "fill: rgba(5, 110, 57); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
+        let colorAvailablePlus = "fill: rgba(47, 172, 102); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
+        let colorAvailable = "fill: rgba(136, 194, 117); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
+        let colorReserved = "fill: rgba(57, 249, 230); stroke: rgba(255, 255, 255); stroke-width: 1.2px;"
         let available = [0,0,0,0,0];
+
         for (stages = 1; stages <= data.numbers_stage; stages++) {
 
             // ((data.properties.status_id).filter(value => value = 1)).length;
@@ -1352,7 +1268,6 @@ $(document).ready(function(){
                     if (data.properties[key].description !== '') {
                         selectionContainer = selectionContainer.concat(`<b>${data.labels.description}</b>: ${data.properties[key].description}<br>`);
                     }
-                        selectionContainer = selectionContainer.concat(`<hr><span class="text-info fw-semibold">Click para ver cotizacion del lote</span>`);
 
                     // selectionContainer = selectionContainer.concat(`"></path>`);
                     $('[data-id="' + name_svg + '"]').attr('data-bs-content', " ").attr('data-bs-content', selectionContainer);
