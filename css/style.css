@@ -530,3 +530,7 @@ a:hover {
 .accordion {
     --bs-accordion-active-bg: #bcffef;
 }
+.form-check-input:checked {
+    background-color: #26c49f ;
+    border-color: #26c49f ;
+}
