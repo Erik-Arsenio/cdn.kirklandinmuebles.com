@@ -14,13 +14,12 @@ $(document).ready(function(){
         let btnId = $(this).attr('id');
         let btnClass = $(this).attr('class');
         let tradeDetailsContainer = $("#trade-details-container");
-        console.log("hola- " + btnId);
+        // console.log("hola- " + btnId);
 
     });
- 
 
-        console.time('Load');
-        // console.timeEnd('Load');
+    console.time('Load');
+
     let data = []
 
     if ($('#image_site').hasClass('lots')) {
@@ -1179,17 +1178,19 @@ $(document).ready(function(){
         }
  
         let selectionContainer = "";
-        let colorNotAvailable = "fill: rgba(228, 22, 66); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
-        let colorAvailablePremium = "fill: rgba(5, 110, 57); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
-        let colorAvailablePlus = "fill: rgba(47, 172, 102); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
-        let colorAvailable = "fill: rgba(136, 194, 117); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
-        let colorReserved = "fill: rgba(57, 249, 230); stroke: rgba(255, 255, 255); stroke-width: 1.2px;"
+        const colorNotAvailable = "fill: rgba(228, 22, 66); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
+        // let colorAvailablePremium = "fill: rgba(5, 110, 57); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
+        // let colorAvailablePlus = "fill: rgba(47, 172, 102); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
+        // let colorAvailable = "fill: rgba(136, 194, 117); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
+        const colorReserved = "fill: rgba(57, 249, 230); stroke: rgba(255, 255, 255); stroke-width: 1.2px;"
+        const colorStatus = {
+            1: "fill: rgba(5, 110, 57); stroke: rgba(255, 255, 255); stroke-width: 1.2px;", // colorAvailablePremium
+            2: "fill: rgba(47, 172, 102); stroke: rgba(255, 255, 255); stroke-width: 1.2px;",  // colorAvailablePlus
+        };
+        const colorStatusDefault = "fill: rgba(136, 194, 117); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
         let available = [0,0,0,0,0];
 
         for (stages = 1; stages <= data.numbers_stage; stages++) {
-
-            // ((data.properties.status_id).filter(value => value = 1)).length;
-            // console.log('Stage- ' + stages + " Disponibles- " + disponibles)
 
             $('g[id="stage_' + stages + '"] >[class*="mapsvg-region"]').each(function(){
             // debugger;
@@ -1210,25 +1211,27 @@ $(document).ready(function(){
                 // lots.push({id: id, area: Number(title.replace(" m2", "")), price: parseInt((Number(title.replace(" m2", ""))) * 2850).toLocaleString('en-EN') });
                 if (data.properties[key].status_id === 2) {
                     $(this).attr('style', colorNotAvailable);
-                    $('[data-modal-id="' + name_svg + '"]').addClass('d-none');
+                    // $('[data-modal-id="' + name_svg + '"]').addClass('d-none');
                     // $(this).addClass(' mapsvg-disabled');
                     // $(this).attr('data-bs-content', " ").attr('data-bs-content', `<b>${data.labels.status}</b>: ${data.properties[key].status}`);
-                } else if (data.properties[key].status_id == 1 || data.properties[key].status_id === 3){
+                } else if (data.properties[key].status_id == 1 || data.properties[key].status_id === 3) {
 
                     if (data.properties[key].status_id == 1) {
                         available[stages] = available[stages] + 1;
                     }
 
-                    if (data.properties[key].category_id === 1) {
-                        $(this).attr('style', colorAvailablePremium);
-                    } else if (data.properties[key].category_id === 2) {
-                        $(this).attr('style', colorAvailablePlus);
-                    } else {
-                        $(this).attr('style', colorAvailable);
-                    }
+                    $(this).attr('style', colorStatus[data.properties[key].category_id] || colorStatusDefault);
+                    
+                    // if (data.properties[key].category_id === 1) {
+                    //     $(this).attr('style', colorAvailablePremium);
+                    // } else if (data.properties[key].category_id === 2) {
+                    //     $(this).attr('style', colorAvailablePlus);
+                    // } else {
+                    //     $(this).attr('style', colorAvailable);
+                    // }
                     if (data.properties[key].status_id === 3){
                         $(this).attr('style', colorReserved);
-                        $('[data-modal-id="' + name_svg + '"]').addClass('d-none');
+                        // $('[data-modal-id="' + name_svg + '"]').addClass('d-none');
                     } 
                     // else {
                     //     $(this).removeClass(' mapsvg-disabled');
@@ -1284,7 +1287,7 @@ $(document).ready(function(){
                 // debugger;
             });
             console.table(available[stages]);
-            // $("#available-" + stages).text(available[stages]);
+            $("#available-" + stages).text(available[stages]);
         }
         // let lots_orde = lots.sort(((a, b) => a.id - b.id));
         // $('#area_selection_1').append(selectionContainer);
