@@ -17,6 +17,7 @@
     // new WOW().init();
 
 
+
     // Sticky Navbar
     $(window).scroll(function () {
         if ($(this).scrollTop() > 45) {
@@ -61,6 +62,7 @@
     //         }
     //     }
     // });
+    
 
     //Set some values on load add/edit modal
 	$(".add-edit-modal").on('show.bs.modal', function (event) {
@@ -85,8 +87,7 @@
 			});
 	});
 
-    //Capture add/edit form submit event and replace it by an AJAX call
-	$(".form-add-edit").submit(function (event) {
+    $(".form-add-edit").submit(function (event) {
 		//Globals
 		event.preventDefault();
 		let uriSubmit = $(this).attr('action');
@@ -103,15 +104,81 @@
 			});
 	});
 
+    // Set some values on load delete modal
+	$(".delete-modal").on('show.bs.modal', function (event) {
+		//Globals
+		let modal = $(this);
+		let button = $(event.relatedTarget);
+		let elementName = button.data('element-name') != undefined ? button.data('element-name') : null;
+		let elementId = button.data('element-id') != undefined ? button.data('element-id') : null;
+		let statusId = button.data('status-id') != undefined ? button.data('status-id') : null;
+		let modalTitle = button.data('modal-title') != undefined ? button.data('modal-title') : null;
+        let actionName = button.data('menu-action');
+        $('#buttom_name').empty().html(actionName);
+        $('#action_name').empty().html(actionName);
+		modal.find(".form-content").empty();
+		modal.find('.modal-title').empty().html(modalTitle);
+        if (statusId == 1) {
+            $('.action-unable').addClass('visible');
+        } else {
+            $('#buttom_name').removeClass('btn-danger').addClass('btn-success');
+            $('.action-unable').addClass('invisible');
+        }
+        $('#project_name').text(elementName);
+        $("#status_id").val(statusId);
+        $("#project_id").val(elementId);
+	});
+
+    //
+	$(".form-delete").submit(function (event) {
+		//Globals
+		event.preventDefault();
+        let elementId = $("#project_id").val();
+        let statusId = $("#status_id").val();
+        let $formPost ={
+            project_id :  elementId,
+            status_id : statusId
+        };
+		let uriSubmit = $(this).attr('action');
+        let modal = $(this).closest('.modal');
+        
+		$.post(uriSubmit, $formPost)
+            .done(function (data) {
+                // $('.modal').modal('hide');
+				if (data == 0) {
+                    $('.modal').modal('hide');
+					location.reload();
+				}
+				else {
+					modal.find('.content').append(data);
+				}
+			});
+	});
+
+
+
+    // Activate use selectPicker
+    function selectPicker() {
+        $('.selectpicker').selectpicker();
+        $(".bootstrap-select").on('click', function (event) {
+            console.log('Click');
+            $('.selectpicker').selectpicker('render');
+        });
+    };
+
+    selectPicker();
+
     //Run events after ajax finishes
 	$(document).ajaxComplete(function () {
 		selectLinked();
+        selectPicker();
 	});
 
     //Populated a target select based on a select controller
     function selectLinked() {
-        $("select.select-linked").on("change", function () {
+        $("select.select-linked").on("change", function (e) {
             //Globals
+            e.stopImmediatePropagation();
             let selectVal = $(this).val();
             let selectTarget = $(this).attr('data-target');
             let selectUri = $(this).attr('data-uri');
@@ -126,7 +193,7 @@
                     dataType: "html"
                 }).done(function (data) {
                     if (data !== '') {
-                        $(selectTarget).empty().append(data).prop('disabled', false);
+                        $(selectTarget).empty().append(data).prop('disabled', false).selectpicker('refresh');
                     }
                     else {
                         $(selectTarget).empty().prop('disabled', true);
