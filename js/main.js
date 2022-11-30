@@ -166,7 +166,10 @@
         });
     };
 
-    selectPicker();
+    let urlNow = window.location;
+    if (!urlNow.pathname.search('investments') ) {
+        selectPicker();        
+    }
 
     //Run events after ajax finishes
 	$(document).ajaxComplete(function () {
