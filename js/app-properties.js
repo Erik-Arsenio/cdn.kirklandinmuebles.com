@@ -84,7 +84,7 @@ $(document).ready(function(){
     if ($('#image_site').hasClass('lots')) {
         $(".loader-container").removeClass('d-none');
         if (($('#image_site').contents()[0].baseURI).search("beach") >= 1) {
-            $(document).prop('title', 'Marela Beach');
+
             data = JSON.parse(`
                 {
                 "numbers_stage": 1,
@@ -181,7 +181,7 @@ $(document).ready(function(){
             ]}
             `);
         } else if (($('#image_site').contents()[0].baseURI).search("celestun") >= 1){
-            $(document).prop('title', 'Marela Celestún');
+
             data = JSON.parse(`
             {
                 "numbers_stage": 1,
@@ -425,7 +425,7 @@ $(document).ready(function(){
             ]}
             `);
         } else if (($('#image_site').contents()[0].baseURI).search("anthia") >= 1){
-            $(document).prop('title', 'Anthia');
+
             data = JSON.parse(`
             {
                 "numbers_stage": 2,
@@ -808,7 +808,7 @@ $(document).ready(function(){
             // "type_id": 1, 
             // "type_name":
         } else if (($('#image_site').contents()[0].baseURI).search("lakuun") >= 1){
-            $(document).prop('title', 'Lakuun');
+
             data = JSON.parse(`
             {
                 "numbers_stage": 2,
