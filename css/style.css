@@ -488,7 +488,7 @@ a {
     color: #000000; 
 }
 .carousel-item img:hover{
-    filter: brightness(80%);
+    /* filter: brightness(80%); */
     cursor: pointer;
 }
 .nav-link {
@@ -533,4 +533,59 @@ a:hover {
 .form-check-input:checked {
     background-color: #26c49f ;
     border-color: #26c49f ;
+}
+
+.text-promo {
+    color: #00b98ebd !important;
+}
+
+.fadeout {
+    color: #ffffff;
+    font-size: large;
+    /* font-family: helvetica; */
+    /* text-align: center; */
+    opacity: 0;
+    -webkit-animation: fadeout 4s;
+    /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadeout 4s;
+    /* Firefox < 16 */
+    -ms-animation: fadeout 4s;
+    /* Internet Explorer */
+    -o-animation: fadeout 4s;
+    /* Opera < 12.1 */
+    animation: fadeout 4s;
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.fadeinout {
+    animation: fadeinout 1s infinite;
+}
+
+@keyframes fadeinout {
+    0% {
+        opacity: 1;
+    }
+
+    /* 25% {
+        opacity: .25;
+    } */
+    50% {
+        opacity: .5;
+    }
+    /* 75% {
+        opacity: .75;
+    } */
+
+    100% {
+        opacity: 1;
+    }
 }

@@ -1,11 +1,70 @@
+let deviceMovil= false;
+
+function detectmob() {
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { 
+        // $('.className').popover('disable'); 
+        deviceMovil= true;
+        $('.mobile').removeClass('d-none');
+        console.log("En Moviles");
+    } else {
+        $('.not_mobile').removeClass('d-none');
+    }
+}
+detectmob();
+
 $(document).ready(function(){
 
-    // detectmob();
-    // if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { 
-    //     $('.className').popover('disable'); 
-    //     console.log("En Moviles");
-    // }
-    // function detectmob() {
+ 
+    // Funtion Promo
+    let promo_lakuun = [
+        `<p class="fs-3 fst-italic fw-bold text-promo text-success">"Atrévete a experimentar UN NUEVO COMIENZO"</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-promo text-success">"Experimenta un nuevo estilo de vida en TIERRA DORADA"</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-promo text-success">"A 10 minutos de la ciudad de Mérida y a 15 minutos de las playas YUCATECAS"</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-promo text-success">"Entrega de la PRIMERA ETAPA Diciembre 2024"</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-promo text-success">"Contará con numerosas amenidades en áreas RECREATIVA, FAMILIAR y DEPORTIVA"</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-promo text-success">"Disfruta de la compañía de amigos y una parrillada en nuestra ÁREA GRILL"</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-promo text-success">"Disfruta de un paseo en familia y pasa las tardes inolvidables recorriendo nuestra CICLOVÍA"</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-promo text-success">"Pasa momentos increibles con tus mascotas en nuestro PET PARK"</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-promo text-success">"Practica tu deporte favorito EN PAREJA"</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-promo text-success">"Imagina relajarte y entrenar en nuestro CANAL DE NADO"</p>`
+    ];
+ 
+    $("#promo_lakuun").empty().html(promo_lakuun[0]);
+    let count = 1;
+
+    changeTextPromo = function(){
+        if(count == promo_lakuun.length){
+            count = 0;
+        }
+        $("#promo_lakuun").empty().html(promo_lakuun[count]);
+        // console.log(count);
+        count++;
+        // console.log(bootstrap.Carousel.getInstance(carouselHome));
+        // setTimeout(changeTextPromo, 11000);
+    }
+    // const myCarousel = document.getElementById('carouselHome, carouselmodal');
+    const myCarousel = document.getElementById('carouselHome', 'carouselmodal');
+
+    myCarousel.addEventListener('slid.bs.carousel', event => {
+        changeTextPromo();
+    })
+    $(".carousel-control-prev").on("click", function (e) {
+        e.stopImmediatePropagation();
+
+        let selectTarget = $(this).attr('data-bs-target');
+        console.log(count);
+        if (count <= 1) {
+            count = promo.length - 1;
+        } else {
+            count = count - 2;
+        }
+        $("#promo_lakuun").empty().html(promo[count]);
+        // console.log(selectTarget);
+
+    });
+
+
+
 
 
     $(".accordion-header").on("click", function() {
@@ -18,7 +77,7 @@ $(document).ready(function(){
 
     });
 
-    console.time('Load');
+    // console.time('Load');
 
     let data = []
 
@@ -1177,6 +1236,10 @@ $(document).ready(function(){
             `)
         }
  
+        // let data_propertie = JSON.parse($('#data_propertie').val());
+    //    ($('#data_propertie').val(data_propertie));
+        console.log(data);
+
         let selectionContainer = "";
         const colorNotAvailable = "fill: rgba(228, 22, 66); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
         // let colorAvailablePremium = "fill: rgba(5, 110, 57); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
@@ -1286,7 +1349,7 @@ $(document).ready(function(){
                 } 
                 // debugger;
             });
-            console.table(available[stages]);
+            // console.table(available[stages]);
             $("#available-" + stages).text(available[stages]);
         }
         // let lots_orde = lots.sort(((a, b) => a.id - b.id));
@@ -1296,7 +1359,7 @@ $(document).ready(function(){
         $('[data-bs-toggle="popover"]').popover();
         $(".loader-container").addClass('d-none');
         $("#image_site").removeClass('d-none');
-        console.timeEnd('Load');
+        // console.timeEnd('Load');
     
         function searchIndexId(data, name_svg, stages) {
             for (key in data.properties) {
@@ -1310,25 +1373,34 @@ $(document).ready(function(){
         
     $(".carousel-inner img").on("click", function(e) {
         e.stopImmediatePropagation();
-        // Globals
-        let id_img = $(this).closest('.carousel').attr('id');
-        let id_html = $('#' +  id_img).html().trim();
-        let src = $(this).attr('src');
-        let modalCarouselContainer = '';
-        let arr_img = $('#' + id_img + ' img').map(function(){
-            return this.src;
-        }).get();
-        $('#modal-imgLabel').empty();
-        $(id_html).prependTo('#modal-carousel-container');
-        for (let i in arr_img){
-            modalCarouselContainer = modalCarouselContainer.concat(`<div class="carousel-item`);
-            if (arr_img[i] == src) {
-                modalCarouselContainer = modalCarouselContainer.concat(` active`);
+        if (!deviceMovil ) {
+            
+    
+            // Globals
+            let id_img = $(this).closest('.carousel').attr('id');
+            let id_html = $('#' +  id_img).html().trim();
+            let src = $(this).attr('src');
+            let modalCarouselContainer = '';
+            let arr_img = $('#' + id_img + ' img').map(function(){
+                return this.src;
+            }).get();
+            $('#modal-imgLabel').empty();
+            $(id_html).prependTo('#modal-carousel-container');
+            if (id_img == 'carouselAmenities') {
+                arr_img.shift();
             }
-            modalCarouselContainer = modalCarouselContainer.concat(`"><img src="${arr_img[i]}" class="card-img-top img-fluid" alt="..."></div>`);
+            for (let i in arr_img){
+                modalCarouselContainer = modalCarouselContainer.concat(`<div class="carousel-item`);
+                if (id_img == 'carouselAmenities' && i == 0) {
+                    modalCarouselContainer = modalCarouselContainer.concat(` active`);
+                } else if (arr_img[i] == src) {
+                    modalCarouselContainer = modalCarouselContainer.concat(` active`);
+                }
+                modalCarouselContainer = modalCarouselContainer.concat(`"><img src="${arr_img[i]}" class="card-img-top img-fluid" alt="..."></div>`);
+            }
+            $('#modal-carousel-container').empty();
+            $('#modal-carousel-container').append(modalCarouselContainer);
+            $("#modal-img").modal("show");
         }
-        $('#modal-carousel-container').empty();
-        $('#modal-carousel-container').append(modalCarouselContainer);
-        $("#modal-img").modal("show");
     });
 });
