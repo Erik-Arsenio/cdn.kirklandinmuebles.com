@@ -62,6 +62,13 @@
     //         }
     //     }
     // });
+
+
+// document.getElementById("btnPause").addEventListener("click", function () {
+//   carousel.pause();
+// });
+
+
     
 
     //Set some values on load add/edit modal
@@ -168,13 +175,16 @@
 
     let urlNow = window.location;
     if (!urlNow.pathname.search('investments') ) {
-        selectPicker();        
+        selectPicker();   
     }
 
     //Run events after ajax finishes
 	$(document).ajaxComplete(function () {
-		selectLinked();
-        selectPicker();
+        if (!urlNow.pathname.search('investments') ) {
+            selectLinked();
+            selectPicker();
+        }
+    
 	});
 
     //Populated a target select based on a select controller
@@ -213,3 +223,30 @@ if (toastMsg != null) {
 	var toast = new bootstrap.Toast(toastMsg);
 	toast.show();
 }
+
+$(document).ready(function(){
+    let urlNow = window.location;
+    if (!urlNow.pathname.search('investments') ) {
+
+        let myCarouselElement = document.querySelector(".carousel");
+        let carousel = new bootstrap.Carousel(myCarouselElement, {
+        interval: 12000,
+        });
+    
+    
+        // $(".carousel-item img").on("click", function() {
+        $(".carousel-control-prev , .carousel-control-next").on("click", function() {
+            // Globals
+            console.log($(this).closest('.carousel').attr('id'))
+            // let btnId = $(this).parent().parent().parent().prop("id");
+            // let btnId = $(this).closest("div").prop("id");
+            let btnId = $(this).closest('.carousel').attr('id');
+            myCarouselElement = document.querySelector("#" + btnId);
+            carousel = new bootstrap.Carousel(myCarouselElement, {
+                ride: false,
+                // interval: 120000,
+            });
+            console.log(btnId);
+        }); 
+    }
+});
