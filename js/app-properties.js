@@ -49,7 +49,7 @@ $(document).ready(function(){
         `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"A 5 minutos de Hunucmá, 20 minutos de Mérida, 25 minutos de las playas de Sisal, pueblo mágico y playas Platinum y a 45 minutos de la Ciudad Progreso."</p>`,
         `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"Cuenta con 5 Etapas con ESTILA DISTINTIVA en la entrada de cada uno. Cada etapa tiene sus propias áreas verdes."</p>`,
         `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"Con precios por m<small><sup>2</sup></small> desde $418 mxn, Enganche de 10% y 60 meses sin intereses. <br>Puedes tenerlo en Diciembre de 2025."</p>`,
-        `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"Si en vez de comprar un Espreso Americano diariariamente en $69 mxn. <br> Inviertes diariamente sólo $56 mxn en un Lote de Anthia. <br> Tendrás un  lote que te durará toda una vida"</p>`,
+        `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"Si en vez de comprar un Espreso Americano diariamente en $69 mxn. <br> Inviertes diariamente sólo $56 mxn en un Lote de Anthia. <br> Tendrás un  lote que te durará toda una vida"</p>`,
         `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"Con 33% de Plusvalía. <br>Atrévete a experimentar<br> UN NUEVO COMIENZO"</span>  <br><span class="fs-3 fw-bold text-danger">INVIERTE</span></p>`
     ];
     `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"Empresas NACIONALES E INTERNACIONALES apuestan en la zona" <br> <span class="text-success-emphasis"> Atrévete a experimentar<br> UN NUEVO COMIENZO</span>  <br><span class="fs-3 fw-bold text-danger">INVIERTE</span></p>`
