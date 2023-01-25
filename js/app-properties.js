@@ -491,11 +491,11 @@ $(document).ready(function(){
                     new bootstrap.Carousel(carouselAmenitiesCasaClubElement, {
                         ride: false,
                     });
+                    let carouselLocationElement = document.querySelector("#carouselLocation");
+                    new bootstrap.Carousel(carouselLocationElement, {
+                        ride: false
+                    });
                 }
-                let carouselLocationElement = document.querySelector("#carouselLocation");
-                new bootstrap.Carousel(carouselLocationElement, {
-                    ride: false
-                });
                 console.log("carousel detenido");
                 
             } else {
