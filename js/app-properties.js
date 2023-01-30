@@ -67,8 +67,18 @@ $(document).ready(function(){
     //     `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"Hemos diseñado y distribuido nuestras áreas verdes de manera equitativa en cada etapa, para asegurar que todos los inversionistas sin importar su ubicación de su lote puedan disfrutar enel futuro de un parque o espacio recreativo cercano a su terreno."</p>`,
     //     `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"Empresas NACIONALES E INTERNACIONALES apuestan en la zona" <br> <span class="text-success-emphasis"> Atrévete a experimentar<br> UN NUEVO COMIENZO</span>  <br><span class="fs-3 fw-bold text-danger">INVIERTE</span></p>`
     // ];
+    let promo_beach = [
+        `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Desarrollo de terrenos residenciales semi-urbanizados en la hermosa playa de Celestún"</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Celestún es considerado un paraíso eco-turístico del estado de Yucatán, nombrado Patrimonio Mundial de la reserva especial de la biosfera."</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Un desarrollo residencial exclusivo y seguro con todas las comodidades y más"</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Celestún, la única costa donde las olas te susurran y el sol te acaricia."</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Cuenta con un Club de playa dentro del desarrollo y a sólo 5 minutos del centro de Celestún."</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"La playa de arena fina, el agua tranquila y poco profunda, rodeada de cocoteros, perfecta para toda la familia."</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Haz nuevos amigos en nuestro Club de Playa"</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Atrévete a experimentar<br> UN NUEVO COMIENZO"</span>  <br><span class="fs-3 fw-bold text-danger">INVIERTE</span></p>`
+    ];
     if (($('#image_site').contents()[0].baseURI).search("beach") >= 1) {
-        promo = 'beach';
+        promo = promo_beach;
 
     } else if (($('#image_site').contents()[0].baseURI).search("celestun") >= 1){
         promo = 'celestun';
@@ -429,8 +439,14 @@ $(document).ready(function(){
                 }
                 modalCarouselContainer = modalCarouselContainer.concat(`"><img src="${arr_img[i]}" class=""  style="width: 55vw;" alt="..."></div>`);
             }
+            console.log("Cantidad de Img- " + arr_img.length)
             $('#modal-carousel-container').empty();
             $('#modal-carousel-container').append(modalCarouselContainer);
+            if ( arr_img.length === 1) {
+                $('#carouselmodal').children('[data-bs-target="#carouselmodal"]').addClass('d-none')
+            } else {
+                $('#carouselmodal').children('[data-bs-target="#carouselmodal"]').removeClass('d-none')
+            }
             $("#modal-img").modal("show");
         }
         //  else {
