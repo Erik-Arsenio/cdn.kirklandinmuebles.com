@@ -399,7 +399,145 @@ $(document).ready(function(){
     //     interval: 12000
     // });
     // let carouselElement = "";
+    let static_url = $('#static_url').val();
+    let promoModalsisal = {
+        title : "Playa Sisal",
+        images : `
+        <div class="carousel-item active">
+            <img src="${static_url}img/anthia/promo/14.jpg" class="card-img-top img-fluid w-75 " alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="${static_url}img/anthia/promo/15.jpg" class="card-img-top img-fluid w-75 " alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="${static_url}img/anthia/promo/16.jpg" class="card-img-top img-fluid w-75 " alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="${static_url}img/anthia/promo/17.jpg" class="card-img-top img-fluid w-75 " alt="...">
+        </div> 
+        `,
+        content : `
+            <p class="fw-bold text-center">A solo 25 minutos del desarrollo.</p>
+            <p class="text-start">Sisal es un lugar muy tranquilo, que tiene una hermosa playa que te invita a la relajación.</p>
+            <p class="text-start">Esta ciudad colonial es especialmente conocida por sus hermosas construcciones históricas, como el Palacio de Gobernador, el Faro de Sisal, el Centro Histórico y la Iglesia de San Miguel.</p>
+            <p class="text-start">Además puedes: Visitar la famosa casa de la Emperatriz Carlota, el Fuerte de Santiago, la Laguna Cocodrilos y Reserva El Palmar,
+                disfrutar del atardecer en el Mirador Charcas, pasear por su muelle que recientemente fue remozado.</p>
+            <p class="text-start">Además de las atracciones históricas, Sisal ofrece una variedad de oportunidades de ocio. Los visitantes disfrutan de una amplia variedad de actividades, desde paseos en bote por el lago hasta paradas para visitar los mercados locales. 
+            También hay muchas oportunidades para descansar y relajarse en el lado caribeño de la ciudad, con hermosas playas y una amplia selección de spas y centros de bienestar.</p>
+            <p class="text-start">En los alrededores del lugar podrás encontrar variedad de restaurantes con comida típica o mariscos, también de puestos donde venden el tradicional pescado frito y otras delicias del mar.</p>
+            <p class="text-start">Los habitantes también disfrutan de la extensa selección de bares y discotecas que hay en la ciudad.</p>
+        `
+    }
+    let promoModalhunucma = {
+        title : "Hunucmá",
+        images : `
+        <div class="carousel-item active">
+            <img src="${static_url}img/anthia/promo/01.jpg" class="card-img-top img-fluid w-75 " alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="${static_url}img/anthia/promo/02.jpg" class="card-img-top img-fluid w-75 " alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="${static_url}img/anthia/promo/03.jpg" class="card-img-top img-fluid w-75 " alt="...">
+        </div>
+
+        `,
+        content : `
+            <p class="fw-bold text-center">A solo 5 minutos del desarrollo.</p>
+            <p class="text-start">Esta ciudad ofrece muchas atracciones atractivas para todo tipo de visitantes. Desde los espectáculos culturales hasta las actividades físicas, aquí hay algo para todos.</p>
+            <p class="text-start">La ciudad de Hunucmá es conocida especialmente por sus hermosos paisajes. La arquitectura es una mezcla de estilos, como el colonial y neoclásico. Las calles están adornadas con plazas, fuentes y parques preciosos. Los edificios antiguos, la arquitectura y el colorido ambiente dan un ambiente único a la ciudad.</p>
+            <p class="text-start">Uno de los atractivos arquitectónicos es la entrada al mercado de artesanías “Eulogio Rosado”. En fachada color amarillo e interior rojo, destaca su piso en mosaicos bicolores que te transporta a épocas pasadas. 
+            Unas cuadras más adelante puedes recorrer el colorido mercado municipal “Nuestra Sra. de Guadalupe” que se ha extendido con puestos en las calles, ahí puedes encontrar comida, verduras, y más.</p>
+            <p class="text-start">Hunucmá es el lugar perfecto para explorar la cultura Maya. El Centro de Interpretación Mayab es un lugar ideal para conocer más sobre su cultura. Esta instalación educativa es el lugar perfecto para descubrir el arte, la cultura y la historia de esta región.</p>
+            <p class="text-start">Al visitarla también puedes disfrutar de los deportes acuáticos en el lago de Hunucmá. El lago es el hogar de numerosas especies, lo que lo convierte en un lugar ideal para la pesca y el buceo. Los deportes acuáticos son una excelente manera de pasar el tiempo en el lago.</p>
+            <p class="text-start">Las plazas y centros comerciales también son populares entre los visitantes de Hunucmá. El Centro Comercial de Hunucmá, el Centro Comercial de El Centro de Las Américas y el Centro Comercial de La Plazuela son algunos de los principales de la ciudad. 
+            Estos centros ofrecen todo, desde ropa y zapatos hasta productos electrónicos y alimentos. Hay numerosas tiendas independientes y restaurantes que ofrecen comida rica y deliciosa.</p>
+            <p class="text-start">Se puede disfrutar de una gran variedad de entretenimiento y actividades que ofrecen los principales parques temáticos de la ciudad. El Parque Tuxtla, el Parque Xel-Ha y el Parque Xcaret son algunos de los parques de atracciones más populares de la ciudad. 
+            Estos parques ofrecen emocionantes montañas rusas, atracciones acuáticas, parques temáticos y más.</p>
+            <p class="text-start">El cenote “El Pocito” o el «de Sergio» (dueño de la casa donde se encuentra) es de tipo cerrado, se accede bajando por una escalera unos metros. Por dentro el agua es baja y tan transparente que puedes ver los peces que ahí crecen. 
+            Por $20 pesos puedes refrescarte y cambiarte en la casa de Sergio, quien amablemente te ofrece todas las facilidades que requieras.</p>
+        `
+    }
+    let promoModalprogreso = {
+        title : "Puerto Progreso",
+        images : `
+        <div class="carousel-item active">
+            <img src="${static_url}img/anthia/promo/04.jpg" class="card-img-top img-fluid w-75 " alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="${static_url}img/anthia/promo/05.jpg" class="card-img-top img-fluid w-75 " alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="${static_url}img/anthia/promo/06.jpg" class="card-img-top img-fluid w-75 " alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="${static_url}img/anthia/promo/07.jpg" class="card-img-top img-fluid w-75 " alt="...">
+        </div>
+
+        `,
+        content : `
+            <p class="fw-bold text-center">A solo 45 minutos del desarrollo.</p>
+            <p class="text-start">Puerto Progreso es una ciudad costera hermosa y con mucho encanto. La ciudad ha estado creciendo constantemente en los últimos años por su ubicación privilegiada frente al Caribe, alojamiento y atracciones turísticas.</p>
+            <p class="text-start">Las atracciones de Puerto Progreso incluyen el faro de la ciudad, que ofrece una vista impresionante y hermosas puestas de sol todas las noches. Allí también se encuentra el parque marino Aguazul, que ofrece la mejor experiencia submarina en la región.</p>
+            <p class="text-start">La Playa Norte es un lugar popular para los visitantes debido a sus tranquilas aguas turquesas y hermosas arenas blancas. También hay varias tiendas de alquiler de equipos de snorkel y buceo, donde pueden disfrutar de hermosas vistas submarinas.</p>
+            <p class="text-start">Otra de las principales atracciones turísticas de Puerto Progreso es la Plaza Comercial Xcanatún, un complejo comercial moderno con una gran variedad de tiendas, restaurantes y áreas de entretenimiento. La plaza también cuenta con una zona deportiva.</p>
+        `
+    }
+    let promoModalcelestun = {
+        title : "Celestún",
+        images : `
+        <div class="carousel-item active">
+            <img src="${static_url}img/anthia/promo/Playa_Celestún_Yucatán.jpg" class="card-img-top img-fluid w-75 " alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="${static_url}img/anthia/promo/Playa_Norte_Celestún.jpg" class="card-img-top img-fluid w-75 " alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="${static_url}img/anthia/promo/Playa_Sur_Celestún.jpg" class="card-img-top img-fluid w-75 " alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="${static_url}img/anthia/promo/Reserva_de_la_Biósfera_Los_Petenes.jpg" class="card-img-top img-fluid w-75 " alt="...">
+        </div>
+        `,
+        content : `
+            <p class="fw-bold text-center">A solo 50 minutos del desarrollo.</p>
+            <p class="text-start">Celestún se ha convertido en un destino turístico y comercial único en la región. Esta ciudad encantadora ofrece una variedad de atracciones y plazas comerciales que no se encuentran en ningún otro lugar.</p>
+            <p class="text-start">Su principal punto de interés turístico es el Faro de San Carlos, que se remonta a mediados del siglo XIX. El diseño único de este antiguo faro atrae a miles de visitantes cada año. El faro es conocido por estar rodeado de hermosas playas de arena blanca y aguas cristalinas.</p>
+            <p class="text-start">También se encuentran cafeterías, restaurantes y bares que ofrecen comida local e internacional, así como una amplia variedad de entretenimiento. La plaza comercial más grande de Celestún es el Centro Comercial El Faro, con más de 100 tiendas, restaurantes y negocios. Esta plaza comercial es el lugar ideal para realizar compras y disfrutar de toda la cultura de Celestún.</p>
+            <p class="text-start">Además de las numerosas atracciones turísticas y comerciales, aquí se ofrece una amplia gama de actividades recreativas. Estas actividades van desde el buceo en el Gran Cenote hasta la observación de aves en el Parque Nacional de Las Coloradas. Los amantes de la naturaleza también disfrutan de los senderos para caminar por la montaña, las hayas y los límites de la selva. </p>
+            <p class="text-start">Celestún es un destino único para todas las edades. Ofrece una variedad de experiencias, desde la exploración de ruinas antiguas hasta el disfrute de la cultura local. Se puede disfrutar la hermosa arquitectura, la cultura vibrante y las actividades al aire libre. </p>
+            <p class="text-start">Esto significa que los visitantes pueden explorar el Faro de San Carlos durante el día y pasar la noche en la plaza comercial El Faro.</p>
+        `
+    }
  
+
+    $("#sisal, #hunucma, #progreso, #celestun ").on("click", function(e) {
+        e.stopImmediatePropagation();
+        let btnId = $(this).attr('id');
+        // let btnClass = $(this).attr('class');
+        // $(this).closest("a").prop("data-bs-target");
+        let promoModal = [];
+        if (btnId == 'sisal') {
+            promoModal = promoModalsisal;
+        } else if (btnId == 'hunucma') {
+            promoModal = promoModalhunucma;
+        } else if (btnId == 'progreso') {
+            promoModal = promoModalprogreso;
+        } else if (btnId == 'celestun') {
+            promoModal = promoModalcelestun;
+        } else if (btnId == 'merida') {
+            promoModal = promoModalmerida;
+        }
+        console.log('Click en mapa de  ' + btnId );
+        $('#promoModalContent, #promoModalImages, #promoModalLabel').empty();
+        $('#promoModalLabel').append(promoModal.title);
+        $('#promoModalImages').append(promoModal.images);
+        $('#promoModalContent').append(promoModal.content);
+        $("#promoModal").modal("show");
+
+    });
+
+
 
     $(".carousel-inner img, about-img img").on("click", function(e) {
         e.stopImmediatePropagation();
