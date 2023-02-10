@@ -20,8 +20,10 @@ $(document).ready(function(){
 
     // $('[data-bs-toggle="popover"]').popover();
     // Funtion Promo
+    let lang = $('#language').val();
+    console.log("Idioma- " + lang);
     let promo = [];
-    let promo_lakuun = [
+    let promo_lakuun_es = [
         `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"Reconéctate con la naturaleza, entre la diversidad de nuestro desarrollo, nuestras amenidades únicas y la seguridad que el estado más seguro del país puede ofrecerte."</p>`,
         `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Experimenta un nuevo estilo de vida en TIERRA DORADA"</p>`,
         `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Un desarrollo residencial exclusivo y seguro con todas las comodidades y más"</p>`,
@@ -35,6 +37,21 @@ $(document).ready(function(){
         `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Pasa momentos increibles con tus mascotas en nuestro PET PARK"</p>`,
         `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Disfruta de un paseo en familia y pasa las tardes inolvidables recorriendo nuestra CICLOVÍA"</p>`,
         `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Practica tu deporte favorito EN PAREJA"</p>`
+    ];
+    let promo_lakuun_en = [
+        `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"Reconnect with nature, enjoy the diversity of our development, our unique amenities and the security of the safest state in Mexico"</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Experience a new lifestyle in the GOLDEN LAND"</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"An exclusive and safe residential development with all the comforts and more"</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"The perfect balance between nature and elegance"</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Delivery of the FIRST STAGE December 2024"</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Dare to experience A NEW BEGINNING"</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Make new friends in our eclectic CLUBHOUSE"</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Numerous exceptional amenities in the RECREATIONAL, FAMILY and SPORTS areas"</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Enjoy the company of friends with a barbecue in our GRILL AREA"</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Spend memorable moments with your children in our CHILDREN'S AREA"</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Even your pets will have fun in our PET PARK"</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Enjoy a family outing and spend pleasant afternoons touring our BIKEWAY"</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Practice your favorite sports with your partner"</p>`
     ];
     // `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"A 10 minutos de las plazas comerciales de la ciudad de Mérida"</p>`,
     // `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"A 20 minutos de las playas de Puerto Progreso"</p>`,
@@ -87,7 +104,11 @@ $(document).ready(function(){
         promo = promo_anthia;
 
     } else if (($('#image_site').contents()[0].baseURI).search("lakuun") >= 1){
-        promo = promo_lakuun;
+        if (lang == 'es') {
+            promo = promo_lakuun_es;
+        } else {
+            promo = promo_lakuun_en;
+        }
     }
     // console.log(promo)
     $(".promo").empty().html(promo[0]);
@@ -577,7 +598,7 @@ $(document).ready(function(){
                 }
                 modalCarouselContainer = modalCarouselContainer.concat(`"><img src="${arr_img[i]}" class=""  style="width: 55vw;" alt="..."></div>`);
             }
-            console.log("Cantidad de Img- " + arr_img.length)
+            // console.log("Cantidad de Img- " + arr_img.length)
             $('#modal-carousel-container').empty();
             $('#modal-carousel-container').append(modalCarouselContainer);
             if ( arr_img.length === 1) {
@@ -654,7 +675,7 @@ $(document).ready(function(){
                 console.log("carousel detenido");
                 
             } else {
-                let intervalCarousel = 9000;
+                let intervalCarousel = 20000;
                 let carouselHomeElement = document.querySelector("#carouselHome");
                 new bootstrap.Carousel(carouselHomeElement, {
                     interval: intervalCarousel,
@@ -678,7 +699,7 @@ $(document).ready(function(){
                         ride: "carousel"
                     });
                 }
-                console.log("carousel intervalo definido");
+                // console.log("carousel intervalo definido");
             }
 
             // var url = $(location).attr('href');
