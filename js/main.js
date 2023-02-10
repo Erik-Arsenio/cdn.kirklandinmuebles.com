@@ -224,13 +224,15 @@ if (toastMsg != null) {
 	toast.show();
 }
 
+
+
 $(document).ready(function(){
     let urlNow = window.location;
     if (!urlNow.pathname.search('investments') ) {
 
         let myCarouselElement = document.querySelector(".carousel");
         let carousel = new bootstrap.Carousel(myCarouselElement, {
-        interval: 12000,
+        interval: 15000,
         });
     
     
@@ -249,4 +251,16 @@ $(document).ready(function(){
             console.log(btnId);
         }); 
     }
+    // document.getElementById('btnSwitch').addEventListener('click',()=>{
+    //     if ($("html").attr('data-bs-theme') == 'light') {
+    //         $("html").attr('data-bs-theme',  "dark")
+    //     }
+    //     else {
+    //         $("html").attr('data-bs-theme',  "light")
+    //     }
+    //     $("html").attr('lang');
+    //     // .attr('data-bs-content', selectionContainer);
+    //     console.log("Ïdioma- " + $("html").attr('lang'))
+    //     console.log("Cambio de modo -" + $("html").attr('data-bs-theme'));
+    // })
 });
