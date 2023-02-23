@@ -73,17 +73,17 @@ $(document).ready(function(){
     let promo_anthia_en = [
         `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"A semi-urbanized land development that offers investment lots."</p>`,
         `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"For a limited time, take advantage of the deposit starting at only $2,000 MXN."</p>`,
-        `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"Hunucmá is an area of high growth potential surrounded by investment developments."</p>`,
+        `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"Hunucma is an area of high growth potential surrounded by investment developments."</p>`,
         `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"Access the development from Hunucmá's 30th street."</p>`,
         `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"It is a semi-urbanized land development that offers investment lots."</p>`,
         `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"Located in Hunucmá, an area with high growth potential and surrounded by investment developments. National and international companies are investing in the area."</p>`,
-        `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"5 minutes from Hunucmá, 20 minutes from Mérida, 25 minutes from Sisal beaches, a magic town and platinum beaches, and 45 minutes from Port Progreso."</p>`,
+        `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"5 minutes from Hunucma, 20 minutes from Mérida, 25 minutes from Sisal beaches, a magic town and platinum beaches, and 45 minutes from Port Progreso."</p>`,
         `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"Has 5 Stages with a DISTINCTIVE ENTRANCEWAY at the entrance of each one. Each stage has its own green areas."</p>`,
         `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"With prices per sqm starting at $418 MXN, 10% down payment, and 60 interest-free monthly payments, you can have it by December 2025."</p>`,
         `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"If instead of buying a daily Americano Espresso for $69 MXN. <br> You invest only $56 MXN daily in an Anthia lot. <br> You will have a lot that will last you a lifetime"</p>`,
         `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"With a 33% appreciation. <br>dare to experience a new beginning<br> <span class="fs-3 fw-bold text-danger">INVEST IN A NEW BEGINNING</span>"</p>`
     ];
-    let promo_beach = [
+    let promo_beach_es = [
         `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Desarrollo de terrenos residenciales semi-urbanizados en la hermosa playa de Celestún"</p>`,
         `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Celestún es considerado un paraíso eco-turístico del estado de Yucatán, nombrado Patrimonio Mundial de la reserva especial de la biosfera."</p>`,
         `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Un desarrollo residencial exclusivo y seguro con todas las comodidades y más"</p>`,
@@ -93,8 +93,22 @@ $(document).ready(function(){
         `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Haz nuevos amigos en nuestro Club de Playa"</p>`,
         `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Atrévete a experimentar<br> UN NUEVO COMIENZO"</span>  <br><span class="fs-3 fw-bold text-danger">INVIERTE</span></p>`
     ];
+    let promo_beach_en = [
+        `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"A development of semi-urbanized lots on the beautiful beach of Celestun"</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Celestun is considered an eco-tourism paradise in the state of Yucatan, named a World Heritage Site of the special biosphere reserve."</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"An exclusive and secure residential development with all the amenities and more."</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Celestun, the only coastline where the waves whisper to you and the sun caresses you.""</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"It has a beach club within the development and is only 5 minutes away from the center of Celestun.""</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"The fine sand beach, calm and shallow water, surrounded by coconut trees, perfect for the whole family."</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Make new friends at our Beach Club."</p>`,
+        `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Dare to experience<br> A NEW BEGINNING"</span>  <br><span class="fs-3 fw-bold text-danger">INVEST</span></p>`
+    ];
     if (($('#image_site').contents()[0].baseURI).search("beach") >= 1) {
-        promo = promo_beach;
+        if (lang == 'es') {
+            promo = promo_beach_es;
+        } else {
+            promo = promo_beach_en;
+        }
 
     } else if (($('#image_site').contents()[0].baseURI).search("celestun") >= 1){
         promo = 'celestun';
@@ -377,8 +391,11 @@ $(document).ready(function(){
                                     if (data.properties[key].category_id == 3) {
                                         data.properties[key].category_name = 'Standard';
                                     }
+                                    if (data.properties[key].category_id == 4) {
+                                        data.properties[key].category_name = 'Beachfront';
+                                    }
                                 }
-                                selectionContainer = selectionContainer.concat(`<b>${data.labels.category_name}</b>: ${(data.properties[key].category_name).toUpperCase()}<br>`);
+                                selectionContainer = selectionContainer.concat(`<b>${data.labels.category_name}</b>: ${(data.properties[key].category_name)}<br>`);
                             }
                             if (data.properties[key].status_id !== '') {
                                 if (lang == 'es') {
@@ -655,7 +672,7 @@ $(document).ready(function(){
 
         promoModalcelestun = {
             ...promoModalcelestun,
-            ...contentcelestunlES
+            ...contentcelestunES
         };
 
     } else if (lang == 'en'){
@@ -828,11 +845,13 @@ $(document).ready(function(){
                     interval: intervalCarousel,
                     ride: "carousel"
                 });
-                let carouselAmenitiesElement = document.querySelector("#carouselAmenities");
-                new bootstrap.Carousel(carouselAmenitiesElement, {
-                    interval: intervalCarousel,
-                    ride: "carousel"
-                });
+                if (($('#image_site').contents()[0].baseURI).search("celestun") <= 1) {
+                    let carouselAmenitiesElement = document.querySelector("#carouselAmenities");
+                    new bootstrap.Carousel(carouselAmenitiesElement, {
+                        interval: intervalCarousel,
+                        ride: "carousel"
+                    });
+                }
                 if (($('#image_site').contents()[0].baseURI).search("lakuun") >= 1){
             
                     let carouselAmenitiesCasaClubElement = document.querySelector("#carouselAmenitiesCasaClub");
