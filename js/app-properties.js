@@ -5,7 +5,7 @@ function detectmob() {
         // $('.className').popover('disable'); 
         deviceMovil= true;
         $('.mobile').removeClass('d-none');
-        console.log("En Moviles");
+        // console.log("En Moviles");
         $('.about-img, .about-img-right').removeClass('p-5').removeClass('pe-0');
         $('.mouse-touche').empty().text('click ');
         // $('.about-img').removeClass('p-5').removeClass('pe-0');
@@ -21,7 +21,7 @@ $(document).ready(function(){
     // $('[data-bs-toggle="popover"]').popover();
     // Funtion Promo
     let lang = $('#language').val();
-    console.log("Idioma- " + lang);
+    // console.log("Idioma- " + lang);
     let promo = [];
     let promo_lakuun_es = [
         `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"Reconéctate con la naturaleza, entre la diversidad de nuestro desarrollo, nuestras amenidades únicas y la seguridad que el estado más seguro del país puede ofrecerte."</p>`,
@@ -191,7 +191,7 @@ $(document).ready(function(){
         // Globals
         let btnId = $(this).attr('id');
         let btnClass = $(this).attr('class');
-        console.log('Click en accordion  ' + btnId + ' | ' + btnClass);
+        // console.log('Click en accordion  ' + btnId + ' | ' + btnClass);
 
         // let panZoom = svgPanZoom('#stage-01', {
         //     viewportSelector: '.svg-pan-zoom_viewport',
@@ -419,7 +419,16 @@ $(document).ready(function(){
                                 selectionContainer = selectionContainer.concat(`<b>${data.labels.price}</b>: ${(parseInt((Number(data.properties[key].area) * data.properties[key].price))).toLocaleString('en-EN')} MXN<br>`);
                             }
                             if (data.properties[key].financing !== '') {
-                                selectionContainer = selectionContainer.concat(`<b>${data.labels.financing}</b>: ${data.properties[key].financ}<br>`);
+                                let upto = '';
+                                let upto_type = '';
+                                if (lang == 'es') {
+                                    upto = 'Hasta';
+                                    upto_type = 'MSI';
+                                } else if (lang == 'en'){
+                                    upto = 'Up to';
+                                    upto_type = 'months';
+                                }
+                                selectionContainer = selectionContainer.concat(`<b>${data.labels.financing}</b>: ${upto} ${data.properties[key].financ} ${upto_type}<br>`);
                             }
                             if (data.properties[key].enganche !== '') {
                                 selectionContainer = selectionContainer.concat(`<b>${data.labels.hitch}</b>: ${data.properties[key].enganche}<br>`);
@@ -680,7 +689,7 @@ $(document).ready(function(){
             ...promoModalsisal,
             ...contentSisalEN
         };
-       promoModalHunucma = {
+        promoModalHunucma = {
             ...promoModalHunucma,
             ...contentHunucmaEN
         };
@@ -713,7 +722,7 @@ $(document).ready(function(){
         } else if (btnId == 'merida') {
             promoModal = promoModalmerida;
         }
-        console.log('Click en mapa de  ' + btnId );
+        // console.log('Click en mapa de  ' + btnId );
         $('#promoModalContent, #promoModalImages, #promoModalLabel').empty();
         $('#promoModalLabel').append(promoModal.title);
         $('#promoModalImages').append(promoModal.images);
@@ -845,7 +854,8 @@ $(document).ready(function(){
                     interval: intervalCarousel,
                     ride: "carousel"
                 });
-                if (($('#image_site').contents()[0].baseURI).search("celestun") <= 1) {
+                // console.log($('#image_site').contents()[0].baseURI.search("marela_celestun"));
+                if (($('#image_site').contents()[0].baseURI).search("marela_celestun") >= 1 || ($('#image_site').contents()[0].baseURI).search("marela_life") >= 1) {
                     let carouselAmenitiesElement = document.querySelector("#carouselAmenities");
                     new bootstrap.Carousel(carouselAmenitiesElement, {
                         interval: intervalCarousel,
