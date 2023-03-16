@@ -1,26 +1,26 @@
-let deviceMovil= false;
+// let deviceMovil= false;
 
-function detectmob() {
-    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { 
-        // $('.className').popover('disable'); 
-        deviceMovil= true;
-        $('.mobile').removeClass('d-none');
-        // console.log("En Moviles");
-        $('.about-img, .about-img-right').removeClass('p-5').removeClass('pe-0');
-        $('.mouse-touche').empty().text('click ');
-        // $('.about-img').removeClass('p-5').removeClass('pe-0');
+// function detectmob() {
+//     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { 
+//         // $('.className').popover('disable'); 
+//         deviceMovil= true;
+//         $('.mobile').removeClass('d-none');
+//         // console.log("En Moviles");
+//         $('.about-img, .about-img-right').removeClass('p-5').removeClass('pe-0');
+//         $('.mouse-touche').empty().text('click ');
+//         // $('.about-img').removeClass('p-5').removeClass('pe-0');
 
-    } else {
-        $('.not_mobile').removeClass('d-none');
-    }
-}
-detectmob();
+//     } else {
+//         $('.not_mobile').removeClass('d-none');
+//     }
+// }
+// detectmob();
 
 $(document).ready(function(){
 
     // $('[data-bs-toggle="popover"]').popover();
     // Funtion Promo
-    let lang = $('#language').val();
+    // let lang = $('#language').val();
     // console.log("Idioma- " + lang);
     let promoHome = {
         lakuun : {
@@ -131,12 +131,35 @@ $(document).ready(function(){
                 `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Dare to experience<br> A NEW BEGINNING"</span>  <br><span class="fs-3 fw-bold text-danger">INVEST</span></p>`
                 ]
         },
+        marela_life : {
+            es : [
+                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Desarrollo de terrenos residenciales semi-urbanizados en la hermosa playa de Celestún"</p>`,
+                `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Celestún es considerado un paraíso eco-turístico del estado de Yucatán, nombrado Patrimonio Mundial de la reserva especial de la biosfera."</p>`,
+                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Un desarrollo residencial exclusivo y seguro con todas las comodidades y más"</p>`,
+                `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Celestún, la única costa donde las olas te susurran y el sol te acaricia."</p>`,
+                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Cuenta con un Club de playa dentro del desarrollo y a sólo 5 minutos del centro de Celestún."</p>`,
+                `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"La playa de arena fina, el agua tranquila y poco profunda, rodeada de cocoteros, perfecta para toda la familia."</p>`,
+                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Haz nuevos amigos en nuestro Club de Playa"</p>`,
+                `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Atrévete a experimentar<br> UN NUEVO COMIENZO"</span>  <br><span class="fs-3 fw-bold text-danger">INVIERTE</span></p>`
+                ],
+
+            en : [
+                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"A development of semi-urbanized lots on the beautiful beach of Celestun"</p>`,
+                `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Celestun is considered an eco-tourism paradise in the state of Yucatan, named a World Heritage Site of the special biosphere reserve."</p>`,
+                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"An exclusive and secure residential development with all the amenities and more."</p>`,
+                `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Celestun, the only coastline where the waves whisper to you and the sun caresses you.""</p>`,
+                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"It has a beach club within the development and is only 5 minutes away from the center of Celestun.""</p>`,
+                `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"The fine sand beach, calm and shallow water, surrounded by coconut trees, perfect for the whole family."</p>`,
+                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Make new friends at our Beach Club."</p>`,
+                `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Dare to experience<br> A NEW BEGINNING"</span>  <br><span class="fs-3 fw-bold text-danger">INVEST</span></p>`
+                ]
+        },
     }
 
-    var url = $('#image_site').contents()[0].baseURI;
-    var array= url.split(/[//,/,?]/);
+    // var url = $('#image_site').contents()[0].baseURI;
+    // var array= url.split(/[//,/,?]/);
     // console.log(array);
-    let investment = array[4];
+    let investment = $('#investment').val();
     // console.log('Desarrollo- ' + investment);
     // console.log(promoHome[investment][lang][0])
 
@@ -485,167 +508,6 @@ $(document).ready(function(){
         });
     }
 
-    let static_url = $('#static_url').val();
-    // let content = {};
-    let promo_Modal = {
-        sisal : {
-                images : `<div class="carousel-item active">
-                            <img src="${static_url}img/anthia/promo/14.jpg" class="card-img-top img-fluid w-75 " alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="${static_url}img/anthia/promo/15.jpg" class="card-img-top img-fluid w-75 " alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="${static_url}img/anthia/promo/16.jpg" class="card-img-top img-fluid w-75 " alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="${static_url}img/anthia/promo/17.jpg" class="card-img-top img-fluid w-75 " alt="...">
-                        </div> 
-                        `,
-                title : { es: "Playa Sisal", en: 'Sisal beach' },
-                content : {
-                    es: `<p class="fw-bold text-center">A solo 25 minutos del desarrollo.</p>
-                        <p class="text-start">Sisal es un lugar muy tranquilo, que tiene una hermosa playa que te invita a la relajación.</p>
-                        <p class="text-start">Esta ciudad colonial es especialmente conocida por sus hermosas construcciones históricas, como el Palacio de Gobernador, el Faro de Sisal, el Centro Histórico y la Iglesia de San Miguel.</p>
-                        <p class="text-start">Además puedes: Visitar la famosa casa de la Emperatriz Carlota, el Fuerte de Santiago, la Laguna Cocodrilos y Reserva El Palmar,
-                            disfrutar del atardecer en el Mirador Charcas, pasear por su muelle que recientemente fue remozado.</p>
-                        <p class="text-start">Además de las atracciones históricas, Sisal ofrece una variedad de oportunidades de ocio. Los visitantes disfrutan de una amplia variedad de actividades, desde paseos en bote por el lago hasta paradas para visitar los mercados locales. 
-                        También hay muchas oportunidades para descansar y relajarse en el lado caribeño de la ciudad, con hermosas playas y una amplia selección de spas y centros de bienestar.</p>
-                        <p class="text-start">En los alrededores del lugar podrás encontrar variedad de restaurantes con comida típica o mariscos, también de puestos donde venden el tradicional pescado frito y otras delicias del mar.</p>
-                        <p class="text-start">Los habitantes también disfrutan de la extensa selección de bares y discotecas que hay en la ciudad.</p>
-                        `,
-                    en: `
-                        <p class="fw-bold text-center">Only 25 minutes from the development.</p>
-                        <p class="text-start">Sisal is a very peaceful place with a beautiful, wide beach that invites relaxation.</p>
-                        <p class="text-start">This colonial city is especially known for its beautiful historical buildings, such as the Governor's Palace, the Sisal Lighthouse, the Historic Center, and the Church of San Miguel. </p>
-                        <p class="text-start">In addition to the historical attractions, Sisal offers a variety of leisure opportunities, including boat rides on the lake, visits to local markets, and a wide selection of spas and wellness centers.</p>
-                        <p class="text-start">Visitors can also enjoy the local cuisine, with a variety of restaurants offering typical food including fresh seafood, as well as street vendors selling traditional fried fish and other seafood delicacies.</p>
-                        `,
-                }
-            },
-        hunucma :  {
-                images : `<div class="carousel-item active">
-                        <img src="${static_url}img/anthia/promo/01.jpg" class="card-img-top img-fluid w-75 " alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="${static_url}img/anthia/promo/02.jpg" class="card-img-top img-fluid w-75 " alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="${static_url}img/anthia/promo/03.jpg" class="card-img-top img-fluid w-75 " alt="...">
-                    </div>`,
-                title : { es: "Hunucmá", en: 'Hunucma' },
-                content : {
-                    es: `<p class="fw-bold text-center">A solo 5 minutos del desarrollo.</p>
-                        <p class="text-start">Esta ciudad ofrece muchas atracciones atractivas para todo tipo de visitantes. Desde los espectáculos culturales hasta las actividades físicas, aquí hay algo para todos.</p>
-                        <p class="text-start">La ciudad de Hunucmá es conocida especialmente por sus hermosos paisajes. La arquitectura es una mezcla de estilos, como el colonial y neoclásico. Las calles están adornadas con plazas, fuentes y parques preciosos. Los edificios antiguos, la arquitectura y el colorido ambiente dan un ambiente único a la ciudad.</p>
-                        <p class="text-start">Uno de los atractivos arquitectónicos es la entrada al mercado de artesanías “Eulogio Rosado”. En fachada color amarillo e interior rojo, destaca su piso en mosaicos bicolores que te transporta a épocas pasadas. 
-                        Unas cuadras más adelante puedes recorrer el colorido mercado municipal “Nuestra Sra. de Guadalupe” que se ha extendido con puestos en las calles, ahí puedes encontrar comida, verduras, y más.</p>
-                        <p class="text-start">Hunucmá es el lugar perfecto para explorar la cultura Maya. El Centro de Interpretación Mayab es un lugar ideal para conocer más sobre su cultura. Esta instalación educativa es el lugar perfecto para descubrir el arte, la cultura y la historia de esta región.</p>
-                        <p class="text-start">Al visitarla también puedes disfrutar de los deportes acuáticos en el lago de Hunucmá. El lago es el hogar de numerosas especies, lo que lo convierte en un lugar ideal para la pesca y el buceo. Los deportes acuáticos son una excelente manera de pasar el tiempo en el lago.</p>
-                        <p class="text-start">Las plazas y centros comerciales también son populares entre los visitantes de Hunucmá. El Centro Comercial de Hunucmá, el Centro Comercial de El Centro de Las Américas y el Centro Comercial de La Plazuela son algunos de los principales de la ciudad. 
-                        Estos centros ofrecen todo, desde ropa y zapatos hasta productos electrónicos y alimentos. Hay numerosas tiendas independientes y restaurantes que ofrecen comida rica y deliciosa.</p>
-                        <p class="text-start">Se puede disfrutar de una gran variedad de entretenimiento y actividades que ofrecen los principales parques temáticos de la ciudad. El Parque Tuxtla, el Parque Xel-Ha y el Parque Xcaret son algunos de los parques de atracciones más populares de la ciudad. 
-                        Estos parques ofrecen emocionantes montañas rusas, atracciones acuáticas, parques temáticos y más.</p>
-                        <p class="text-start">El cenote “El Pocito” o el «de Sergio» (dueño de la casa donde se encuentra) es de tipo cerrado, se accede bajando por una escalera unos metros. Por dentro el agua es baja y tan transparente que puedes ver los peces que ahí crecen. 
-                        `,
-                    en: `<p class="fw-bold text-center">Just 5 minutes from the development.</p>
-                        <p class="text-start">This city offers many attractive attractions for all types of visitors. From cultural shows to physical activities, there is something for everyone here.</p>
-                        <p class="text-start">The city of Hunucmá is especially known for its beautiful landscapes. The architecture is a mix of styles, such as colonial and neoclassical. The streets are adorned with beautiful squares, fountains, and parks. The old buildings, architecture, and colorful atmosphere give a unique ambiance to the city.</p>
-                        <p class="text-start">One of the architectural attractions is the entrance to the "Eulogio Rosado" handicraft market. Its yellow façade and red interior, with its two-color mosaic floor, transport you to past times. A few blocks away, you can walk through the colorful "Nuestra Sra. de Guadalupe" municipal market, 
-                            which has expanded with stalls on the streets, where you can find food, vegetables, and more.</p>
-                        <p class="text-start">Hunucmá is the perfect place to explore Mayan culture. The Mayab Interpretation Center is an ideal place to learn more about their culture. This educational facility is the perfect place to discover the art, culture, and history of this region.</p>
-                        <p class="text-start">When visiting Hunucmá, you can also enjoy water sports on the lake. The lake is home to numerous species, making it an ideal place for fishing and diving. Water sports are an excellent way to spend time on the lake.</p>
-                        <p class="text-start">Plazas and shopping centers are also popular among visitors to Hunucmá. The Hunucmá Shopping Center, the El Centro de Las Américas Shopping Center, and the La Plazuela Shopping Center are some of the city's main shopping destinations. These centers offer everything from clothing and shoes to electronic products and food. 
-                            There are numerous independent shops and restaurants that offer delicious food.</p>
-                        <p class="text-start">You can enjoy a variety of entertainment and activities offered by the city's main theme parks. Tuxtla Park, Xel-Ha Park, and Xcaret Park are some of the most popular amusement parks in the city. 
-                            These parks offer exciting roller coasters, water attractions, theme parks, and more.</p>
-                        <p class="text-start">The "El Pocito" cenote or "Sergio's" cenote (named after the owner of the house where it is located) is a closed-type cenote, accessed by going down a staircase a few meters. 
-                            Inside, the water is shallow and so transparent that you can see the fish that inhabit it. For $20 pesos, you can refresh yourself and change in Sergio's house, where he kindly offers you all the facilities you require. 
-                    `,
-                }
-            },
-        progreso :  {
-                images : `<div class="carousel-item active">
-                        <img src="${static_url}img/anthia/promo/04.jpg" class="card-img-top img-fluid w-75 " alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="${static_url}img/anthia/promo/05.jpg" class="card-img-top img-fluid w-75 " alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="${static_url}img/anthia/promo/06.jpg" class="card-img-top img-fluid w-75 " alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="${static_url}img/anthia/promo/07.jpg" class="card-img-top img-fluid w-75 " alt="...">
-                    </div>`,
-                title : { es: "Puerto Progreso", en: 'Puerto Progreso' },
-                content : {
-                    es: `<p class="fw-bold text-center">A solo 45 minutos del desarrollo.</p>
-                        <p class="text-start">Puerto Progreso es una ciudad costera hermosa y con mucho encanto. La ciudad ha estado creciendo constantemente en los últimos años por su ubicación privilegiada frente al Caribe, alojamiento y atracciones turísticas.</p>
-                        <p class="text-start">Las atracciones de Puerto Progreso incluyen el faro de la ciudad, que ofrece una vista impresionante y hermosas puestas de sol todas las noches. Allí también se encuentra el parque marino Aguazul, que ofrece la mejor experiencia submarina en la región.</p>
-                        <p class="text-start">La Playa Norte es un lugar popular para los visitantes debido a sus tranquilas aguas turquesas y hermosas arenas blancas. También hay varias tiendas de alquiler de equipos de snorkel y buceo, donde pueden disfrutar de hermosas vistas submarinas.</p>
-                        <p class="text-start">Otra de las principales atracciones turísticas de Puerto Progreso es la Plaza Comercial Xcanatún, un complejo comercial moderno con una gran variedad de tiendas, restaurantes y áreas de entretenimiento. La plaza también cuenta con una zona deportiva.</p>`,
-                    en: `<p class="fw-bold text-center">Just 45 minutes away from the development.</p>
-                        <p class="text-start">Puerto Progreso is a beautiful and charming coastal town. The city has been steadily growing in recent years due to its prime location facing the Caribbean with ample accommodation options, and tourist attractions.</p>
-                        <p class="text-start">Attractions in Puerto Progreso include the city's lighthouse, which offers an impressive view and beautiful sunsets every night. There is also the Aguazul Marine Park, which offers the best underwater experience in the region.</p>
-                        <p class="text-start">Playa Norte is a popular spot for visitors due to its calm turquoise waters and beautiful white sands. There are also several snorkeling and diving equipment rental shops, where visitors can enjoy beautiful underwater views.</p>
-                        <p class="text-start">Another major tourist attraction in Puerto Progreso is the Xcanatún Commercial Plaza, a modern shopping complex with a wide variety of shops, restaurants, and entertainment areas. The plaza also features a sports area.</p>`,
-                }
-            },
-        celestun :  {
-                images : `<div class="carousel-item active">
-                            <img src="${static_url}img/anthia/promo/Playa_Celestún_Yucatán.jpg" class="card-img-top img-fluid w-75 " alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="${static_url}img/anthia/promo/Playa_Norte_Celestún.jpg" class="card-img-top img-fluid w-75 " alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="${static_url}img/anthia/promo/Playa_Sur_Celestún.jpg" class="card-img-top img-fluid w-75 " alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="${static_url}img/anthia/promo/Reserva_de_la_Biósfera_Los_Petenes.jpg" class="card-img-top img-fluid w-75 " alt="...">
-                        </div>`,
-                title : { es: "Celestún", en: 'Celestun' },
-                content : {
-                    es: `<p class="fw-bold text-center">A solo 50 minutos del desarrollo.</p>
-                        <p class="text-start">Celestún se ha convertido en un destino turístico y comercial único en la región. Esta ciudad encantadora ofrece una variedad de atracciones y plazas comerciales que no se encuentran en ningún otro lugar.</p>
-                        <p class="text-start">Su principal punto de interés turístico es el Faro de San Carlos, que se remonta a mediados del siglo XIX. El diseño único de este antiguo faro atrae a miles de visitantes cada año. El faro es conocido por estar rodeado de hermosas playas de arena blanca y aguas cristalinas.</p>
-                        <p class="text-start">También se encuentran cafeterías, restaurantes y bares que ofrecen comida local e internacional, así como una amplia variedad de entretenimiento. La plaza comercial más grande de Celestún es el Centro Comercial El Faro, con más de 100 tiendas, restaurantes y negocios. Esta plaza comercial es el lugar ideal para realizar compras y disfrutar de toda la cultura de Celestún.</p>
-                        <p class="text-start">Además de las numerosas atracciones turísticas y comerciales, aquí se ofrece una amplia gama de actividades recreativas. Estas actividades van desde el buceo en el Gran Cenote hasta la observación de aves en el Parque Nacional de Las Coloradas. Los amantes de la naturaleza también disfrutan de los senderos para caminar por la montaña, las hayas y los límites de la selva. </p>
-                        <p class="text-start">Celestún es un destino único para todas las edades. Ofrece una variedad de experiencias, desde la exploración de ruinas antiguas hasta el disfrute de la cultura local. Se puede disfrutar la hermosa arquitectura, la cultura vibrante y las actividades al aire libre. </p>
-                        <p class="text-start">Esto significa que los visitantes pueden explorar el Faro de San Carlos durante el día y pasar la noche en la plaza comercial El Faro.</p>`,
-                    en: `<p class="fw-bold text-center">Just 50 minutes away from the development.</p>
-                        <p class="text-start">Celestun has become a unique tourist and commercial destination in the region. This charming city offers a variety of attractions and shopping plazas that are not found anywhere else.</p>
-                        <p class="text-start">Its main tourist attraction is the San Carlos Lighthouse, which dates back to the mid-19th century. The unique design of this old lighthouse attracts thousands of visitors each year. The lighthouse is known for being surrounded by beautiful white sand beaches and crystal-clear waters.</p>
-                        <p class="text-start">There are also cafes, restaurants, and bars that offer local and international food, as well as a wide variety of entertainment. Celestun's largest shopping plaza is the El Faro Shopping Center, with over 100 shops, restaurants, and businesses. This shopping plaza is the ideal place for shopping and enjoying all of Celestun's culture.</p>
-                        <p class="text-start">In addition to the numerous tourist and commercial attractions, a wide range of recreational activities are offered here. These activities range from diving in the Gran Cenote to bird watching in the Las Coloradas National Park. Nature lovers also enjoy walking trails through the mountains, beeches, and jungle boundaries.</p>
-                        <p class="text-start">Celestun is a unique destination for all ages. It offers a variety of experiences, from exploring ancient ruins to enjoying local culture. Visitors can enjoy the beautiful architecture, vibrant culture, and outdoor activities.</p>
-                        <p class="text-start">This means that visitors can explore the San Carlos Lighthouse during the day and spend the night at the El Faro shopping plaza.</p>`,
-                }
-            },
-        merida :  {
-                images : ``,
-                title : { es: "Mérida", en: 'Merida' },
-                content : {
-                    es: ``,
-                    en: ``,
-                }
-            },
-        
-
-
-    }
-
-    $("#sisal, #hunucma, #progreso, #celestun ").on("click", function(e) {
-        e.stopImmediatePropagation();
-        let locationId = $(this).attr('id');
-        $('#promoModalContent, #promoModalImages, #promoModalLabel').empty();
-        $('#promoModalLabel').append(promo_Modal[locationId].title[lang] );
-        $('#promoModalImages').append(promo_Modal[locationId].images );
-        $('#promoModalContent').append(promo_Modal[locationId].content[lang]);
-        $("#promoModal").modal("show");
-
-    });
-
 
 
     $(".carousel-inner img, about-img img").on("click", function(e) {
@@ -663,7 +525,7 @@ $(document).ready(function(){
         // });
         // console.log(id_img);
         // console.log(carousel);
-        // console.log(myCarouselElement);
+        // console.log('deviceMovil- ' + deviceMovil);
         if (!deviceMovil ) {
             // Globals
             let id_html = $('#' +  id_img).html().trim();
