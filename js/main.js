@@ -233,7 +233,8 @@ function detectmob() {
         deviceMovil= true;
         $('.mobile').removeClass('d-none');
         console.log("En Moviles");
-        $('.about-img, .about-img-right').removeClass('p-5').removeClass('pe-0');
+        $('.about-img, .about-img-right').removeClass('p-3').removeClass('pe-0');
+        $('.about-img, .about-img-right').removeClass('about-img').removeClass('about-img-right');
         $('.mouse-touche').empty().text('click ');
         // $('.about-img').removeClass('p-5').removeClass('pe-0');
         // ! Guardar deviceMovil en Input hide
@@ -319,7 +320,7 @@ $(document).ready(function(){
 
     if (investment == ''){
         //! Para saber cantidad disponible por desarrollo.
-        let projects = ['lakuun', 'anthia', 'marela_beach', 'marela_celestun'];
+        let projects = ['lakuun', 'anthia', 'marela_life', 'marela_beach', 'marela_celestun'];
         // console.log(projects);
         // let available_project = [];
    
@@ -387,12 +388,16 @@ $(document).ready(function(){
                         en: `<p class="fw-bold text-center">Only 66 minutes from the development.</p>`
                     },
                     marela_beach: {
-                        es: `<p class="fw-bold text-center">A solo 66 minutos del desarrollo.</p>`,
-                        en: `<p class="fw-bold text-center">Only 66 minutes from the development.</p>`
+                        es: `<p class="fw-bold text-center">A solo 77 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Only 77 minutes from the development.</p>`
+                    },
+                    marela_life: {
+                        es: `<p class="fw-bold text-center">A solo 77 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Only 77 minutes from the development.</p>`
                     },
                     marela_celestun: {
-                        es: `<p class="fw-bold text-center">A solo 66 minutos del desarrollo.</p>`,
-                        en: `<p class="fw-bold text-center">Only 66 minutes from the development.</p>`
+                        es: `<p class="fw-bold text-center">A solo 77 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Only 77 minutes from the development.</p>`
                     },
                 },
                 content : {
@@ -434,12 +439,16 @@ $(document).ready(function(){
                         en: `<p class="fw-bold text-center">Just 38 minutes from the development.</p>`
                     },
                     marela_beach: {
-                        es: `<p class="fw-bold text-center">A solo 38 minutos del desarrollo.</p>`,
-                        en: `<p class="fw-bold text-center">Just 38 minutes from the development.</p>`
+                        es: `<p class="fw-bold text-center">A solo 52 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 52 minutes from the development.</p>`
+                    },
+                    marela_life: {
+                        es: `<p class="fw-bold text-center">A solo 52 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 52 minutes from the development.</p>`
                     },
                     marela_celestun: {
-                        es: `<p class="fw-bold text-center">A solo 38 minutos del desarrollo.</p>`,
-                        en: `<p class="fw-bold text-center">Just 38 minutes from the development.</p>`
+                        es: `<p class="fw-bold text-center">A solo 52 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 52 minutes from the development.</p>`
                     },
                 },
                 content : {
@@ -496,12 +505,16 @@ $(document).ready(function(){
                         en: `<p class="fw-bold text-center">Just 26 minutes away from the development.</p>`
                     },
                     marela_beach: {
-                        es: `<p class="fw-bold text-center">A solo 26 minutos del desarrollo.</p>`,
-                        en: `<p class="fw-bold text-center">Just 26 minutes away from the development.</p>`
+                        es: `<p class="fw-bold text-center">A solo 87 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 87 minutes away from the development.</p>`
+                    },
+                    marela_life: {
+                        es: `<p class="fw-bold text-center">A solo 87 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 87 minutes away from the development.</p>`
                     },
                     marela_celestun: {
-                        es: `<p class="fw-bold text-center">A solo 26 minutos del desarrollo.</p>`,
-                        en: `<p class="fw-bold text-center">Just 26 minutes away from the development.</p>`
+                        es: `<p class="fw-bold text-center">A solo 87 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 87 minutes away from the development.</p>`
                     },
                 },
                 content : {
@@ -541,12 +554,16 @@ $(document).ready(function(){
                         en: `<p class="fw-bold text-center">Just 83 minutes away from the development.</p>`
                     },
                     marela_beach: {
-                        es: `<p class="fw-bold text-center">A solo 83 minutos del desarrollo.</p>`,
-                        en: `<p class="fw-bold text-center">Just 83 minutes away from the development.</p>`
+                        es: `<p class="fw-bold text-center">A solo 5 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 5 minutes away from the development.</p>`
+                    },
+                    marela_life: {
+                        es: `<p class="fw-bold text-center">A solo 5 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 5 minutes away from the development.</p>`
                     },
                     marela_celestun: {
-                        es: `<p class="fw-bold text-center">A solo 83 minutos del desarrollo.</p>`,
-                        en: `<p class="fw-bold text-center">Just 83 minutes away from the development.</p>`
+                        es: `<p class="fw-bold text-center">A solo 5 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 5 minutes away from the development.</p>`
                     },
                 },
                 content : {
@@ -610,12 +627,16 @@ $(document).ready(function(){
                         en: `<p class="fw-bold text-center">Just 10 minutes away from the development.</p>`
                     },
                     marela_beach: {
-                        es: `<p class="fw-bold text-center">A solo 10 minutos del desarrollo.</p>`,
-                        en: `<p class="fw-bold text-center">Just 10 minutes away from the development.</p>`
+                        es: `<p class="fw-bold text-center">A solo 45 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 45 minutes away from the development.</p>`
+                    },
+                    marela_life: {
+                        es: `<p class="fw-bold text-center">A solo 45 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 45 minutes away from the development.</p>`
                     },
                     marela_celestun: {
-                        es: `<p class="fw-bold text-center">A solo 10 minutos del desarrollo.</p>`,
-                        en: `<p class="fw-bold text-center">Just 10 minutes away from the development.</p>`
+                        es: `<p class="fw-bold text-center">A solo 45 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 45 minutes away from the development.</p>`
                     },
                 },
                 content : {
