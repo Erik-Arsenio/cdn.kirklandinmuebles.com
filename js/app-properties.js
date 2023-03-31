@@ -529,33 +529,52 @@ $(document).ready(function(){
         if (!deviceMovil ) {
             // Globals
             let id_html = $('#' +  id_img).html().trim();
-            let src = $(this).attr('src');
+            // console.log(`Leng total-  ${id_html.length}`);
+            // console.log(id_html.search('carousel-caption'));
             let modalCarouselContainer = '';
-            let arr_img = $('#' + id_img + ' img').map(function(){
-                return this.src;
-            }).get();
-            $('#modal-imgLabel').empty();
-            $(id_html).prependTo('#modal-carousel-container');
-            // if (id_img == 'carouselAmenities') {
-            //     arr_img.shift();
-            // }
-            for (let i in arr_img){
-                modalCarouselContainer = modalCarouselContainer.concat(`<div class="carousel-item`);
-                if (id_img == 'carouselAmenities' && i == 0) {
-                    modalCarouselContainer = modalCarouselContainer.concat(` active`);
-                } else if (arr_img[i] == src) {
-                    modalCarouselContainer = modalCarouselContainer.concat(` active`);
+            if (id_html.search('carousel-caption') >= 1) {
+                // console.log("Cabeza- " + id_html.search('<div class="carousel-inner">'));
+                let cabeza = '<div class="carousel-inner">'
+                // console.log("Cabeza length- " + cabeza.length);
+                let id_html_new = id_html.replace(cabeza,'');
+                // console.log(`Leng sin encabezado-  ${id_html_new.length}`);
+                // console.log(id_html_new.search('<button class="carousel-control-prev"'));
+                id_html_new = id_html_new.slice(0, id_html_new.search('<button class="carousel-control-prev"'));
+                id_html_new = id_html_new.replaceAll('height="1240 px"', "");
+                id_html_new = id_html_new.replaceAll('width="1754 px"', 'style="width: 55vw;"');
+                id_html_new = id_html_new.replaceAll('class="h6 text-dark"', 'class="h5 text-dark"');
+
+                console.log(id_html_new);
+                // console.log(id_html);
+                modalCarouselContainer = id_html_new;
+            } else {
+                let src = $(this).attr('src');
+                let arr_img = $('#' + id_img + ' img').map(function(){
+                    return this.src;
+                }).get();
+                $('#modal-imgLabel').empty();
+                $(id_html).prependTo('#modal-carousel-container');
+                // if (id_img == 'carouselAmenities') {
+                //     arr_img.shift();
+                // }
+                for (let i in arr_img){
+                    modalCarouselContainer = modalCarouselContainer.concat(`<div class="carousel-item`);
+                    if (id_img == 'carouselAmenities' && i == 0) {
+                        modalCarouselContainer = modalCarouselContainer.concat(` active`);
+                    } else if (arr_img[i] == src) {
+                        modalCarouselContainer = modalCarouselContainer.concat(` active`);
+                    }
+                    modalCarouselContainer = modalCarouselContainer.concat(`"><img src="${arr_img[i]}" class=""  style="width: 55vw;" alt="..."></div>`);
                 }
-                modalCarouselContainer = modalCarouselContainer.concat(`"><img src="${arr_img[i]}" class=""  style="width: 55vw;" alt="..."></div>`);
-            }
             // console.log("Cantidad de Img- " + arr_img.length)
+                if ( arr_img.length === 1) {
+                    $('#carouselmodal').children('[data-bs-target="#carouselmodal"]').addClass('d-none')
+                } else {
+                    $('#carouselmodal').children('[data-bs-target="#carouselmodal"]').removeClass('d-none')
+                }
+            }
             $('#modal-carousel-container').empty();
             $('#modal-carousel-container').append(modalCarouselContainer);
-            if ( arr_img.length === 1) {
-                $('#carouselmodal').children('[data-bs-target="#carouselmodal"]').addClass('d-none')
-            } else {
-                $('#carouselmodal').children('[data-bs-target="#carouselmodal"]').removeClass('d-none')
-            }
             $("#modal-img").modal("show");
         }
         //  else {
@@ -608,20 +627,35 @@ $(document).ready(function(){
                 new bootstrap.Carousel(carouselHomeElement, {
                     ride: false,
                 });
-                if ( investment != "marela_celestun" || investment != "marela_life") {
+                if ( investment != "marela_celestun") {
                     let carouselAmenitiesElement = document.querySelector("#carouselAmenities");
                     new bootstrap.Carousel(carouselAmenitiesElement, {
                         ride: false,
                     });
                 }
-                if (investment == "lakuun"){
+                if (investment == "lakuun" || investment == "marela_life"){
                     let carouselAmenitiesCasaClubElement = document.querySelector("#carouselAmenitiesCasaClub");
                     new bootstrap.Carousel(carouselAmenitiesCasaClubElement, {
                         ride: false,
                     });
-                    let carouselLocationElement = document.querySelector("#carouselLocation");
-                    new bootstrap.Carousel(carouselLocationElement, {
-                        ride: false
+                    // let carouselLocationElement = document.querySelector("#carouselLocation");
+                    // new bootstrap.Carousel(carouselLocationElement, {
+                    //     ride: false
+                    // });
+                }
+                if (investment == "marela_life"){
+            
+                    let carouselAmenitiesCasaClubElement = document.querySelector("#carouselAmenitiesCasaClub");
+                    new bootstrap.Carousel(carouselAmenitiesCasaClubElement, {
+                        ride: "carousel"
+                    });
+                    let carouselImagesCasaClubElement = document.querySelector("#carouselImagesCasaClub");
+                    new bootstrap.Carousel(carouselImagesCasaClubElement, {
+                        ride: "carousel"
+                    });
+                    let carouselMasterPlanElement = document.querySelector("#carouselMasterPlan");
+                    new bootstrap.Carousel(carouselMasterPlanElement, {
+                        ride: "carousel"
                     });
                 }
                 console.log("carousel detenido");
@@ -635,7 +669,7 @@ $(document).ready(function(){
                 });
                 // console.log('Desarrollo- ' + investment);
                 // if (($('#image_site').contents()[0].baseURI).search("marela_celestun") >= 1 || ($('#image_site').contents()[0].baseURI).search("marela_life") >= 1) {
-                if ( investment != "marela_celestun" || investment != "marela_life") {
+                if ( investment != "marela_celestun") {
                     let carouselAmenitiesElement = document.querySelector("#carouselAmenities");
                     new bootstrap.Carousel(carouselAmenitiesElement, {
                         interval: intervalCarousel,
@@ -643,15 +677,33 @@ $(document).ready(function(){
                     });
                 }
                 // if (($('#image_site').contents()[0].baseURI).search("lakuun") >= 1){
-                if (investment == "lakuun"){
+                if (investment == "lakuun" || investment == "marela_life"){
             
                     let carouselAmenitiesCasaClubElement = document.querySelector("#carouselAmenitiesCasaClub");
                     new bootstrap.Carousel(carouselAmenitiesCasaClubElement, {
                         interval: intervalCarousel,
                         ride: "carousel"
                     });
-                    let carouselLocationElement = document.querySelector("#carouselLocation");
-                    new bootstrap.Carousel(carouselLocationElement, {
+                    // let carouselLocationElement = document.querySelector("#carouselLocation");
+                    // new bootstrap.Carousel(carouselLocationElement, {
+                    //     interval: intervalCarousel,
+                    //     ride: "carousel"
+                    // });
+                }
+                if (investment == "marela_life"){
+            
+                    let carouselAmenitiesCasaClubElement = document.querySelector("#carouselAmenitiesCasaClub");
+                    new bootstrap.Carousel(carouselAmenitiesCasaClubElement, {
+                        interval: intervalCarousel,
+                        ride: "carousel"
+                    });
+                    let carouselImagesCasaClubElement = document.querySelector("#carouselImagesCasaClub");
+                    new bootstrap.Carousel(carouselImagesCasaClubElement, {
+                        interval: intervalCarousel,
+                        ride: "carousel"
+                    });
+                    let carouselMasterPlanElement = document.querySelector("#carouselMasterPlan");
+                    new bootstrap.Carousel(carouselMasterPlanElement, {
                         interval: intervalCarousel,
                         ride: "carousel"
                     });
