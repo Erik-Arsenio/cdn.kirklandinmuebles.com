@@ -1,3 +1,5 @@
+// \\@ts-check
+
 // let deviceMovil= false;
 
 // function detectmob() {
@@ -20,7 +22,7 @@ $(document).ready(function(){
 
     // $('[data-bs-toggle="popover"]').popover();
     // Funtion Promo
-    // let lang = $('#language').val();
+    let lang = $('#language').val();
     // console.log("Idioma- " + lang);
     let promoHome = {
         lakuun : {
@@ -137,7 +139,7 @@ $(document).ready(function(){
                 `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Celestún es considerado un paraíso eco-turístico del estado de Yucatán, nombrado Patrimonio Mundial de la reserva especial de la biosfera."</p>`,
                 `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Un desarrollo residencial exclusivo y seguro con todas las comodidades y más"</p>`,
                 `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Celestún, la única costa donde las olas te susurran y el sol te acaricia."</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Cuenta con un Club de playa dentro del desarrollo y a sólo 5 minutos del centro de Celestún."</p>`,
+                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Cuenta con una Casa Club dentro del desarrollo y puede comprar la membresía del Club de Playa."</p>`,
                 `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"La playa de arena fina, el agua tranquila y poco profunda, rodeada de cocoteros, perfecta para toda la familia."</p>`,
                 `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Haz nuevos amigos en la Casa Club y Club de Playa"</p>`,
                 `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Atrévete a experimentar<br> UN NUEVO COMIENZO"</span>  <br><span class="fs-3 fw-bold text-danger">INVIERTE</span></p>`
@@ -167,7 +169,7 @@ $(document).ready(function(){
     // $(".promo").empty().html(promo[0]);
     let count = 1;
 
-    changeTextPromo = function(){
+    function changeTextPromo(){
         if(count == promoHome[investment][lang].length){
             count = 0;
         }
@@ -175,10 +177,12 @@ $(document).ready(function(){
         // console.log(count);
         count++;
     }
-    const myCarousel = document.getElementById('carouselHome', 'carouselmodal');
+    const myCarousel = document.getElementById('carouselHome');
 
     myCarousel.addEventListener('slid.bs.carousel', event => {
-        changeTextPromo();
+        console.log("En Home- " + event.target.id);
+        // let btnTarget = event.target.id; 
+        event.target.id == 'carouselHome' ? changeTextPromo() : '';
     })
     $(".carousel-control-prev").on("click", function (e) {
         e.stopImmediatePropagation();
@@ -192,6 +196,24 @@ $(document).ready(function(){
             $(".promo").empty().html(promoHome[investment][lang][count]);
         }
     });
+
+    if($("#carouselAmenitiesCasaClub").length > 0){
+        const carouselAmenitiesCasaClubMov = document.getElementById('carouselAmenitiesCasaClub')
+        carouselAmenitiesCasaClubMov.addEventListener('slid.bs.carousel', event => {
+            console.log("En Club- " + event.target.id);
+            event.stopImmediatePropagation();
+            let hijos = $('#carouselAmenitiesCasaClub').children().children();
+            let el = 0
+            for (el = 0; el <= hijos.length -1 ; el++) {
+                if(hijos[el].className == 'carousel-item active') break
+            }
+            $('.area-text').removeClass('text-success');
+            $('.amenities-club-text-' + el).addClass('text-success');
+        })
+    } 
+    // else  {
+    //     console.log("Np existe el carousel de Casa Club");
+    // }
 
     // $("svg").on("click", function() {
     //     let btnId = $(this).attr('id');
@@ -224,7 +246,7 @@ $(document).ready(function(){
         // Globals
         let btnId = $(this).attr('id');
         let btnClass = $(this).attr('class');
-        // console.log('Click en accordion  ' + btnId + ' | ' + btnClass);
+        console.log('Click en accordion  ' + btnId + ' | ' + btnClass);
 
         // let panZoom = svgPanZoom('#stage-01', {
         //     viewportSelector: '.svg-pan-zoom_viewport',
@@ -259,27 +281,15 @@ $(document).ready(function(){
         // });
     });
 
-    // console.time('Load');
-  
+
 
     let data = []
-
     if ($('#image_site').hasClass('lots')) {
         $(".loader-container").removeClass('d-none');
 
-        //Get discount according to quantity entered
-        // $.ajax({
-        //     url: "assets/json/list_topup_discount.json",
-        //     dataType: "json",
-        //     cache: false
-        // }).done(function(data) {
-
-
-        // });
-
         //Globals
-        let project_name = "";
         let uri = $('#data_url').val();
+
         $.ajax({
             url: uri ,
             type : 'GET',
@@ -290,35 +300,6 @@ $(document).ready(function(){
                 data = datas; 
             }
 
-
-            // console.log(data.promo.es)
-            // data = JSON.parse($('#data_propertie').val());
-            // let dataUpdate = JSON.parse($('#data_update_propertie').val());
-            // dataUpdate = dataUpdate.sort((x,y) => x.status - y.status);
-            // dataUpdate = dataUpdate.sort((x,y) => x.id.localeCompare(y.id));
-            
-            // let properties = data.properties;
-            // console.log(data);
-            // console.log(dataUpdate);
-            // console.log(properties);
-            // console.log(properties[0].name);
-            // let coincidencia = 0;
-            // for (key in properties) {
-
-            //     coincidencia = dataUpdate.find( dataUpdate => dataUpdate.id == properties[key].name);
-            //     if (coincidencia != undefined) {
-            //         // coincidencia.status = properties[key].status_id;
-            //         // coincidencia.status_text = properties[key].status_name
-            //         if (properties[key].status_id != coincidencia.status) {
-            //             console.log(properties[key].name + " : " + properties[key].status_id + " => " + coincidencia.status); 
-            //             // properties[key].status_id = Number(coincidencia.status);
-            //             // properties[key].status_name = coincidencia.status_text;
-            //         }
-            //     }
-            //     // console.log(dataUpdate[key].id + ' ' + dataUpdate[key].status_text);
-
-            // }
-            // console.log(properties);
             let selectionContainer = "";
             const colorNotAvailable = "fill: rgba(228, 22, 66); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
             // let colorAvailablePremium = "fill: rgba(5, 110, 57); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
@@ -347,7 +328,7 @@ $(document).ready(function(){
                 data.labels.hitch = 'Down payment';
             }
 
-            for (stages = 1; stages <= data.numbers_stage; stages++) {
+            for (let stages = 1; stages <= data.numbers_stage; stages++) {
 
                 $('g[id="stage_' + stages + '"] >[class*="mapsvg-region"]').each(function(){
                 // debugger;
@@ -377,9 +358,11 @@ $(document).ready(function(){
                             // $(this).attr('data-bs-content', " ").attr('data-bs-content', `<b>${data.labels.status}</b>: ${data.properties[key].status}`);
                         } else if (data.properties[key].status_id == 1 || data.properties[key].status_id == 2) {
 
-                            if (data.properties[key].status_id == 1) {
-                                available[stages] = available[stages] + 1;
-                            }
+                            // if (data.properties[key].status_id == 1) {
+                            //     available[stages] = available[stages] + 1;
+                            // }
+                            data.properties[key].status_id == 1 ? available[stages] = available[stages] + 1 : available[stages] = available[stages];
+                            
 
                             $(this).attr('style', colorStatus[data.properties[key].category_id] || colorStatusDefault);
                             
@@ -390,10 +373,10 @@ $(document).ready(function(){
                             // } else {
                             //     $(this).attr('style', colorAvailable);
                             // }
-                            if (data.properties[key].status_id == 2){
-                                $(this).attr('style', colorReserved);
-                                // $('[data-modal-id="' + name_svg + '"]').addClass('d-none');
-                            } 
+                            data.properties[key].status_id == 2 ? $(this).attr('style', colorReserved) : '';
+                            // if (data.properties[key].status_id == 2){
+                            //     $(this).attr('style', colorReserved);
+                            // } 
                             // else {
                             //     $(this).removeClass(' mapsvg-disabled');
                             // }
@@ -421,12 +404,8 @@ $(document).ready(function(){
                                 if (lang == 'es') {
                                     // lot = 'Lote';
                                 } else if (lang == 'en'){
-                                    if (data.properties[key].category_id == 3) {
-                                        data.properties[key].category_name = 'Standard';
-                                    }
-                                    if (data.properties[key].category_id == 4) {
-                                        data.properties[key].category_name = 'Beachfront';
-                                    }
+                                    data.properties[key].category_id == 3 ? data.properties[key].category_name = 'Standard' 
+                                    : data.properties[key].category_id == 4 ? data.properties[key].category_name = 'Beachfront' : "";
                                 }
                                 selectionContainer = selectionContainer.concat(`<b>${data.labels.category_name}</b>: ${(data.properties[key].category_name)}<br>`);
                             }
@@ -661,10 +640,10 @@ $(document).ready(function(){
                 console.log("carousel detenido");
                 
             } else {
-                let intervalCarousel = 20000;
+                let intervalCarousel = 10000;
                 let carouselHomeElement = document.querySelector("#carouselHome");
                 new bootstrap.Carousel(carouselHomeElement, {
-                    interval: intervalCarousel,
+                    // interval: intervalCarousel,
                     ride: "carousel"
                 });
                 // console.log('Desarrollo- ' + investment);
@@ -681,9 +660,12 @@ $(document).ready(function(){
             
                     let carouselAmenitiesCasaClubElement = document.querySelector("#carouselAmenitiesCasaClub");
                     new bootstrap.Carousel(carouselAmenitiesCasaClubElement, {
-                        interval: intervalCarousel,
-                        ride: "carousel"
+                        ride: "carousel",
+                        pause: "hover",
+                        // interval: intervalCarousel,
                     });
+                  
+                    // console.log("New Interval" + intervalCarousel);
                     // let carouselLocationElement = document.querySelector("#carouselLocation");
                     // new bootstrap.Carousel(carouselLocationElement, {
                     //     interval: intervalCarousel,
@@ -694,21 +676,24 @@ $(document).ready(function(){
             
                     let carouselAmenitiesCasaClubElement = document.querySelector("#carouselAmenitiesCasaClub");
                     new bootstrap.Carousel(carouselAmenitiesCasaClubElement, {
-                        interval: intervalCarousel,
+                        // interval: intervalCarousel,
                         ride: "carousel"
                     });
                     let carouselImagesCasaClubElement = document.querySelector("#carouselImagesCasaClub");
                     new bootstrap.Carousel(carouselImagesCasaClubElement, {
-                        interval: intervalCarousel,
+                        // interval: intervalCarousel,
                         ride: "carousel"
                     });
                     let carouselMasterPlanElement = document.querySelector("#carouselMasterPlan");
                     new bootstrap.Carousel(carouselMasterPlanElement, {
-                        interval: intervalCarousel,
+                        // interval: intervalCarousel,
                         ride: "carousel"
                     });
                 }
-                // console.log("carousel intervalo definido");
+                $('.carousel').carousel({
+                    interval: 30000
+                });
+                console.log("carousel intervalo definido");
             }
 
             // var url = $(location).attr('href');
