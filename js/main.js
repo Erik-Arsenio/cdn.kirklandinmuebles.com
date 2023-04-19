@@ -358,10 +358,7 @@ $(document).ready(function(){
 
     }
 
-  
-
     let static_url = $('#static_url').val();
-    // let content = {};
     let promo_Modal = {
         sisal : {
                 images : `<div class="carousel-item active">
@@ -664,9 +661,8 @@ $(document).ready(function(){
 
 
     }
-    $("#sisal, #hunucma, #progreso, #celestun, #merida ").on("click", function(e) {
-        e.stopImmediatePropagation();
-        let locationId = $(this).attr('id');
+ 
+    function loadModal(investment, promo_Modal, locationId) {
         $('#promoModalContent, #promoModalImages, #promoModalLabel, #promoModalDistance').empty();
         $('#promoModalLabel').append(promo_Modal[locationId].title[lang] );
         $('#promoModalImages').append(promo_Modal[locationId].images );
@@ -677,8 +673,18 @@ $(document).ready(function(){
             $('.img-promo').removeClass('w-100').addClass('w-100');
         }
         $("#promoModal").modal("show");
-
+        
+    }
+    // console.log(JSON.stringify(promo_Modal));
+    $("#sisal, #hunucma, #progreso, #celestun, #merida ").on("click", function(e) {
+        e.stopImmediatePropagation();
+        // console.log(Object.entries(promo_Modal).length);
+        let locationId = $(this).attr('id');
+            loadModal(investment, promo_Modal, locationId);
+        
     });
+
+
 
 
 });
