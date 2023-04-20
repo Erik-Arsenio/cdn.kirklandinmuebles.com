@@ -20,29 +20,11 @@
 
 $(document).ready(function(){
 
-
-
-    // let uri = $('#data_url').val();
-    let promoHome = {};
-    // $.ajax({
-    //     url: 'http://kirklandinmobiliaria.com/assets/json/promo.json' ,
-    //     type : 'GET',
-    //     dataType: "json"
-    // }).done(function (datas) {
-    //     console.log( $('#data_url').val() + '/promo.json')
-    //     if (datas !== null) {
-    //         //Globals
-    //         let promo = datas;
-    //         console.log(promo)
-    //     }
-
-    // });
-
     // $('[data-bs-toggle="popover"]').popover();
     // Funtion Promo
     let lang = $('#language').val();
     // console.log("Idioma- " + lang);
-        promoHome = {
+    let promoHome = {
         lakuun : {
             es :[
                 `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"Reconéctate con la naturaleza, entre la diversidad de nuestro desarrollo, nuestras amenidades únicas y la seguridad que el estado más seguro del país puede ofrecerte."</p>`,
@@ -176,7 +158,6 @@ $(document).ready(function(){
         },
     }
 
-        // console.log(JSON.stringify(promoHome));
     // var url = $('#image_site').contents()[0].baseURI;
     // var array= url.split(/[//,/,?]/);
     // console.log(array);
@@ -199,7 +180,7 @@ $(document).ready(function(){
     const myCarousel = document.getElementById('carouselHome');
 
     myCarousel.addEventListener('slid.bs.carousel', event => {
-        // console.log("En Home- " + event.target.id);
+        console.log("En Home- " + event.target.id);
         // let btnTarget = event.target.id; 
         event.target.id == 'carouselHome' ? changeTextPromo() : '';
     })
@@ -219,7 +200,7 @@ $(document).ready(function(){
     if($("#carouselAmenitiesCasaClub").length > 0){
         const carouselAmenitiesCasaClubMov = document.getElementById('carouselAmenitiesCasaClub')
         carouselAmenitiesCasaClubMov.addEventListener('slid.bs.carousel', event => {
-            // console.log("En Club- " + event.target.id);
+            console.log("En Club- " + event.target.id);
             event.stopImmediatePropagation();
             let hijos = $('#carouselAmenitiesCasaClub').children().children();
             let el = 0
@@ -350,9 +331,8 @@ $(document).ready(function(){
             for (let stages = 1; stages <= data.numbers_stage; stages++) {
 
                 $('g[id="stage_' + stages + '"] >[class*="mapsvg-region"]').each(function(){
-
+                // debugger;
                     let name_svg = $(this).attr('id');
-                    // let title_svg = $(this).attr('title');
                     // console.log('Stage- ' + stages + ' Id svg- ' + name_svg );
                     let stageId = Number($(this).closest("g").prop("id").substr(-1, 1));
                     
@@ -367,13 +347,6 @@ $(document).ready(function(){
                     // else {
                     //     console.log('Id- ' + name_svg + '  x- ' + $(this).attr('x') + '  y- ' + $(this).attr('y'));     
                         
-                    // }
-                    // if (stages == 4 ){
-                        // if (Number(data.properties[key]['area']) != Number(title_svg.slice(0, -3))) {
-                            // console.log(`Etapa- ${data.properties[key]['stage']}/${stages} || ${data.properties[key]['name']}- ${Number(data.properties[key]['area'])} || ${Number(title_svg.slice(0, -3))}- Tipo- ${data.properties[key]['category_name']}`);
-                        // }
-                        // data.properties[key]['category_name'] === 'Estandar' ? console.log(`Etapa- ${data.properties[key]['stage']}/${stages} || ${data.properties[key]['name']}- ${Number(data.properties[key]['area'])} || ${Number(title_svg.slice(0, -3))}- Precio-${data.properties[key]['price']} Tipo- ${data.properties[key]['category_name']}`) : ''
-                        // debugger
                     // }
                     if (stages == stageId && data.properties[key]['name'] == name_svg) {
 
@@ -500,62 +473,20 @@ $(document).ready(function(){
             // $('#view-svg-1').append($("#svg-1").html());
             $('[data-bs-toggle="popover"]').popover();
             $(".loader-container").addClass('d-none');
-            $("#image_site, .image_map").removeClass('d-none');
+            $("#image_site").removeClass('d-none');
             // console.timeEnd('Load');
     
             function searchIndexId(data, name_svg, stageId) {
-                for (let key_search in data.properties) {
-                    if (data.properties[key_search]['name'] === name_svg && data.properties[key_search]['stage'] === stageId) {
-                        return Number(key_search);
+                for (key in data.properties) {
+                    if (data.properties[key]['name'] === name_svg && data.properties[key]['stage'] === stageId) {
+                        return Number(key);
                         
                     }
                 }
             }
-            // let dataUpdate = [];
-            // console.log("Nuerode Stage- " + data.numbers_stage);
-            // $.ajax({
-            //     url: 'http://kirklandinmobiliaria.com/assets/json/anthia-4_update.json',
-            //     type : 'GET',
-            //     dataType: "json"
-            // }).done(function (datas) {
-            //     if (datas !== null) {
-            //         //Globals
-            //         dataUpdate = datas; 
-            //     }
-            //     testing(data, dataUpdate)
-            // });
-            
         });
     }
-    let test = true;
-    function testing(data, dataUpdate) {
-        // console.log(dataUpdate.regions);
-        const browsers = [
-            { name: 'Chrome', year: 2008 },
-            { name: 'Firefox', year: 2004 },
-            { name: 'Safari', year: 2003 },
-            { name: 'Opera', year: 1996 },
-            { name: 'IE', year: 1995 },
-            { name: 'Edge', year: 2015 }
-        ];
 
-        browsers.sort((x, y) => x.year - y.year);
-        console.log(browsers);
-
-        const lotsInfo = dataUpdate.regions
-        lotsInfo.sort((x,y) => x.id.split("-")[1] - y.id.split("-")[1])
-        console.log(lotsInfo)
-    
-    }
-    // let lotsInfo = [];
-    if (test == true) {
-        $.getJSON( "http://kirklandinmobiliaria.com/assets/json/anthia-4_update.json", function( data_lots ) {
-            // let lotsInfo = new Map(data_lots.data_regions)
-            let lotsInfo = data_lots.data_regions
-            lotsInfo.length != 0 ? testing(data, lotsInfo) : console.warn('Los datos son incorrectos');
-            // console.info('Los datos son correctos')
-        });        
-    }
 
 
     $(".carousel-inner img, about-img img").on("click", function(e) {
@@ -681,7 +612,7 @@ $(document).ready(function(){
                         ride: false,
                     });
                 }
-                if (investment == "lakuun"){
+                if (investment == "lakuun" || investment == "marela_life"){
                     let carouselAmenitiesCasaClubElement = document.querySelector("#carouselAmenitiesCasaClub");
                     new bootstrap.Carousel(carouselAmenitiesCasaClubElement, {
                         ride: false,
@@ -695,24 +626,24 @@ $(document).ready(function(){
             
                     let carouselAmenitiesCasaClubElement = document.querySelector("#carouselAmenitiesCasaClub");
                     new bootstrap.Carousel(carouselAmenitiesCasaClubElement, {
-                        ride: false
+                        ride: "carousel"
                     });
                     let carouselImagesCasaClubElement = document.querySelector("#carouselImagesCasaClub");
                     new bootstrap.Carousel(carouselImagesCasaClubElement, {
-                        ride: false
+                        ride: "carousel"
                     });
                     let carouselMasterPlanElement = document.querySelector("#carouselMasterPlan");
                     new bootstrap.Carousel(carouselMasterPlanElement, {
-                        ride: false
+                        ride: "carousel"
                     });
                 }
                 console.log("carousel detenido");
                 
             } else {
-                // let intervalCarousel = 10000;
+                let intervalCarousel = 10000;
                 let carouselHomeElement = document.querySelector("#carouselHome");
                 new bootstrap.Carousel(carouselHomeElement, {
-                    // interval: 15000,
+                    // interval: intervalCarousel,
                     ride: "carousel"
                 });
                 // console.log('Desarrollo- ' + investment);
@@ -720,6 +651,7 @@ $(document).ready(function(){
                 if ( investment != "marela_celestun") {
                     let carouselAmenitiesElement = document.querySelector("#carouselAmenities");
                     new bootstrap.Carousel(carouselAmenitiesElement, {
+                        interval: intervalCarousel,
                         ride: "carousel"
                     });
                 }
@@ -728,7 +660,6 @@ $(document).ready(function(){
             
                     let carouselAmenitiesCasaClubElement = document.querySelector("#carouselAmenitiesCasaClub");
                     new bootstrap.Carousel(carouselAmenitiesCasaClubElement, {
-                        // interval: 15000,
                         ride: "carousel",
                         pause: "hover",
                         // interval: intervalCarousel,
@@ -760,7 +691,7 @@ $(document).ready(function(){
                     });
                 }
                 $('.carousel').carousel({
-                    interval: 6000
+                    interval: 30000
                 });
                 console.log("carousel intervalo definido");
             }
