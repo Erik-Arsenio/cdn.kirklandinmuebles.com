@@ -103,8 +103,8 @@ $(document).ready(function(){
                 `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"A development of semi-urbanized lots on the beautiful beach of Celestun"</p>`,
                 `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Celestun is considered an eco-tourism paradise in the state of Yucatan, named a World Heritage Site of the special biosphere reserve."</p>`,
                 `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"An exclusive and secure residential development with all the amenities and more."</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Celestun, the only coastline where the waves whisper to you and the sun caresses you.""</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"It has a beach club within the development and is only 5 minutes away from the center of Celestun.""</p>`,
+                `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Celestun, the only coastline where the waves whisper to you and the sun caresses you."</p>`,
+                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"It has a beach club within the development and is only 5 minutes away from the center of Celestun."</p>`,
                 `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"The fine sand beach, calm and shallow water, surrounded by coconut trees, perfect for the whole family."</p>`,
                 `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Make new friends at our Beach Club."</p>`,
                 `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Dare to experience<br> A NEW BEGINNING"</span>  <br><span class="fs-3 fw-bold text-danger">INVEST</span></p>`
@@ -126,8 +126,8 @@ $(document).ready(function(){
                 `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"A development of semi-urbanized lots on the beautiful beach of Celestun"</p>`,
                 `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Celestun is considered an eco-tourism paradise in the state of Yucatan, named a World Heritage Site of the special biosphere reserve."</p>`,
                 `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"An exclusive and secure residential development with all the amenities and more."</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Celestun, the only coastline where the waves whisper to you and the sun caresses you.""</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"It has a beach club within the development and is only 5 minutes away from the center of Celestun.""</p>`,
+                `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Celestun, the only coastline where the waves whisper to you and the sun caresses you."</p>`,
+                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"It has a beach club within the development and is only 5 minutes away from the center of Celestun."</p>`,
                 `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"The fine sand beach, calm and shallow water, surrounded by coconut trees, perfect for the whole family."</p>`,
                 `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Make new friends at our Beach Club."</p>`,
                 `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Dare to experience<br> A NEW BEGINNING"</span>  <br><span class="fs-3 fw-bold text-danger">INVEST</span></p>`
@@ -137,22 +137,22 @@ $(document).ready(function(){
             es : [
                 `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Desarrollo de terrenos residenciales 100% urbanizados en la hermosa playa de Celestún"</p>`,
                 `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Celestún es considerado un paraíso eco-turístico del estado de Yucatán, nombrado Patrimonio Mundial de la reserva especial de la biosfera."</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Un desarrollo residencial exclusivo y seguro con todas las comodidades y más"</p>`,
+                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Un desarrollo residencial exclusivo y seguro con todas las comodidades y más.<br>Es como vivir dentro de un Resort en la Rivera Yucateca."</p>`,
                 `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Celestún, la única costa donde las olas te susurran y el sol te acaricia."</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Cuenta con una Casa Club dentro del desarrollo y puede comprar la membresía del Club de Playa."</p>`,
+                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Cuenta con una Casa Club dentro del desarrollo y un Club de Playa. A sólo 5 minutos del centro de Celestún."</p>`,
                 `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"La playa de arena fina, el agua tranquila y poco profunda, rodeada de cocoteros, perfecta para toda la familia."</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Haz nuevos amigos en la Casa Club y Club de Playa"</p>`,
+                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Haz nuevos amigos en la Casa Club y Club de Playa. A 150 metro de la playa con camino exclusivo y directo a ella"</p>`,
                 `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Atrévete a experimentar<br> UN NUEVO COMIENZO"</span>  <br><span class="fs-3 fw-bold text-danger">INVIERTE</span></p>`
                 ],
 
             en : [
-                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"A development of 100% urbanized lots on the beautiful beach of Celestun"</p>`,
+                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Development of 100% urbanized residential land on the beautiful beach of Celestún"</p>`,
                 `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Celestun is considered an eco-tourism paradise in the state of Yucatan, named a World Heritage Site of the special biosphere reserve."</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"An exclusive and secure residential development with all the amenities and more."</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Celestun, the only coastline where the waves whisper to you and the sun caresses you.""</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"It has a beach club within the development and is only 5 minutes away from the center of Celestun.""</p>`,
+                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"An exclusive and secure residential development with all the amenities and more.<br>Is like living inside a Resort on the Yucatecan Riviera."</p>`,
+                `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Celestun, the only coastline where the waves whisper to you and the sun caresses you."</p>`,
+                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"It has a Club House within the development and Beach Club. Is only 5 minutes away from the center of Celestun."</p>`,
                 `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"The fine sand beach, calm and shallow water, surrounded by coconut trees, perfect for the whole family."</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Make new friends at our Beach Club."</p>`,
+                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Make new friends at our Club House and Beach Club. 150 meters from the beach with an exclusive and direct path to it"</p>`,
                 `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Dare to experience<br> A NEW BEGINNING"</span>  <br><span class="fs-3 fw-bold text-danger">INVEST</span></p>`
                 ]
         },
@@ -180,7 +180,7 @@ $(document).ready(function(){
     const myCarousel = document.getElementById('carouselHome');
 
     myCarousel.addEventListener('slid.bs.carousel', event => {
-        console.log("En Home- " + event.target.id);
+        // console.log("En Home- " + event.target.id);
         // let btnTarget = event.target.id; 
         event.target.id == 'carouselHome' ? changeTextPromo() : '';
     })
@@ -200,7 +200,7 @@ $(document).ready(function(){
     if($("#carouselAmenitiesCasaClub").length > 0){
         const carouselAmenitiesCasaClubMov = document.getElementById('carouselAmenitiesCasaClub')
         carouselAmenitiesCasaClubMov.addEventListener('slid.bs.carousel', event => {
-            console.log("En Club- " + event.target.id);
+            // console.log("En Club- " + event.target.id);
             event.stopImmediatePropagation();
             let hijos = $('#carouselAmenitiesCasaClub').children().children();
             let el = 0
@@ -473,18 +473,49 @@ $(document).ready(function(){
             // $('#view-svg-1').append($("#svg-1").html());
             $('[data-bs-toggle="popover"]').popover();
             $(".loader-container").addClass('d-none');
-            $("#image_site").removeClass('d-none');
+            $("#image_site, .image_map").removeClass('d-none');
             // console.timeEnd('Load');
     
             function searchIndexId(data, name_svg, stageId) {
-                for (key in data.properties) {
-                    if (data.properties[key]['name'] === name_svg && data.properties[key]['stage'] === stageId) {
-                        return Number(key);
+                for (let key_search in data.properties) {
+                    if (data.properties[key_search]['name'] === name_svg && data.properties[key_search]['stage'] === stageId) {
+                        return Number(key_search);
                         
                     }
                 }
             }
+            // let dataUpdate = [];
+            // console.log("Nuerode Stage- " + data.numbers_stage);
+            // $.ajax({
+            //     url: 'http://kirklandinmobiliaria.com/assets/json/anthia-4_update.json',
+            //     type : 'GET',
+            //     dataType: "json"
+            // }).done(function (datas) {
+            //     if (datas !== null) {
+            //         //Globals
+            //         dataUpdate = datas; 
+            //     }
+            //     testing(data, dataUpdate)
+            // });
         });
+    }
+
+    let test = false;
+    function testing(data, dataUpdate) {
+        // console.log(dataUpdate.regions);
+        const lotsInfo = dataUpdate.regions
+        lotsInfo.sort((x,y) => x.id.split("-")[1] - y.id.split("-")[1])
+        console.log(lotsInfo)
+    
+    }
+    // let lotsInfo = [];
+    if (test == true) {
+        $.getJSON( "http://kirklandinmobiliaria.com/assets/json/anthia-4_update.json", function( data_lots ) {
+            // let lotsInfo = new Map(data_lots.data_regions)
+            let lotsInfo = data_lots.data_regions
+            lotsInfo.length != 0 ? testing(data, lotsInfo) : console.warn('Los datos son incorrectos');
+            // console.info('Los datos son correctos')
+        });        
     }
 
 
@@ -612,7 +643,7 @@ $(document).ready(function(){
                         ride: false,
                     });
                 }
-                if (investment == "lakuun" || investment == "marela_life"){
+                if (investment == "lakuun"){
                     let carouselAmenitiesCasaClubElement = document.querySelector("#carouselAmenitiesCasaClub");
                     new bootstrap.Carousel(carouselAmenitiesCasaClubElement, {
                         ride: false,
@@ -626,24 +657,24 @@ $(document).ready(function(){
             
                     let carouselAmenitiesCasaClubElement = document.querySelector("#carouselAmenitiesCasaClub");
                     new bootstrap.Carousel(carouselAmenitiesCasaClubElement, {
-                        ride: "carousel"
+                        ride: "false"
                     });
                     let carouselImagesCasaClubElement = document.querySelector("#carouselImagesCasaClub");
                     new bootstrap.Carousel(carouselImagesCasaClubElement, {
-                        ride: "carousel"
+                        ride: "false"
                     });
                     let carouselMasterPlanElement = document.querySelector("#carouselMasterPlan");
                     new bootstrap.Carousel(carouselMasterPlanElement, {
-                        ride: "carousel"
+                        ride: "false"
                     });
                 }
                 console.log("carousel detenido");
                 
             } else {
-                let intervalCarousel = 10000;
+                // let intervalCarousel = 10000;
                 let carouselHomeElement = document.querySelector("#carouselHome");
                 new bootstrap.Carousel(carouselHomeElement, {
-                    // interval: intervalCarousel,
+                    // interval: 15000,
                     ride: "carousel"
                 });
                 // console.log('Desarrollo- ' + investment);
@@ -651,7 +682,6 @@ $(document).ready(function(){
                 if ( investment != "marela_celestun") {
                     let carouselAmenitiesElement = document.querySelector("#carouselAmenities");
                     new bootstrap.Carousel(carouselAmenitiesElement, {
-                        interval: intervalCarousel,
                         ride: "carousel"
                     });
                 }
@@ -691,9 +721,9 @@ $(document).ready(function(){
                     });
                 }
                 $('.carousel').carousel({
-                    interval: 30000
+                    interval: 10000
                 });
-                console.log("carousel intervalo definido");
+                // console.log("carousel intervalo definido");
             }
 
             // var url = $(location).attr('href');
@@ -710,5 +740,17 @@ $(document).ready(function(){
 
             $(".loader-container-img").addClass('d-none');
             $(".load-image").removeClass('d-none');
+
+            // const observer = new IntersectionObserver(entries => {
+            // entries.forEach(entry => {
+            //     const intersecting = entry.isIntersecting
+            //     { threshold: 1 }
+            //     // entry.target.style.backgroundColor = intersecting ? "blue" : "orange"
+            //     intersecting ? console.log("Entra en viewport") : console.log("Sale del viewport")
+            //     // console.log("Entra en viewport")
+            // })
+            // })
+            
+            // observer.observe(document.getElementById("test"))
 
 });
