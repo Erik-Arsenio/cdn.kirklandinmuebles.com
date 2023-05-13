@@ -1,4 +1,3 @@
-// \\@ts-check
 
 // let deviceMovil= false;
 
@@ -17,12 +16,18 @@
 //     }
 // }
 // detectmob();
+    var url = $('#image_site').contents()[0].baseURI;
+    var array= url.split(/[//,/,?]/);
+    console.log(array);
+    console.log(array[array.length - 1].slice(5));
 
-$(document).ready(function(){
+// $(document).ready(function(){
+
 
     // $('[data-bs-toggle="popover"]').popover();
     // Funtion Promo
-    let lang = $('#language').val();
+    lang = array[array.length - 1].slice(5);
+    // let lang = $('#language').val();
     // console.log("Idioma- " + lang);
     let promoHome = {
         lakuun : {
@@ -161,7 +166,8 @@ $(document).ready(function(){
     // var url = $('#image_site').contents()[0].baseURI;
     // var array= url.split(/[//,/,?]/);
     // console.log(array);
-    let investment = $('#investment').val();
+    let investment = array[4];
+    // let investment = $('#investment').val();
     // console.log('Desarrollo- ' + investment);
     // console.log(promoHome[investment][lang][0])
 
@@ -242,11 +248,16 @@ $(document).ready(function(){
 
 
     // });
+
+
+
     $(".accordion-header").on("click", function() {
         // Globals
         let btnId = $(this).attr('id');
         let btnClass = $(this).attr('class');
+
         console.log('Click en accordion  ' + btnId + ' | ' + btnClass);
+        console.log($(this)[0].id)
 
         // let panZoom = svgPanZoom('#stage-01', {
         //     viewportSelector: '.svg-pan-zoom_viewport',
@@ -283,222 +294,23 @@ $(document).ready(function(){
 
 
 
-    let data = []
-    if ($('#image_site').hasClass('lots')) {
-        $(".loader-container").removeClass('d-none');
 
-        //Globals
-        let uri = $('#data_url').val();
 
-        $.ajax({
-            url: uri ,
-            type : 'GET',
-            dataType: "json"
-        }).done(function (datas) {
-            if (data !== null) {
-                //Globals
-                data = datas; 
-            }
 
-            let selectionContainer = "";
-            const colorNotAvailable = "fill: rgba(228, 22, 66); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
-            // let colorAvailablePremium = "fill: rgba(5, 110, 57); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
-            // let colorAvailablePlus = "fill: rgba(47, 172, 102); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
-            // let colorAvailable = "fill: rgba(136, 194, 117); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
-            const colorReserved = "fill: rgba(57, 249, 230); stroke: rgba(255, 255, 255); stroke-width: 1.2px;"
-            const colorStatus = {
-                1: "fill: rgba(5, 110, 57); stroke: rgba(255, 255, 255); stroke-width: 1.2px;", // colorAvailablePremium
-                2: "fill: rgba(47, 172, 102); stroke: rgba(255, 255, 255); stroke-width: 1.2px;",  // colorAvailablePlus
-            };
-            const colorStatusDefault = "fill: rgba(136, 194, 117); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
-            let available = [0,0,0,0,0];
-            let lot = '';
-            if (lang == 'es') {
-                lot = 'Lote';
-            } else if (lang == 'en'){
-                lot = 'Lot';
-                data.labels.available = 'Available';
-                data.labels.not_available = 'Sold';
-                data.labels.reserved = 'Reserved';
-                data.labels.category_name = 'Type';
-                data.labels.status_name = 'Status';
-                data.labels.area = 'Area';
-                data.labels.price = 'Price';
-                data.labels.financing = 'Financing';
-                data.labels.hitch = 'Down payment';
-            }
+    // let dataUpdate = [];
+    // console.log("Nuerode Stage- " + data.numbers_stage);
+    // $.ajax({
+    //     url: 'http://kirklandinmobiliaria.com/assets/json/anthia-4_update.json',
+    //     type : 'GET',
+    //     dataType: "json"
+    // }).done(function (datas) {
+    //     if (datas !== null) {
+    //         //Globals
+    //         dataUpdate = datas; 
+    //     }
+    //     testing(data, dataUpdate)
+    // });
 
-            for (let stages = 1; stages <= data.numbers_stage; stages++) {
-
-                $('g[id="stage_' + stages + '"] >[class*="mapsvg-region"]').each(function(){
-                // debugger;
-                    let name_svg = $(this).attr('id');
-                    // console.log('Stage- ' + stages + ' Id svg- ' + name_svg );
-                    let stageId = Number($(this).closest("g").prop("id").substr(-1, 1));
-                    
-                    // let id = Number($(this).attr('id').substr(2));
-                    // let title = $(this).attr("title");
-                    let key = searchIndexId(data, name_svg, stageId);
-                    // console.log('Stages- ' + stages + '  -->  StageId- ' + stageId + ' Idsvg- ' + name_svg + ' Key- ' + key);
-                    // let popoverContent = ``;
-                    // if ($(this).attr('d') != undefined) {
-                    //     console.log('Id- ' + name_svg + '  d- ' + $(this).attr('d'));     
-                    // } 
-                    // else {
-                    //     console.log('Id- ' + name_svg + '  x- ' + $(this).attr('x') + '  y- ' + $(this).attr('y'));     
-                        
-                    // }
-                    if (stages == stageId && data.properties[key]['name'] == name_svg) {
-
-                        // lots.push({id: id, area: Number(title.replace(" m2", "")), price: parseInt((Number(title.replace(" m2", ""))) * 2850).toLocaleString('en-EN') });
-                        if (data.properties[key].status_id == 0) {
-                            $(this).attr('style', colorNotAvailable);
-                            // $('[data-modal-id="' + name_svg + '"]').addClass('d-none');
-                            // $(this).addClass(' mapsvg-disabled');
-                            // $(this).attr('data-bs-content', " ").attr('data-bs-content', `<b>${data.labels.status}</b>: ${data.properties[key].status}`);
-                        } else if (data.properties[key].status_id == 1 || data.properties[key].status_id == 2) {
-
-                            // if (data.properties[key].status_id == 1) {
-                            //     available[stages] = available[stages] + 1;
-                            // }
-                            data.properties[key].status_id == 1 ? available[stages] = available[stages] + 1 : available[stages] = available[stages];
-                            
-
-                            $(this).attr('style', colorStatus[data.properties[key].category_id] || colorStatusDefault);
-                            
-                            // if (data.properties[key].category_id === 1) {
-                            //     $(this).attr('style', colorAvailablePremium);
-                            // } else if (data.properties[key].category_id === 2) {
-                            //     $(this).attr('style', colorAvailablePlus);
-                            // } else {
-                            //     $(this).attr('style', colorAvailable);
-                            // }
-                            data.properties[key].status_id == 2 ? $(this).attr('style', colorReserved) : '';
-                            // if (data.properties[key].status_id == 2){
-                            //     $(this).attr('style', colorReserved);
-                            // } 
-                            // else {
-                            //     $(this).removeClass(' mapsvg-disabled');
-                            // }
-                            // selectionContainer = ``;
-                            // if ($(this).attr('d') != undefined) {
-                            //     console.log('Id- ' + name_svg + '  d- ' + $(this).attr('d'));    
-                            // } else {
-                            //     console.log('Id- ' + name_svg + '  x- ' + $(this).attr('x') + '  y- ' + $(this).attr('y'));     
-                            // }
-
-                                // selectionContainer = selectionContainer.concat(``);    
-                            // $('[data-id="' + name_svg + '"]').attr('data-bs-toggle', "popover");
-                            $('g[data-id="stage_' + stages + '"]').children('[data-id="' + name_svg + '"]').attr('data-bs-toggle', "popover");
-                            if(!deviceMovil) {
-                                $('g[data-id="stage_' + stages + '"]').children('[data-id="' + name_svg + '"]').attr('data-bs-trigger', "hover");
-                            } else {
-                                $('[data-id="' + name_svg + '"]').attr('data-bs-trigger', "focus");
-                            }
-                            
-                            $('g[data-id="stage_' + stages + '"]').children('[data-id="' + name_svg + '"]').attr('data-bs-placement', "auto");
-                            $('g[data-id="stage_' + stages + '"]').children('[data-id="' + name_svg + '"]').attr('title', " ").attr('title', `<b>${lot}</b> - ` + name_svg);
-                            $('g[data-id="stage_' + stages + '"]').children('[data-id="' + name_svg + '"]').attr('data-bs-html', " ").attr('data-bs-html', "true" );
-                            selectionContainer = ``;
-                            if (data.properties[key].category_id !== '') {
-                                if (lang == 'es') {
-                                    // lot = 'Lote';
-                                } else if (lang == 'en'){
-                                    data.properties[key].category_id == 3 ? data.properties[key].category_name = 'Standard' 
-                                    : data.properties[key].category_id == 4 ? data.properties[key].category_name = 'Beachfront' : "";
-                                }
-                                selectionContainer = selectionContainer.concat(`<b>${data.labels.category_name}</b>: ${(data.properties[key].category_name)}<br>`);
-                            }
-                            if (data.properties[key].status_id !== '') {
-                                if (lang == 'es') {
-                                    // lot = 'Lote';
-                                } else if (lang == 'en'){
-                                    if (data.properties[key].status_id == 0) {
-                                        data.properties[key].status_name = 'Sold';
-                                    } else if (data.properties[key].status_id == 1) {
-                                        data.properties[key].status_name = 'Available';
-                                    } else if (data.properties[key].status_id == 0) {
-                                        data.properties[key].status_name = 'Reserved';
-                                    }
-
-                                }
-                                selectionContainer = selectionContainer.concat(`<b>${data.labels.status_name}</b>: ${data.properties[key].status_name}<br>`);
-                            }
-                            if (data.properties[key].area !== '') {
-                                selectionContainer = selectionContainer.concat(`<b>${data.labels.area}</b>: ${data.properties[key].area} m<sup>2</sup><br>`);
-                            }
-                            if (data.properties[key].price !== '') {
-                                selectionContainer = selectionContainer.concat(`<b>${data.labels.price}</b>: ${(parseInt((Number(data.properties[key].area) * data.properties[key].price))).toLocaleString('en-EN')} MXN<br>`);
-                            }
-                            if (data.properties[key].financing !== '') {
-                                let upto = '';
-                                let upto_type = '';
-                                if (lang == 'es') {
-                                    upto = 'Hasta';
-                                    upto_type = 'MSI';
-                                } else if (lang == 'en'){
-                                    upto = 'Up to';
-                                    upto_type = 'months';
-                                }
-                                selectionContainer = selectionContainer.concat(`<b>${data.labels.financing}</b>: ${upto} ${data.properties[key].financ} ${upto_type}<br>`);
-                            }
-                            if (data.properties[key].enganche !== '') {
-                                selectionContainer = selectionContainer.concat(`<b>${data.labels.hitch}</b>: ${data.properties[key].enganche}<br>`);
-                            }
-                            if (data.properties[key].description !== '') {
-                                selectionContainer = selectionContainer.concat(`<b>${data.labels.description}</b>: ${data.properties[key].description}<br>`);
-                            }
-
-                            // selectionContainer = selectionContainer.concat(`"></path>`);
-                            $('g[data-id="stage_' + stages + '"]').children('[data-id="' + name_svg + '"]').attr('data-bs-content', " ").attr('data-bs-content', selectionContainer);
-
-                            // let lot = $( '[data-id="' + name_svg + '"]' ).get(0).outerHTML;
-                            // let lot = document.querySelector(`*[data-id=${name_svg}] `).innerHTML;
-                            // console.log($( '[data-id="' + name_svg + '"]' ).get(0).outerHTML);
-                            // lot = lot.replace("data-id", "data-ids");
-                            // console.log(lot);
-                            // $( `<a href="javascript:void(0);" class="input-button input-button-clear" data-modal-id="${name_svg}" data-toggle="modal" data-target="#modal-img">${lot}</a>`).insertAfter( '[data-id="' + name_svg + '"]' );
-                            // $('[data-id="' + name_svg + '"]').remove();
-                            // $( "</a>" ).insertAfter( $( '[data-id="' + name_svg + '"]'  ) );
-                        } 
-                    }
-                        // debugger;
-                });
-                // console.table(available[stages]);
-                $("#available-" + stages).text(available[stages]);
-            }
-            // let lots_orde = lots.sort(((a, b) => a.id - b.id));
-            // $('#area_selection_1').append(selectionContainer);
-            // console.log($("#svg-1").html());
-            // $('#view-svg-1').append($("#svg-1").html());
-            $('[data-bs-toggle="popover"]').popover();
-            $(".loader-container").addClass('d-none');
-            $("#image_site, .image_map").removeClass('d-none');
-            // console.timeEnd('Load');
-    
-            function searchIndexId(data, name_svg, stageId) {
-                for (let key_search in data.properties) {
-                    if (data.properties[key_search]['name'] === name_svg && data.properties[key_search]['stage'] === stageId) {
-                        return Number(key_search);
-                        
-                    }
-                }
-            }
-            // let dataUpdate = [];
-            // console.log("Nuerode Stage- " + data.numbers_stage);
-            // $.ajax({
-            //     url: 'http://kirklandinmobiliaria.com/assets/json/anthia-4_update.json',
-            //     type : 'GET',
-            //     dataType: "json"
-            // }).done(function (datas) {
-            //     if (datas !== null) {
-            //         //Globals
-            //         dataUpdate = datas; 
-            //     }
-            //     testing(data, dataUpdate)
-            // });
-        });
-    }
 
     let test = false;
     function testing(data, dataUpdate) {
@@ -635,7 +447,8 @@ $(document).ready(function(){
             if (deviceMovil ) {
                 let carouselHomeElement = document.querySelector("#carouselHome");
                 new bootstrap.Carousel(carouselHomeElement, {
-                    ride: false,
+                    interval: 15000,
+                    ride: "carousel"
                 });
                 if ( investment != "marela_celestun") {
                     let carouselAmenitiesElement = document.querySelector("#carouselAmenities");
@@ -671,10 +484,10 @@ $(document).ready(function(){
                 console.log("carousel detenido");
                 
             } else {
-                // let intervalCarousel = 10000;
+                let intervalCarousel = 15000;
                 let carouselHomeElement = document.querySelector("#carouselHome");
                 new bootstrap.Carousel(carouselHomeElement, {
-                    // interval: 15000,
+                    interval: intervalCarousel,
                     ride: "carousel"
                 });
                 // console.log('Desarrollo- ' + investment);
@@ -692,7 +505,7 @@ $(document).ready(function(){
                     new bootstrap.Carousel(carouselAmenitiesCasaClubElement, {
                         ride: "carousel",
                         pause: "hover",
-                        // interval: intervalCarousel,
+                        interval: 10000,
                     });
                   
                     // console.log("New Interval" + intervalCarousel);
@@ -706,12 +519,12 @@ $(document).ready(function(){
             
                     let carouselAmenitiesCasaClubElement = document.querySelector("#carouselAmenitiesCasaClub");
                     new bootstrap.Carousel(carouselAmenitiesCasaClubElement, {
-                        // interval: intervalCarousel,
+                        interval: 15000,
                         ride: "carousel"
                     });
                     let carouselImagesCasaClubElement = document.querySelector("#carouselImagesCasaClub");
                     new bootstrap.Carousel(carouselImagesCasaClubElement, {
-                        // interval: intervalCarousel,
+                        interval: 10000,
                         ride: "carousel"
                     });
                     let carouselMasterPlanElement = document.querySelector("#carouselMasterPlan");
@@ -720,9 +533,9 @@ $(document).ready(function(){
                         ride: "carousel"
                     });
                 }
-                $('.carousel').carousel({
-                    interval: 10000
-                });
+                // $('.carousel').carousel({
+                //     interval: 10000
+                // });
                 // console.log("carousel intervalo definido");
             }
 
@@ -753,4 +566,249 @@ $(document).ready(function(){
             
             // observer.observe(document.getElementById("test"))
 
-});
+// });
+
+function updateLotsMap(data) {
+    let selectionContainer = "";
+    const colorNotAvailable = "fill: rgba(228, 22, 66); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
+    // let colorAvailablePremium = "fill: rgba(5, 110, 57); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
+    // let colorAvailablePlus = "fill: rgba(47, 172, 102); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
+    // let colorAvailable = "fill: rgba(136, 194, 117); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
+    const colorReserved = "fill: rgba(57, 249, 230); stroke: rgba(255, 255, 255); stroke-width: 1.2px;"
+    const colorStatus = {
+        1: "fill: rgba(5, 110, 57); stroke: rgba(255, 255, 255); stroke-width: 1.2px;", // colorAvailablePremium
+        2: "fill: rgba(47, 172, 102); stroke: rgba(255, 255, 255); stroke-width: 1.2px;",  // colorAvailablePlus
+    };
+    const colorStatusDefault = "fill: rgba(136, 194, 117); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
+    let available = [0,0,0,0,0];
+    let lot = '';
+    if (lang == 'es') {
+        lot = 'Lote';
+    } else if (lang == 'en'){
+        lot = 'Lot';
+        data.labels.available = 'Available';
+        data.labels.not_available = 'Sold';
+        data.labels.reserved = 'Reserved';
+        data.labels.category_name = 'Type';
+        data.labels.status_name = 'Status';
+        data.labels.area = 'Area';
+        data.labels.price = 'Price';
+        data.labels.financing = 'Financing';
+        data.labels.hitch = 'Down payment';
+    }
+
+    for (let stages = 1; stages <= data.numbers_stage; stages++) {
+
+        $('g[id="stage_' + stages + '"] >[class*="mapsvg-region"]').each(function(){
+        // debugger;
+            let name_svg = $(this).attr('id');
+            // console.log('Stage- ' + stages + ' Id svg- ' + name_svg );
+            let stageId = Number($(this).closest("g").prop("id").substr(-1, 1));
+            
+            // let id = Number($(this).attr('id').substr(2));
+            // let title = $(this).attr("title");
+            let key = searchIndexId(data, name_svg, stageId);
+            // console.log('Stages- ' + stages + '  -->  StageId- ' + stageId + ' Idsvg- ' + name_svg + ' Key- ' + key);
+            // let popoverContent = ``;
+            // if ($(this).attr('d') != undefined) {
+            //     console.log('Id- ' + name_svg + '  d- ' + $(this).attr('d'));     
+            // } 
+            // else {
+            //     console.log('Id- ' + name_svg + '  x- ' + $(this).attr('x') + '  y- ' + $(this).attr('y'));     
+                
+            // }
+            if (stages == stageId && data.properties[key]['name'] == name_svg) {
+
+                // lots.push({id: id, area: Number(title.replace(" m2", "")), price: parseInt((Number(title.replace(" m2", ""))) * 2850).toLocaleString('en-EN') });
+                if (data.properties[key].status_id == 0) {
+                    $(this).attr('style', colorNotAvailable);
+                    // $('[data-modal-id="' + name_svg + '"]').addClass('d-none');
+                    // $(this).addClass(' mapsvg-disabled');
+                    // $(this).attr('data-bs-content', " ").attr('data-bs-content', `<b>${data.labels.status}</b>: ${data.properties[key].status}`);
+                } else if (data.properties[key].status_id == 1 || data.properties[key].status_id == 2) {
+
+                    // if (data.properties[key].status_id == 1) {
+                    //     available[stages] = available[stages] + 1;
+                    // }
+                    data.properties[key].status_id == 1 ? available[stages] = available[stages] + 1 : available[stages] = available[stages];
+                    
+
+                    $(this).attr('style', colorStatus[data.properties[key].category_id] || colorStatusDefault);
+                    
+                    // if (data.properties[key].category_id === 1) {
+                    //     $(this).attr('style', colorAvailablePremium);
+                    // } else if (data.properties[key].category_id === 2) {
+                    //     $(this).attr('style', colorAvailablePlus);
+                    // } else {
+                    //     $(this).attr('style', colorAvailable);
+                    // }
+                    data.properties[key].status_id == 2 ? $(this).attr('style', colorReserved) : '';
+                    // if (data.properties[key].status_id == 2){
+                    //     $(this).attr('style', colorReserved);
+                    // } 
+                    // else {
+                    //     $(this).removeClass(' mapsvg-disabled');
+                    // }
+                    // selectionContainer = ``;
+                    // if ($(this).attr('d') != undefined) {
+                    //     console.log('Id- ' + name_svg + '  d- ' + $(this).attr('d'));    
+                    // } else {
+                    //     console.log('Id- ' + name_svg + '  x- ' + $(this).attr('x') + '  y- ' + $(this).attr('y'));     
+                    // }
+
+                        // selectionContainer = selectionContainer.concat(``);    
+                    // $('[data-id="' + name_svg + '"]').attr('data-bs-toggle', "popover");
+                    $('g[data-id="stage_' + stages + '"]').children('[data-id="' + name_svg + '"]').attr('data-bs-toggle', "popover");
+                    if(!deviceMovil) {
+                        $('g[data-id="stage_' + stages + '"]').children('[data-id="' + name_svg + '"]').attr('data-bs-trigger', "hover");
+                    } else {
+                        $('[data-id="' + name_svg + '"]').attr('data-bs-trigger', "focus");
+                    }
+                    
+                    $('g[data-id="stage_' + stages + '"]').children('[data-id="' + name_svg + '"]').attr('data-bs-placement', "auto");
+                    $('g[data-id="stage_' + stages + '"]').children('[data-id="' + name_svg + '"]').attr('title', " ").attr('title', `<b>${lot}</b> - ` + name_svg);
+                    $('g[data-id="stage_' + stages + '"]').children('[data-id="' + name_svg + '"]').attr('data-bs-html', " ").attr('data-bs-html', "true" );
+                    selectionContainer = ``;
+                    if (data.properties[key].category_id !== '') {
+                        if (lang == 'es') {
+                            // lot = 'Lote';
+                        } else if (lang == 'en'){
+                            data.properties[key].category_id == 3 ? data.properties[key].category_name = 'Standard' 
+                            : data.properties[key].category_id == 4 ? data.properties[key].category_name = 'Beachfront' : "";
+                        }
+                        selectionContainer = selectionContainer.concat(`<b>${data.labels.category_name}</b>: ${(data.properties[key].category_name)}<br>`);
+                    }
+                    if (data.properties[key].status_id !== '') {
+                        if (lang == 'es') {
+                            // lot = 'Lote';
+                        } else if (lang == 'en'){
+                            if (data.properties[key].status_id == 0) {
+                                data.properties[key].status_name = 'Sold';
+                            } else if (data.properties[key].status_id == 1) {
+                                data.properties[key].status_name = 'Available';
+                            } else if (data.properties[key].status_id == 0) {
+                                data.properties[key].status_name = 'Reserved';
+                            }
+
+                        }
+                        selectionContainer = selectionContainer.concat(`<b>${data.labels.status_name}</b>: ${data.properties[key].status_name}<br>`);
+                    }
+                    if (data.properties[key].area !== '') {
+                        selectionContainer = selectionContainer.concat(`<b>${data.labels.area}</b>: ${data.properties[key].area} m<sup>2</sup><br>`);
+                    }
+                    if (data.properties[key].price !== '') {
+                        selectionContainer = selectionContainer.concat(`<b>${data.labels.price}</b>: ${(parseInt((Number(data.properties[key].area) * data.properties[key].price))).toLocaleString('en-EN')} MXN<br>`);
+                    }
+                    if (data.properties[key].financing !== '') {
+                        let upto = '';
+                        let upto_type = '';
+                        if (lang == 'es') {
+                            upto = 'Hasta';
+                            upto_type = 'MSI';
+                        } else if (lang == 'en'){
+                            upto = 'Up to';
+                            upto_type = 'months';
+                        }
+                        selectionContainer = selectionContainer.concat(`<b>${data.labels.financing}</b>: ${upto} ${data.properties[key].financ} ${upto_type}<br>`);
+                    }
+                    if (data.properties[key].enganche !== '') {
+                        selectionContainer = selectionContainer.concat(`<b>${data.labels.hitch}</b>: ${data.properties[key].enganche}<br>`);
+                    }
+                    if (data.properties[key].description !== '') {
+                        selectionContainer = selectionContainer.concat(`<b>${data.labels.description}</b>: ${data.properties[key].description}<br>`);
+                    }
+
+                    // selectionContainer = selectionContainer.concat(`"></path>`);
+                    $('g[data-id="stage_' + stages + '"]').children('[data-id="' + name_svg + '"]').attr('data-bs-content', " ").attr('data-bs-content', selectionContainer);
+
+                    // let lot = $( '[data-id="' + name_svg + '"]' ).get(0).outerHTML;
+                    // let lot = document.querySelector(`*[data-id=${name_svg}] `).innerHTML;
+                    // console.log($( '[data-id="' + name_svg + '"]' ).get(0).outerHTML);
+                    // lot = lot.replace("data-id", "data-ids");
+                    // console.log(lot);
+                    // $( `<a href="javascript:void(0);" class="input-button input-button-clear" data-modal-id="${name_svg}" data-toggle="modal" data-target="#modal-img">${lot}</a>`).insertAfter( '[data-id="' + name_svg + '"]' );
+                    // $('[data-id="' + name_svg + '"]').remove();
+                    // $( "</a>" ).insertAfter( $( '[data-id="' + name_svg + '"]'  ) );
+                } 
+            }
+                // debugger;
+        });
+        // console.table(available[stages]);
+        $("#available-" + stages).text(available[stages]);
+    }
+    // let lots_orde = lots.sort(((a, b) => a.id - b.id));
+    // $('#area_selection_1').append(selectionContainer);
+    // console.log($("#svg-1").html());
+    // $('#view-svg-1').append($("#svg-1").html());
+    if (lang == 'en') {
+        $(".lot-standard").text('Standard');
+        $(".casa_club").attr('data-bs-original-title', 'Club House');
+        $(".visitor_parking").attr('data-bs-original-title', 'Visitor parking');
+    }
+    $('[data-bs-toggle="popover"]').popover();
+    $(".loader-container").addClass('d-none');
+    $("#image_site, .image_map").removeClass('d-none');
+    // console.timeEnd('Load');
+
+    function searchIndexId(data, name_svg, stageId) {
+        for (let key_search in data.properties) {
+            if (data.properties[key_search]['name'] === name_svg && data.properties[key_search]['stage'] === stageId) {
+                return Number(key_search);
+                
+            }
+        }
+    }
+}
+
+// console.log($("#stage-1").html()) ;
+let data = []
+if ($('#image_site').hasClass('lots')) {
+    $(".loader-container").removeClass('d-none');
+
+    //Globals
+    let uri = $('#data_url').val();
+
+    $.ajax({
+        url: uri ,
+        type : 'GET',
+        dataType: "json"
+    }).done(function (datas) {
+        if (data !== null) {
+            //Globals
+            data = datas;
+            console.log(data);
+        }
+        console.log('Desarrollo- ' + investment)
+        if (investment == 'marela_life') {
+            
+            let dataMap = "";
+            let urlInvestment = $('#data_url').val().slice(0, -5) + '_map-1.txt';
+            console.log(urlInvestment)
+            $.ajax({
+                url : urlInvestment,
+                dataType: "text",
+                success : function (data_map) {
+                    dataMap = data_map;
+                    console.log(lang);
+                    $("#stage-1").html(dataMap);
+                    // console.log(dataMap)
+                    if (document.getElementById("stage-1") !== null) {
+                        // alert("The element exists");
+                        updateLotsMap(data);
+                    }
+                    else {
+                        alert("The element does not exist");
+                    }
+                    // $( "div[class*='map-svg']" ).change(function() {
+                    //     let btnId = $(this).attr('id');
+                    //     console.log('Change map- ' + btnId)
+                    // });
+                }
+            });
+        } else {
+            updateLotsMap(data);
+        }
+
+    });
+}
+
