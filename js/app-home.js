@@ -1,31 +1,20 @@
 $(document).ready(function(){
-    // $("a img, .btn-lots").on("click", function(e) {
-    //     console.log("Click");
-    //     // Globals
-    //     e.stopImmediatePropagation();
-    //     let lots = Number($(this).attr('data-lot'));
-    //     let src = $(this).attr('src');
-    //     console.log(src);
-    //     $('.num-lot').text(lots);
-    //     $('#img-lot').attr("src", src);
-    
-    //     console.log("lote No: " + lots);
-    //     $("#modal-lots").modal("show");
-    
-    // });
-    
-    $(".btn-investments").on("click", function(e) {
-        // Globals
-        e.stopImmediatePropagation();
-        let url_page = '';
-        let url_card = $(this).attr('data-href');
-        let url_img = $(this).closest('.carousel').attr('data-href');
-        if (url_card !== undefined) {
-            url_page = url_card;
-        } else {
-            url_page = url_img;
+
+    function validaCheckbox() {
+        $('#spanish').prop("checked", false);
+        $('#english').prop("checked", false);
+    }
+
+    var checkbox = document.getElementById('either');
+    $("#spanish, #english").on("click", function(e) {
+        // let id_lang = $(this).attr('id');
+        if( $(this).is(':checked')) {
+            $('#either').prop("checked", false);
+            // console.log(id_lang + '- Seleccionado');
         }
-        window.open(url_page, '_blank');
-    
+        
     });
+
+    checkbox.addEventListener("change", validaCheckbox, false);
+
 });
