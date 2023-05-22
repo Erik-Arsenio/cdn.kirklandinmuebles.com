@@ -356,7 +356,24 @@ $(document).ready(function(){
         $(".loader-container-img").addClass('d-none');
         $(".load-image").removeClass('d-none');
 
+        
     }
+    $(".btn-investments").on("click", function(e) {
+        // Globals
+        e.stopImmediatePropagation();
+        if (investment == ''){
+            let url_page = '';
+            let url_card = $(this).attr('data-href');
+            let url_img = $(this).closest('.carousel').attr('data-href');
+            if (url_card !== undefined) {
+                url_page = url_card;
+            } else {
+                url_page = url_img;
+            }
+            window.open(url_page, '_blank');
+        }
+        
+    });
 
     let static_url = $('#static_url').val();
     let promo_Modal = {
