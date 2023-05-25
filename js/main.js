@@ -326,8 +326,7 @@ $(document).ready(function(){
    
         let uri = $('#data_url').val();
         let data = [];
-        projects.forEach(project => {
-            let uris = uri + '/' + project + '.json';
+        let uris = uri + '/available_lots.json';
             // console.log(uris);
             $.ajax({
                 url: uris ,
@@ -339,20 +338,22 @@ $(document).ready(function(){
                     data = datas;
                     // console.log("Desarrollo- " + project);
                     // console.log(data.numbers_stage);
-                    // console.log(data.available);
+                    // console.log(data);
+                    // console.log(data['anthia']);
+                    
+                    projects.forEach(project => {
+                        // available_projects = available_projects.concat([data[project]]);
 
-                    available_projects = available_projects.concat([data.available]);
+                        // console.log(available_projects);
+                        // console.log(sumarContenidoArreglo(data.available));
 
-                    // console.log(available_projects);
-                    // console.log(sumarContenidoArreglo(data.available));
-
-                    if (sumarContenidoArreglo(data.available) == 0) {
-                        $('img[src*=' + project + ']').next().removeClass("d-none");
-                    }
+                        if (sumarContenidoArreglo(data[project]) == 0) {
+                            $('img[src*=' + project + ']').next().removeClass("d-none");
+                        }
+                    });
                 }
             });
             
-        });
         $(".loader-container-img").addClass('d-none');
         $(".load-image").removeClass('d-none');
 
