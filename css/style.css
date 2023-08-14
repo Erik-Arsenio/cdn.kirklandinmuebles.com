@@ -72,21 +72,22 @@
 
 /*** Navbar ***/
 .nav-bar {
-    position: relative;
+    position: inherit;
     margin-top: 45px;
     padding: 0 3rem;
     transition: .5s;
-    z-index: 9999;
+    z-index: 9998;
 }
 
 .nav-bar.sticky-top {
     position: sticky;
     padding: 0;
-    z-index: 9999;
+    z-index: 9998;
 }
 
 .navbar {
     box-shadow: 0 0 30px rgba(0, 0, 0, .08);
+    z-index: 9998;
 }
 
 .navbar .dropdown-toggle::after {
@@ -698,3 +699,14 @@ a:hover {
     }
 
 }
+
+.bpw-widget-btn {
+    background-color: #26c49f !important;
+
+}
+.bpw-floating-button {
+    float: left;
+}
+.bp-widget-side {
+    z-index: 9999 !important;
+} 
