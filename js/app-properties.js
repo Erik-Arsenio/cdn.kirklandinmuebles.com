@@ -1,25 +1,8 @@
 
-// let deviceMovil= false;
-
-// function detectmob() {
-//     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { 
-//         // $('.className').popover('disable'); 
-//         deviceMovil= true;
-//         $('.mobile').removeClass('d-none');
-//         // console.log("En Moviles");
-//         $('.about-img, .about-img-right').removeClass('p-5').removeClass('pe-0');
-//         $('.mouse-touche').empty().text('click ');
-//         // $('.about-img').removeClass('p-5').removeClass('pe-0');
-
-//     } else {
-//         $('.not_mobile').removeClass('d-none');
-//     }
-// }
-// detectmob();
     var url = $('#image_site').contents()[0].baseURI;
     var array= url.split(/[//,/,?]/);
     console.log(array);
-    console.log(array[array.length - 1].slice(5));
+    console.log(array[array.length - 1]);
 
 // $(document).ready(function(){
 
@@ -167,9 +150,7 @@
     // var array= url.split(/[//,/,?]/);
     // console.log(array);
     let investment = array[4];
-    // let investment = $('#investment').val();
-    // console.log('Desarrollo- ' + investment);
-    // console.log(promoHome[investment][lang][0])
+
 
     $(".promo").empty().html(promoHome[investment][lang][0]);
     // $(".promo").empty().html(promo[0]);
@@ -249,6 +230,111 @@
 
     // });
 
+    
+    //!  Saber si la URL trae un numero de stage
+    console.log(Number(array[5]))
+    let stageUriShow = Number(array[5]);
+
+    // let investment = $('#investment').val();
+    console.log('Desarrollo- ' + investment);
+    // console.log(promoHome[investment][lang][0])
+
+    let uri = $('#data_url').val();
+    let uriArray = uri.split(/[//,/,?]/);
+    console.log(uriArray)
+    let dataAvailable = [];
+
+
+    let uris = "http://kirklandinmobiliaria.com/assets/json/" + 'available_lots.json';
+
+        $.ajax({
+            url: uris ,
+            type : 'GET',
+            dataType: "json"
+        }).done(function (datas) {
+            if (datas !== null) {
+                //Globals
+                dataAvailable = datas;
+                console.log(dataAvailable[investment]);
+                
+                $(document).ready(function(){
+        
+                    console.log(dataAvailable[investment]);
+            
+                    if (isNaN(stageUriShow) || dataAvailable[investment].length == 1) {
+                        console.log("La variable en NaN")
+                        // stageUriShow = 1;
+                    } else {
+                        // stageUriShow = dataAvailable[investment].length;
+                    } 
+            
+                    console.log("Stage a mostrar segun URL- " + stageUriShow)
+                    console.log("Cantidad de Stages- " + dataAvailable[investment].length);
+                    for (let lotAvailable = 0; lotAvailable < dataAvailable[investment].length; lotAvailable++) {
+                        $("#available-" + (lotAvailable + 1)).text(dataAvailable[investment][lotAvailable]);
+                    }
+            
+                    // $("#collapseStage-1").addClass(' show');
+            
+                    // loadLotsMaps(stageUriShow);
+                    // if ($("#stage-1").hasClass('map-painted')) {
+                    //     console.log("Mapa update en la carga")
+                    // }
+            
+                    let options = {
+                        // root: document.querySelector('#map_area'),
+                        rootMargin: '0px',
+                        threshold: 0.75
+                    }
+                    
+                    
+                    function isShow(entries) {
+                        let entry = entries[0]
+                        if (entry.isIntersecting) {
+                            console.log("Visible-  ");
+                            console.log((entry.target.id).substr(-1));
+                            if (!isNaN(stageUriShow) ) {
+                                // console.log("La variable en NaN")
+                                
+                                if (stageUriShow > dataAvailable[investment].length) {
+                                    stageUriShow = dataAvailable[investment].length;
+                                }
+                                // stageUriShow = 1;
+                                console.log("La variable stageUriShow es= " + stageUriShow);
+                                if ((entry.target.id).substr(-1) == stageUriShow && !$("#stage-" + stageUriShow).hasClass('map-painted')) {
+                                    console.log("Mapa No update en la carga")
+                                    loadLotsMaps(stageUriShow);
+                                } else {console.log("Mapa Update ")}
+                            }
+                        } else {
+                            console.log("No Visible- ");                
+                            console.log(entry.target.id);                
+                        }
+                        // entries.forEach(entry => {
+                        //     // Cada entry describe un cambio en la intersección para
+                        //     // un elemento observado
+                        //   //   entry.boundingClientRect
+                        //   //   entry.intersectionRatio
+                        //   //   entry.intersectionRect
+                        //   //   entry.isIntersecting
+                        //   //   entry.rootBounds
+                        //   //   entry.target
+                        //   console.log(entry.target)
+                        //   //   entry.time
+                        // });
+                    };
+                    const cody = document.querySelectorAll('.map_area');
+                    const observer = new IntersectionObserver(isShow,options);
+                    cody.forEach(element => observer.observe(element))
+                    // observer.observe(cody);
+                });
+            }
+        }).fail((jqXHR, errorMsg) => {
+            alert(jqXHR.responseText.code, errorMsg)
+        });      
+
+
+
 
 
     $(".accordion-header").on("click", function() {
@@ -257,7 +343,17 @@
         let btnClass = $(this).attr('class');
 
         console.log('Click en accordion  ' + btnId + ' | ' + btnClass);
-        console.log($(this)[0].id)
+        console.log($(this)[0].id);
+        console.log(($(this)[0].id).substr(-1));
+        let stageShow = ($(this)[0].id).substr(-1);
+
+        if (!$("#stage-" + ($(this)[0].id).substr(-1)).hasClass('map-painted')) {
+            loadLotsMaps(stageShow);
+        } else {
+            console.log("Mapa update");
+            
+        }
+
 
         // let panZoom = svgPanZoom('#stage-01', {
         //     viewportSelector: '.svg-pan-zoom_viewport',
@@ -568,7 +664,7 @@
 
 // });
 
-function updateLotsMap(data) {
+function updateLotsMap(data, stageUriShow) {
     let selectionContainer = "";
     const colorNotAvailable = "fill: rgba(228, 22, 66); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
     // let colorAvailablePremium = "fill: rgba(5, 110, 57); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
@@ -597,7 +693,7 @@ function updateLotsMap(data) {
         data.labels.hitch = 'Down payment';
     }
 
-    for (let stages = 1; stages <= data.numbers_stage; stages++) {
+    for (let stages = stageUriShow; stages <= stageUriShow; stages++) {
 
         $('g[id="stage_' + stages + '"] >[class*="mapsvg-region"]').each(function(){
         // debugger;
@@ -734,7 +830,7 @@ function updateLotsMap(data) {
                 // debugger;
         });
         // console.table(available[stages]);
-        $("#available-" + stages).text(available[stages]);
+        // $("#available-" + stages).text(available[stages]);
     }
     // let lots_orde = lots.sort(((a, b) => a.id - b.id));
     // $('#area_selection_1').append(selectionContainer);
@@ -744,10 +840,13 @@ function updateLotsMap(data) {
         $(".lot-standard").text('Standard');
         $(".casa_club").attr('data-bs-original-title', 'Club House');
         $(".visitor_parking").attr('data-bs-original-title', 'Visitor parking');
+        $(".distintive_entranceway").attr('data-bs-original-title', 'Distintive entranceway');
+        $(".amenities").attr('data-bs-original-title', 'Amenities');
+        $(".green_area").attr('data-bs-original-title', 'Green area');
     }
     $('[data-bs-toggle="popover"]').popover();
     $(".loader-container").addClass('d-none');
-    $("#image_site, .image_map").removeClass('d-none');
+    $("#image_site").removeClass('d-none');
     // console.timeEnd('Load');
 
     function searchIndexId(data, name_svg, stageId) {
@@ -762,53 +861,60 @@ function updateLotsMap(data) {
 
 // console.log($("#stage-1").html()) ;
 let data = []
-if ($('#image_site').hasClass('lots')) {
-    $(".loader-container").removeClass('d-none');
-
-    //Globals
-    let uri = $('#data_url').val();
-
-    $.ajax({
-        url: uri ,
-        type : 'GET',
-        dataType: "json"
-    }).done(function (datas) {
-        if (data !== null) {
-            //Globals
-            data = datas;
-            console.log(data);
-        }
-        console.log('Desarrollo- ' + investment)
-        if (investment == 'marela_life') {
-            
-            let dataMap = "";
-            let urlInvestment = $('#data_url').val().slice(0, -5) + '_map-1.txt';
-            console.log(urlInvestment)
-            $.ajax({
-                url : urlInvestment,
-                dataType: "text",
-                success : function (data_map) {
-                    dataMap = data_map;
-                    console.log(lang);
-                    $("#stage-1").html(dataMap);
-                    // console.log(dataMap)
-                    if (document.getElementById("stage-1") !== null) {
-                        // alert("The element exists");
-                        updateLotsMap(data);
+function loadLotsMaps(stageUriShow) {
+    
+    if ($('#image_site').hasClass('lots')) {
+        $(".loader-container").removeClass('d-none');
+    
+        //Globals
+        let uri = $('#data_url').val();
+    
+        $.ajax({
+            url: uri ,
+            type : 'GET',
+            dataType: "json"
+        }).done(function (datas) {
+            if (data !== null) {
+                //Globals
+                data = datas;
+                console.log(data);
+            }
+            // console.log('Desarrollo- ' + investment)
+            // if (investment == 'marela_life' || investment == 'lakuun' || investment == 'anthia' || investment == 'marela_beach') {
+                
+                let dataMap = "";
+                let urlInvestment = $('#data_url').val().slice(0, -5) + '_map-' + stageUriShow + '.txt';
+                console.log(urlInvestment)
+                $.ajax({
+                    url : urlInvestment,
+                    dataType: "text",
+                    success : function (data_map) {
+                        dataMap = data_map;
+                        // console.log(lang);
+                        $("#stage-" + stageUriShow).html(dataMap);
+                        // console.log(dataMap)
+                        if (document.getElementById("stage-" + stageUriShow) !== null) {
+                            // alert("The element exists");
+                            updateLotsMap(data, stageUriShow);
+                            $("#collapseStage-" + stageUriShow).addClass(' show');
+                            $("#stage-" + stageUriShow).addClass(' map-painted');
+                            $("#stage-" + stageUriShow).removeClass('d-none');
+    
+                        }
+                        else {
+                            alert("The element does not exist");
+                        }
+                        // $( "div[class*='map-svg']" ).change(function() {
+                        //     let btnId = $(this).attr('id');
+                        //     console.log('Change map- ' + btnId)
+                        // });
                     }
-                    else {
-                        alert("The element does not exist");
-                    }
-                    // $( "div[class*='map-svg']" ).change(function() {
-                    //     let btnId = $(this).attr('id');
-                    //     console.log('Change map- ' + btnId)
-                    // });
-                }
-            });
-        } else {
-            updateLotsMap(data);
-        }
-
-    });
+                });
+            // } else {
+            //     updateLotsMap(data, stageUriShow);
+            // }
+    
+        });
+    }
 }
 
