@@ -320,7 +320,7 @@ $(document).ready(function(){
 
     if (investment == ''){
         //! Para saber cantidad disponible por desarrollo.
-        let projects = ['lakuun', 'anthia', 'marela_life', 'marela_beach', 'marela_celestun'];
+        let projects = ['lakuun', 'anthia', 'marela_life', 'marela_beach', 'marela_celestun', 'wayuum'];
         // console.log(projects);
         // let available_project = [];
    
@@ -402,6 +402,10 @@ $(document).ready(function(){
                         es: `<p class="fw-bold text-center">A solo 66 minutos del desarrollo.</p>`,
                         en: `<p class="fw-bold text-center">Only 66 minutes from the development.</p>`
                     },
+                    wayuuum: {
+                        es: `<p class="fw-bold text-center">A solo 66 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Only 66 minutes from the development.</p>`
+                    },
                     marela_beach: {
                         es: `<p class="fw-bold text-center">A solo 77 minutos del desarrollo.</p>`,
                         en: `<p class="fw-bold text-center">Only 77 minutes from the development.</p>`
@@ -450,6 +454,10 @@ $(document).ready(function(){
                         en: `<p class="fw-bold text-center">Just 5 minutes from the development.</p>`
                     },
                     lakuun: {
+                        es: `<p class="fw-bold text-center">A solo 38 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 38 minutes from the development.</p>`
+                    },
+                    wayuum: {
                         es: `<p class="fw-bold text-center">A solo 38 minutos del desarrollo.</p>`,
                         en: `<p class="fw-bold text-center">Just 38 minutes from the development.</p>`
                     },
@@ -519,6 +527,10 @@ $(document).ready(function(){
                         es: `<p class="fw-bold text-center">A solo 26 minutos del desarrollo.</p>`,
                         en: `<p class="fw-bold text-center">Just 26 minutes away from the development.</p>`
                     },
+                    wayuum: {
+                        es: `<p class="fw-bold text-center">A solo 15 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 15 minutes away from the development.</p>`
+                    },
                     marela_beach: {
                         es: `<p class="fw-bold text-center">A solo 87 minutos del desarrollo.</p>`,
                         en: `<p class="fw-bold text-center">Just 87 minutes away from the development.</p>`
@@ -565,6 +577,10 @@ $(document).ready(function(){
                         en: `<p class="fw-bold text-center">Just 50 minutes away from the development.</p>`
                     },
                     lakuun: {
+                        es: `<p class="fw-bold text-center">A solo 83 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 83 minutes away from the development.</p>`
+                    },
+                    wayuum: {
                         es: `<p class="fw-bold text-center">A solo 83 minutos del desarrollo.</p>`,
                         en: `<p class="fw-bold text-center">Just 83 minutes away from the development.</p>`
                     },
@@ -641,6 +657,10 @@ $(document).ready(function(){
                         es: `<p class="fw-bold text-center">A solo 10 minutos del desarrollo.</p>`,
                         en: `<p class="fw-bold text-center">Just 10 minutes away from the development.</p>`
                     },
+                    wayuum: {
+                        es: `<p class="fw-bold text-center">A solo 20 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 20 minutes away from the development.</p>`
+                    },
                     marela_beach: {
                         es: `<p class="fw-bold text-center">A solo 45 minutos del desarrollo.</p>`,
                         en: `<p class="fw-bold text-center">Just 45 minutes away from the development.</p>`
@@ -694,7 +714,7 @@ $(document).ready(function(){
         
     }
     // console.log(JSON.stringify(promo_Modal));
-    $("#sisal, #hunucma, #progreso, #celestun, #merida ").on("click", function(e) {
+    $("#sisal, #hunucma, #progreso, #celestun, #merida").on("click", function(e) {
         e.stopImmediatePropagation();
         // console.log(Object.entries(promo_Modal).length);
         let locationId = $(this).attr('id');
