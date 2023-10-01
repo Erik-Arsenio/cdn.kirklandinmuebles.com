@@ -146,38 +146,48 @@
         },
         wayuum : {
             es :[
-                `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"Reconéctate con la naturaleza, entre la diversidad de nuestro desarrollo, nuestras amenidades únicas y la seguridad que el estado más seguro del país puede ofrecerte."</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Experimenta un nuevo estilo de vida en TIERRA DORADA"</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Un desarrollo residencial exclusivo y seguro con todas las comodidades y más"</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"El equilibrio prefecto entre la naturaleza y la elegencia."</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Entrega de la PRIMERA ETAPA Diciembre 2024"</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Atrévete a experimentar UN NUEVO COMIENZO"</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Haz nuevos amigos en nuestro ecléctico CLUBHOUSE"</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Contará con numerosas amenidades en áreas RECREATIVA, FAMILIAR y DEPORTIVA"</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Disfruta de la compañía de amigos y una parrillada en nuestra ÁREA GRILL"</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Pase momentos memorables con sus hijos en nuestro AREA INFANTIL"</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Pasa momentos increibles con tus mascotas en nuestro PET PARK"</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Disfruta de un paseo en familia y pasa las tardes inolvidables recorriendo nuestra CICLOVÍA"</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Practica tu deporte favorito EN PAREJA"</p>`
-                ],
-
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"<b>LA PRIMERA COMUNIDAD</b> planeada en Chicxulub, Yucatán. <b>EQUILIBRIO PERFECTO</b> entre la infraestructura de la ciudad."</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"<b>7 Privadas residenciales</b> que hacen alusión a la fauna endémica: Balam (Jaguar), Toh (Pájaro momoto), Kaab (Abeja), Maax (Mono), Haleb (Tepezcuintle), Weech (Armadillo) y Turix (Libélula) "</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Un desarrollo residencial exclusivo y seguro con todas las comodidades y más"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"El equilibrio prefecto entre la naturaleza y la elegancia."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Grandes áreas comerciales con espacios interactivos entre <b>COMERCIO Y VEGETACIÓN"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Inspirada en el escalonamiento y trazo de las ciudades Mayas, <b>PARA HACERTE SENTIR TODO UN NATIVO DE LA REGIÓN.</b>"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Contará con numerosas amenidades en áreas RECREATIVA, FAMILIAR y DEPORTIVA"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"GRANDES ISLAS DESTINADAS PARA CENTROS COMERCIALES, SUPERMERCADOS, BANCOS, HOSPITALES Y ESCUELAS."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Cada una contará con un <b>GRAN PARQUE DE COMTEMPLACION Y LAGO"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Pasa momentos increibles con tus mascotas en nuestro parque Peek"</p>`
+            ],
+            
             en : [
-                `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"Reconnect with nature, enjoy the diversity of our development, our unique amenities and the security of the safest state in Mexico"</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Experience a new lifestyle in the GOLDEN LAND"</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"An exclusive and safe residential development with all the comforts and more"</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"The perfect balance between nature and elegance"</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Delivery of the FIRST STAGE December 2024"</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Dare to experience A NEW BEGINNING"</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Make new friends in our eclectic CLUBHOUSE"</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Numerous exceptional amenities in the RECREATIONAL, FAMILY and SPORTS areas"</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Enjoy the company of friends with a barbecue in our GRILL AREA"</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Spend memorable moments with your children in our CHILDREN'S AREA"</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Even your pets will have fun in our PET PARK"</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">"Enjoy a family outing and spend pleasant afternoons touring our BIKEWAY"</p>`,
-                `<p class="fs-3 fst-italic fw-bold text-success-emphasis">"Practice your favorite sports with your partner"</p>`
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"<b>THE FIRST COMMUNITY</b> planned in Chicxulub, Yucatán. <b>PERFECT BALANCE</b> between the city's infrastructure."</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"<b>7 private residential areas</b> that allude to the endemic fauna: Balam (Jaguar), Toh (Momoto Bird), Kaab (Bee), Maax (Monkey), Haleb (Tepezcuintle), Weech (Armadillo) and Turix (Dragon-fly)"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"An exclusive and secure residential development with all the amenities and more"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"The perfect balance between nature and elegance."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Large commercial areas with interactive spaces between TRADE AND VEGETATION"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Inspired by the staggering and layout of the Mayan cities, <b>TO MAKE YOU FEEL LIKE A NATIVE OF THE REGION.</b>"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"It will have numerous amenities in RECREATIONAL, FAMILY and SPORTS areas."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"LARGE ISLANDS DESIGNED FOR SHOPPING CENTERS, SUPERMARKETS, BANKS, HOSPITALS AND SCHOOLS."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Each one will have a<b>LARGE COMTEMPLATION PARK AND LAKE"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Even your pets will have fun in our Peek Park"</p>`
                 ]
         },
     }
+    // `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">""</p>`,
+    // `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">""</p>`,
+    // `<p class="fs-3 fst-italic fw-bold text-success-emphasis">""</p>`
+    
+    //<b>LA PRIMERA COMUNIDAD</b> planeada en Chicxulub, Yucatán.
+    //<b>EQUILIBRIO PERFECTO</b> entre la infraestructura de la ciudad.
+    // Inspirada en el escalonamiento y trazo de las ciudades Mayas, <b>PARA HACERTE SENTIR TODO UN NATIVO DE LA REGIÓN.</b>
+    // <b>7 Privadas residenciales</b> y grandes áreas comerciales con <b>infraestructura y amenidades únicas</b>
+    // Gandes áreas comerciales con espacios interactivos entre <b>COMERCIO Y VEGETACIÓN</b>
+    // En el centro, se podrán apreciar <b>2 GRANDES ISLAS DESTINADAS PARA CENTROS COMERCIALES, SUPERMERCADOS, BANCOSS Y ESCUELAS.</b>
+    // Cada una contará con un <b>GRAN PARQUE DE COMTEMPLACION Y LAGO</b>
+
+
+    // La gran comunidad <b>residencial de la zona diamante</b>, a minutos del mar.
+    // Ubicada en Chicxulub Yucatán, <b>una de las zonas de más alta plusvalía del estado</b>
+    // Diseño, arquitectura, <b>naturaleza y estilo de vida</b>
 
     // var url = $('#image_site').contents()[0].baseURI;
     // var array= url.split(/[//,/,?]/);
@@ -802,22 +812,32 @@ function updateLotsMap(data, stageUriShow) {
                     selectionContainer = ``;
                     if (data.properties[key].category_id !== '') {
                         if (lang == 'es') {
-                            // lot = 'Lote';
+                            data.properties[key].category_id == 3 ? data.properties[key].category_name = 'Estandar' : "";
                         } else if (lang == 'en'){
                             data.properties[key].category_id == 3 ? data.properties[key].category_name = 'Standard' 
                             : data.properties[key].category_id == 4 ? data.properties[key].category_name = 'Beachfront' : "";
                         }
+                            data.properties[key].category_id == 1 ? data.properties[key].category_name = 'Premium' 
+                            : data.properties[key].category_id == 2 ? data.properties[key].category_name = 'Plus' : "";
+                        
                         selectionContainer = selectionContainer.concat(`<b>${data.labels.category_name}</b>: ${(data.properties[key].category_name)}<br>`);
                     }
                     if (data.properties[key].status_id !== '') {
                         if (lang == 'es') {
                             // lot = 'Lote';
+                            if (data.properties[key].status_id == 0) {
+                                data.properties[key].status_name = 'Vendido';
+                            } else if (data.properties[key].status_id == 1) {
+                                data.properties[key].status_name = 'Disponible';
+                            } else if (data.properties[key].status_id == 2) {
+                                data.properties[key].status_name = 'Reservado';
+                            }
                         } else if (lang == 'en'){
                             if (data.properties[key].status_id == 0) {
                                 data.properties[key].status_name = 'Sold';
                             } else if (data.properties[key].status_id == 1) {
                                 data.properties[key].status_name = 'Available';
-                            } else if (data.properties[key].status_id == 0) {
+                            } else if (data.properties[key].status_id == 2) {
                                 data.properties[key].status_name = 'Reserved';
                             }
 
