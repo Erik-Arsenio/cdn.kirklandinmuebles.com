@@ -171,6 +171,25 @@
                 `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Even your pets will have fun in our Peek Park"</p>`
                 ]
         },
+        sorenna : {
+            es :[
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"<b>LA PRIMERA COMUNIDAD</b> planeada en Chicxulub, Yucatán. <b>EQUILIBRIO PERFECTO</b> entre la infraestructura de la ciudad."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Cerca de la playa y cerca de la ciudad, Sorenna se encuentra en una de las zonas de mayor crecimiento en Yucatán"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Un desarrollo abierto con lotes de uso de suelo mixto, donde se puede construir desde una residencia hasta un local comercial"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Avenida principal pavimentada de 15m de ancho, alumbrado público, energía eléctrica subterránea"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Cuatro Glorietas distribuidas en el desarrollo"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Alta Plusvalía compuesta por su cercanía con Wayúum"</p>`
+            ],
+            
+            en : [
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"<b>LA PRIMERA COMUNIDAD</b> planeada en Chicxulub, Yucatán. <b>EQUILIBRIO PERFECTO</b> entre la infraestructura de la ciudad."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Cerca de la playa y cerca de la ciudad, Sorenna se encuentra en una de las zonas de mayor crecimiento en Yucatán"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Un desarrollo abierto con lotes de uso de suelo mixto, donde se puede construir desde una residencia hasta un local comercial"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Avenida principal pavimentada de 15m de ancho, alumbrado público, energía eléctrica subterránea"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Cuatro Glorietas distribuidas en el desarrollo"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Alta Plusvalía compuesta por su cercanía con Wayúum"</p>`
+                ]
+        },
     }
     // `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">""</p>`,
     // `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">""</p>`,
@@ -710,17 +729,56 @@
 // });
 
 function updateLotsMap(data, stageUriShow) {
+    console.log('Desarrollo- ' + investment)
     let selectionContainer = "";
     const colorNotAvailable = "fill: rgba(228, 22, 66); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
     // let colorAvailablePremium = "fill: rgba(5, 110, 57); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
     // let colorAvailablePlus = "fill: rgba(47, 172, 102); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
     // let colorAvailable = "fill: rgba(136, 194, 117); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
     const colorReserved = "fill: rgba(57, 249, 230); stroke: rgba(255, 255, 255); stroke-width: 1.2px;"
-    const colorStatus = {
-        1: "fill: rgba(5, 110, 57); stroke: rgba(255, 255, 255); stroke-width: 1.2px;", // colorAvailablePremium
-        2: "fill: rgba(47, 172, 102); stroke: rgba(255, 255, 255); stroke-width: 1.2px;",  // colorAvailablePlus
+    let colorStatus = {};
+    let colorStatusDefault = "";
+    let categoryName =  {
+        es: { 
+            1: "Premium",
+            2: "Plus",
+            3: "Estandar",
+            4: "Frente al mar", 
+            5: "Regular",
+            6: "Avenida Esquina",
+            7: "Avenida",
+            8: "Esquina"
+            },
+        en: {  
+            1: "Premium",
+            2: "Plus",
+            3: "Standard",
+            4: "Beachfront",
+            5: "Regular",
+            6: "Corner Avenue ",
+            7: "Avenue",
+            8: "Corner"
+            }, 
     };
-    const colorStatusDefault = "fill: rgba(136, 194, 117); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
+
+    if (investment == 'sorenna') {
+        colorStatus = {
+            6: "fill: rgba(0, 102, 51); stroke: rgba(255, 255, 255); stroke-width: 1.2px;", // colorAvailableAvenueCorner
+            7: "fill: rgba(47, 172, 102); stroke: rgba(255, 255, 255); stroke-width: 1.2px;",  // colorAvailableAvenue
+            8: "fill: rgba(136, 194, 117); stroke: rgba(255, 255, 255); stroke-width: 1.2px;",  // colorAvailableCorner
+        };
+        colorStatusDefault = "fill: rgba(183 245 162); stroke: rgba(255, 255, 255); stroke-width: 1.2px;"; // colorAvailableRegular
+        
+    } else {
+
+        colorStatus = {
+            1: "fill: rgba(5, 110, 57); stroke: rgba(255, 255, 255); stroke-width: 1.2px;", // colorAvailablePremium
+            2: "fill: rgba(47, 172, 102); stroke: rgba(255, 255, 255); stroke-width: 1.2px;",  // colorAvailablePlus
+        };
+        colorStatusDefault = "fill: rgba(136, 194, 117); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
+        
+    }
+
     let available = [0,0,0,0,0];
     let lot = '';
     if (lang == 'es') {
@@ -811,14 +869,17 @@ function updateLotsMap(data, stageUriShow) {
                     $('g[data-id="stage_' + stages + '"]').children('[data-id="' + name_svg + '"]').attr('data-bs-html', " ").attr('data-bs-html', "true" );
                     selectionContainer = ``;
                     if (data.properties[key].category_id !== '') {
+                        data.properties[key].category_name = categoryName[lang][data.properties[key].category_id]
+
                         if (lang == 'es') {
-                            data.properties[key].category_id == 3 ? data.properties[key].category_name = 'Estandar' : "";
+                            // data.properties[key].category_name = categoryName[data.properties[key].category_id]
+                            // data.properties[key].category_id == 3 ? data.properties[key].category_name = 'Estandar' : "";
                         } else if (lang == 'en'){
-                            data.properties[key].category_id == 3 ? data.properties[key].category_name = 'Standard' 
-                            : data.properties[key].category_id == 4 ? data.properties[key].category_name = 'Beachfront' : "";
+                            // data.properties[key].category_id == 3 ? data.properties[key].category_name = 'Standard' 
+                            // : data.properties[key].category_id == 4 ? data.properties[key].category_name = 'Beachfront' : "";
                         }
-                            data.properties[key].category_id == 1 ? data.properties[key].category_name = 'Premium' 
-                            : data.properties[key].category_id == 2 ? data.properties[key].category_name = 'Plus' : "";
+                            // data.properties[key].category_id == 1 ? data.properties[key].category_name = 'Premium' 
+                            // : data.properties[key].category_id == 2 ? data.properties[key].category_name = 'Plus' : "";
                         
                         selectionContainer = selectionContainer.concat(`<b>${data.labels.category_name}</b>: ${(data.properties[key].category_name)}<br>`);
                     }
