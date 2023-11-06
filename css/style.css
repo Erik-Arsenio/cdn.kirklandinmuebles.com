@@ -398,7 +398,7 @@
 }
 @media (min-width: 320px) {
     .leyend-status {
-        font-size: .5em;
+        font-size: .4em;
     }
     .available-title {
         font-size: .6rem !important;
@@ -408,7 +408,7 @@
 @media (min-width: 375px) {
 
     .leyend-status {
-        font-size: .5em;
+        font-size: .4em;
     }
     .available-title {
         font-size: .7rem !important;
@@ -419,7 +419,7 @@
 @media (min-width: 425px) {
 
     .leyend-status {
-        font-size: .5em;
+        font-size: .4em;
     }
     .available-title {
         font-size: .8rem !important;
