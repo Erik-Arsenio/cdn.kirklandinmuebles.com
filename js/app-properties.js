@@ -1,17 +1,8 @@
 
     var url = $('#image_site').contents()[0].baseURI;
     var array= url.split(/[//,/,?]/);
-    console.log(array);
-    console.log(array[array.length - 1]);
-
-// $(document).ready(function(){
-
-
-    // $('[data-bs-toggle="popover"]').popover();
     // Funtion Promo
     lang = array[array.length - 1].slice(5);
-    // let lang = $('#language').val();
-    // console.log("Idioma- " + lang);
     let promoHome = {
         lakuun : {
             es :[
@@ -191,31 +182,11 @@
                 ]
         },
     }
-    // `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">""</p>`,
-    // `<p class="fs-3 fst-italic fw-bold text-primary-emphasis">""</p>`,
-    // `<p class="fs-3 fst-italic fw-bold text-success-emphasis">""</p>`
-    
-    //<b>LA PRIMERA COMUNIDAD</b> planeada en Chicxulub, Yucatán.
-    //<b>EQUILIBRIO PERFECTO</b> entre la infraestructura de la ciudad.
-    // Inspirada en el escalonamiento y trazo de las ciudades Mayas, <b>PARA HACERTE SENTIR TODO UN NATIVO DE LA REGIÓN.</b>
-    // <b>7 Privadas residenciales</b> y grandes áreas comerciales con <b>infraestructura y amenidades únicas</b>
-    // Gandes áreas comerciales con espacios interactivos entre <b>COMERCIO Y VEGETACIÓN</b>
-    // En el centro, se podrán apreciar <b>2 GRANDES ISLAS DESTINADAS PARA CENTROS COMERCIALES, SUPERMERCADOS, BANCOSS Y ESCUELAS.</b>
-    // Cada una contará con un <b>GRAN PARQUE DE COMTEMPLACION Y LAGO</b>
 
-
-    // La gran comunidad <b>residencial de la zona diamante</b>, a minutos del mar.
-    // Ubicada en Chicxulub Yucatán, <b>una de las zonas de más alta plusvalía del estado</b>
-    // Diseño, arquitectura, <b>naturaleza y estilo de vida</b>
-
-    // var url = $('#image_site').contents()[0].baseURI;
-    // var array= url.split(/[//,/,?]/);
-    // console.log(array);
     let investment = array[4];
 
 
     $(".promo").empty().html(promoHome[investment][lang][0]);
-    // $(".promo").empty().html(promo[0]);
     let count = 1;
 
     function changeTextPromo(){
@@ -223,14 +194,11 @@
             count = 0;
         }
         $(".promo").empty().html(promoHome[investment][lang][count]);
-        // console.log(count);
         count++;
     }
     const myCarousel = document.getElementById('carouselHome');
 
     myCarousel.addEventListener('slid.bs.carousel', event => {
-        // console.log("En Home- " + event.target.id);
-        // let btnTarget = event.target.id; 
         event.target.id == 'carouselHome' ? changeTextPromo() : '';
     })
     $(".carousel-control-prev").on("click", function (e) {
@@ -249,7 +217,6 @@
     if($("#carouselAmenitiesCasaClub").length > 0){
         const carouselAmenitiesCasaClubMov = document.getElementById('carouselAmenitiesCasaClub')
         carouselAmenitiesCasaClubMov.addEventListener('slid.bs.carousel', event => {
-            // console.log("En Club- " + event.target.id);
             event.stopImmediatePropagation();
             let hijos = $('#carouselAmenitiesCasaClub').children().children();
             let el = 0
@@ -260,57 +227,15 @@
             $('.amenities-club-text-' + el).addClass('text-success');
         })
     } 
-    // else  {
-    //     console.log("Np existe el carousel de Casa Club");
-    // }
 
-    // $("svg").on("click", function() {
-    //     let btnId = $(this).attr('id');
-    //     let btnClass = $(this).attr('class');
-    //     console.log('Click en SVG Id-  ' + btnId );
-    //     if(deviceMovil && btnId == "stage-01") {
-    //         let panZoom = svgPanZoom('#' + btnId, {
-    //             viewportSelector: '.svg-pan-zoom_viewport',
-    //             panEnabled: true,
-    //             zoomEnabled: true,
-    //             controlIconsEnabled: true,
-    //             fit: true,
-    //             center: true,
-    //             dblClickZoomEnabled: false,
-    //             preventMouseEventsDefault: false,
-    //         });
-    //     }
-    // });
-
-
-    // $(".carousel-control-prev ,  carousel-control-prev").on("click", function() {
-    //     // Globals
-    //     let btnId = $(this).closest("div").prop("id");
-    //     let btnClass = $(this).attr('data-bs-target');
-    //     console.log('Click en carousel  ' + btnId + ' | ' + btnClass);
-
-
-    // });
-
-    
-    //!  Saber si la URL trae un numero de stage
-    console.log(Number(array[5]))
     let stageUriShow = Number(array[5]);
-
-    // let investment = $('#investment').val();
-    console.log('Desarrollo- ' + investment);
-    // console.log(promoHome[investment][lang][0])
 
     let uri = $('#data_url').val();
     let uriArray = uri.split(/[//,/,?]/);
-    console.log(uriArray)
     let dataAvailable = [];
 
 
     let uris = uriArray[0]+ "/" + uriArray[1] + "/" + uriArray[2] + "/" + uriArray[3] + "/" + uriArray[4]+ "/" + 'available_lots.json';
-    console.log(uris)
-    // let uris = "https://kirklandinmobiliaria.com/assets/json/" + 'available_lots.json';
-
         $.ajax({
             url: uris ,
             type : 'GET',
@@ -323,30 +248,18 @@
                 
                 $(document).ready(function(){
         
-                    console.log(dataAvailable[investment]);
             
                     if (isNaN(stageUriShow) || dataAvailable[investment].length == 1) {
-                        console.log("La variable en NaN")
+                        // console.log("La variable en NaN")
                         // stageUriShow = 1;
                     } else {
                         // stageUriShow = dataAvailable[investment].length;
                     } 
-            
-                    console.log("Stage a mostrar segun URL- " + stageUriShow)
-                    console.log("Cantidad de Stages- " + dataAvailable[investment].length);
                     for (let lotAvailable = 0; lotAvailable < dataAvailable[investment].length; lotAvailable++) {
                         $("#available-" + (lotAvailable + 1)).text(dataAvailable[investment][lotAvailable]);
                     }
-            
-                    // $("#collapseStage-1").addClass(' show');
-            
-                    // loadLotsMaps(stageUriShow);
-                    // if ($("#stage-1").hasClass('map-painted')) {
-                    //     console.log("Mapa update en la carga")
-                    // }
-            
+
                     let options = {
-                        // root: document.querySelector('#map_area'),
                         rootMargin: '0px',
                         threshold: 0.75
                     }
@@ -355,37 +268,16 @@
                     function isShow(entries) {
                         let entry = entries[0]
                         if (entry.isIntersecting) {
-                            console.log("Visible-  ");
-                            console.log((entry.target.id).substr(-1));
                             if (!isNaN(stageUriShow) ) {
-                                // console.log("La variable en NaN")
-                                
                                 if (stageUriShow > dataAvailable[investment].length) {
                                     stageUriShow = dataAvailable[investment].length;
                                 }
-                                // stageUriShow = 1;
-                                console.log("La variable stageUriShow es= " + stageUriShow);
                                 if ((entry.target.id).substr(-1) == stageUriShow && !$("#stage-" + stageUriShow).hasClass('map-painted')) {
-                                    console.log("Mapa No update en la carga")
                                     loadLotsMaps(stageUriShow);
-                                } else {console.log("Mapa Update ")}
+                                } else {
+                                }
                             }
-                        } else {
-                            console.log("No Visible- ");                
-                            console.log(entry.target.id);                
                         }
-                        // entries.forEach(entry => {
-                        //     // Cada entry describe un cambio en la intersección para
-                        //     // un elemento observado
-                        //   //   entry.boundingClientRect
-                        //   //   entry.intersectionRatio
-                        //   //   entry.intersectionRect
-                        //   //   entry.isIntersecting
-                        //   //   entry.rootBounds
-                        //   //   entry.target
-                        //   console.log(entry.target)
-                        //   //   entry.time
-                        // });
                     };
                     const cody = document.querySelectorAll('.map_area');
                     const observer = new IntersectionObserver(isShow,options);
@@ -405,72 +297,13 @@
         // Globals
         let btnId = $(this).attr('id');
         let btnClass = $(this).attr('class');
-
-        console.log('Click en accordion  ' + btnId + ' | ' + btnClass);
-        console.log($(this)[0].id);
-        console.log(($(this)[0].id).substr(-1));
         let stageShow = ($(this)[0].id).substr(-1);
 
         if (!$("#stage-" + ($(this)[0].id).substr(-1)).hasClass('map-painted')) {
             loadLotsMaps(stageShow);
-        } else {
-            console.log("Mapa update");
-            
-        }
+        } 
 
-
-        // let panZoom = svgPanZoom('#stage-01', {
-        //     viewportSelector: '.svg-pan-zoom_viewport',
-        //     panEnabled: true,
-        //     zoomEnabled: true,
-        //     controlIconsEnabled: true,
-        //     fit: true,
-        //     center: true,
-        //     dblClickZoomEnabled: false,
-        //     preventMouseEventsDefault: false,
-
-    
-        // });
-    
-        
-        // document.getElementById('zoom-in').addEventListener('click', function(ev){
-        //     ev.preventDefault()
-    
-        // panZoom.zoomIn()
-        // });
-    
-        // document.getElementById('zoom-out').addEventListener('click', function(ev){
-        // ev.preventDefault()
-    
-        // panZoom.zoomOut()
-        // });
-    
-        // document.getElementById('reset').addEventListener('click', function(ev){
-        // ev.preventDefault()
-    
-        // panZoom.resetZoom()
-        // });
     });
-
-
-
-
-
-
-    // let dataUpdate = [];
-    // console.log("Nuerode Stage- " + data.numbers_stage);
-    // $.ajax({
-    //     url: 'http://kirklandinmobiliaria.com/assets/json/anthia-4_update.json',
-    //     type : 'GET',
-    //     dataType: "json"
-    // }).done(function (datas) {
-    //     if (datas !== null) {
-    //         //Globals
-    //         dataUpdate = datas; 
-    //     }
-    //     testing(data, dataUpdate)
-    // });
-
 
     let test = false;
     function testing(data, dataUpdate) {
@@ -490,44 +323,40 @@
         });        
     }
 
+    $(".category-type").on("click", function(e) {
+        e.stopImmediatePropagation();
+        let stage = $(this).closest('.category-type').attr('data-stage');
+        let category = $(this).closest('.category-type').attr('data-category');
+        console.log('Seleccion de stage= ' + stage);
+        console.log('Seleccion de category= ' + category);
+        const newCategory = data.properties.filter(function (categ){
+            if (categ.category_id == Number(category) && categ.stage == Number(stage)) {
+                return categ
+            }
+        });
+        for (let lot = 0; lot < (newCategory.length - 1); lot++) {
+            $('text[data-text="' + newCategory[lot].name + '"]').toggleClass("st21");
+            $('polygon[data-id="' + newCategory[lot].name + '"]').toggleClass("st1");
+        }
+    });
 
 
     $(".carousel-inner img, about-img img").on("click", function(e) {
         e.stopImmediatePropagation();
         let id_img = $(this).closest('.carousel').attr('id');
-        // if (id_img == "carouselHome") {
-        //     carouselElement = carouselHomeElement;
-        // } else {
-        //     carouselElement = carouselAmenitiesElement;
-        // }
-        // let myCarouselElement = document.querySelector('#' +  id_img);
-        // let carousel = new bootstrap.Carousel(myCarouselElement, {
-        //     ride: false,
-        //     interval: 1800000
-        // });
-        // console.log(id_img);
-        // console.log(carousel);
-        // console.log('deviceMovil- ' + deviceMovil);
+
         if (!deviceMovil ) {
             // Globals
             let id_html = $('#' +  id_img).html().trim();
-            // console.log(`Leng total-  ${id_html.length}`);
-            // console.log(id_html.search('carousel-caption'));
             let modalCarouselContainer = '';
             if (id_html.search('carousel-caption') >= 1) {
-                // console.log("Cabeza- " + id_html.search('<div class="carousel-inner">'));
                 let cabeza = '<div class="carousel-inner">'
-                // console.log("Cabeza length- " + cabeza.length);
                 let id_html_new = id_html.replace(cabeza,'');
-                // console.log(`Leng sin encabezado-  ${id_html_new.length}`);
-                // console.log(id_html_new.search('<button class="carousel-control-prev"'));
                 id_html_new = id_html_new.slice(0, id_html_new.search('<button class="carousel-control-prev"'));
                 id_html_new = id_html_new.replaceAll('height="1240 px"', "");
                 id_html_new = id_html_new.replaceAll('width="1754 px"', 'style="width: 55vw;"');
                 id_html_new = id_html_new.replaceAll('class="h6 text-dark"', 'class="h5 text-dark"');
 
-                console.log(id_html_new);
-                // console.log(id_html);
                 modalCarouselContainer = id_html_new;
             } else {
                 let src = $(this).attr('src');
@@ -536,9 +365,7 @@
                 }).get();
                 $('#modal-imgLabel').empty();
                 $(id_html).prependTo('#modal-carousel-container');
-                // if (id_img == 'carouselAmenities') {
-                //     arr_img.shift();
-                // }
+
                 for (let i in arr_img){
                     modalCarouselContainer = modalCarouselContainer.concat(`<div class="carousel-item`);
                     if (id_img == 'carouselAmenities' && i == 0) {
@@ -548,7 +375,6 @@
                     }
                     modalCarouselContainer = modalCarouselContainer.concat(`"><img src="${arr_img[i]}" class=""  style="width: 55vw;" alt="..."></div>`);
                 }
-            // console.log("Cantidad de Img- " + arr_img.length)
                 if ( arr_img.length === 1) {
                     $('#carouselmodal').children('[data-bs-target="#carouselmodal"]').addClass('d-none')
                 } else {
@@ -559,49 +385,7 @@
             $('#modal-carousel-container').append(modalCarouselContainer);
             $("#modal-img").modal("show");
         }
-        //  else {
-        //     let carousel = new bootstrap.Carousel(document.querySelector('#' +  id_img), {
-        //         ride: false,
-        //     });
-        //     console.log("carousel detenido por click");
-        // }
     });
-
-            // window.panZoomTiger = svgPanZoom('#demo-tiger', {
-            //     zoomEnabled: true,
-            //     controlIconsEnabled: true,
-            //     dblClickZoomEnabled: false, // enable or disable zooming by double clicking (default enabled)
-            //     mouseWheelZoomEnabled: true, // enable or disable zooming by mouse wheel (default enabled)
-            //     preventMouseEventsDefault: false, // enable or disable preventDefault for mouse events
-            //     fit: true,
-            //     center: true
-            // });
-            // var panZoom = svgPanZoom('#demo-tiger', {
-            //     zoomEnabled: true,
-            //     controlIconsEnabled: false,
-            //     fit: true,
-            //     center: true,
-            //     dblClickZoomEnabled: false
-            // });
-            // document.getElementById('zoom-in').addEventListener('click', function(ev){
-            //     ev.preventDefault()
-      
-            //     panZoom.zoomIn()
-            // });
-    
-            // document.getElementById('zoom-out').addEventListener('click', function(ev){
-            // ev.preventDefault()
-    
-            // panZoom.zoomOut()
-            // });
-    
-            // document.getElementById('reset').addEventListener('click', function(ev){
-            // ev.preventDefault()
-    
-            // panZoom.resetZoom()
-            // });
-
-            // $('[data-bs-toggle="popover"]').popover();
 
 
             if (deviceMovil ) {
@@ -621,10 +405,6 @@
                     new bootstrap.Carousel(carouselAmenitiesCasaClubElement, {
                         ride: false,
                     });
-                    // let carouselLocationElement = document.querySelector("#carouselLocation");
-                    // new bootstrap.Carousel(carouselLocationElement, {
-                    //     ride: false
-                    // });
                 }
                 if (investment == "marela_life"){
             
@@ -650,15 +430,14 @@
                     interval: intervalCarousel,
                     ride: "carousel"
                 });
-                // console.log('Desarrollo- ' + investment);
-                // if (($('#image_site').contents()[0].baseURI).search("marela_celestun") >= 1 || ($('#image_site').contents()[0].baseURI).search("marela_life") >= 1) {
+
                 if ( investment != "marela_celestun") {
                     let carouselAmenitiesElement = document.querySelector("#carouselAmenities");
                     new bootstrap.Carousel(carouselAmenitiesElement, {
                         ride: "carousel"
                     });
                 }
-                // if (($('#image_site').contents()[0].baseURI).search("lakuun") >= 1){
+
                 if (investment == "lakuun" || investment == "marela_life"){
             
                     let carouselAmenitiesCasaClubElement = document.querySelector("#carouselAmenitiesCasaClub");
@@ -667,13 +446,7 @@
                         pause: "hover",
                         interval: 10000,
                     });
-                  
-                    // console.log("New Interval" + intervalCarousel);
-                    // let carouselLocationElement = document.querySelector("#carouselLocation");
-                    // new bootstrap.Carousel(carouselLocationElement, {
-                    //     interval: intervalCarousel,
-                    //     ride: "carousel"
-                    // });
+
                 }
                 if (investment == "marela_life"){
             
@@ -693,48 +466,15 @@
                         ride: "carousel"
                     });
                 }
-                // $('.carousel').carousel({
-                //     interval: 10000
-                // });
-                // console.log("carousel intervalo definido");
             }
-
-            // var url = $(location).attr('href');
-            // console.log(url);
-            // const arr = url.split('/');
-            // let urlNow = window.location;
-            // console.log(urlNow);
-            // // https://developer.mozilla.org/
-            // var element = document.getElementById("headingStage-" + arr[arr.length-1]);
-            // element.scrollIntoView({block: "start", behavior: "smooth"});
-            // let positionY = window.pageYOffset;
-            // console.log("PosicionY actual- " + positionY + 'px');
-            // window.scrollTo(0, positionY - 80);
 
             $(".loader-container-img").addClass('d-none');
             $(".load-image").removeClass('d-none');
-
-            // const observer = new IntersectionObserver(entries => {
-            // entries.forEach(entry => {
-            //     const intersecting = entry.isIntersecting
-            //     { threshold: 1 }
-            //     // entry.target.style.backgroundColor = intersecting ? "blue" : "orange"
-            //     intersecting ? console.log("Entra en viewport") : console.log("Sale del viewport")
-            //     // console.log("Entra en viewport")
-            // })
-            // })
-            
-            // observer.observe(document.getElementById("test"))
-
-// });
 
 function updateLotsMap(data, stageUriShow) {
     console.log('Desarrollo- ' + investment)
     let selectionContainer = "";
     const colorNotAvailable = "fill: rgba(228, 22, 66); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
-    // let colorAvailablePremium = "fill: rgba(5, 110, 57); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
-    // let colorAvailablePlus = "fill: rgba(47, 172, 102); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
-    // let colorAvailable = "fill: rgba(136, 194, 117); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
     const colorReserved = "fill: rgba(57, 249, 230); stroke: rgba(255, 255, 255); stroke-width: 1.2px;"
     let colorStatus = {};
     let colorStatusDefault = "";
@@ -799,64 +539,23 @@ function updateLotsMap(data, stageUriShow) {
     for (let stages = stageUriShow; stages <= stageUriShow; stages++) {
 
         $('g[id="stage_' + stages + '"] >[class*="mapsvg-region"]').each(function(){
-        // debugger;
+
             let name_svg = $(this).attr('id');
-            // console.log('Stage- ' + stages + ' Id svg- ' + name_svg );
             let stageId = Number($(this).closest("g").prop("id").substr(-1, 1));
-            
-            // let id = Number($(this).attr('id').substr(2));
-            // let title = $(this).attr("title");
             let key = searchIndexId(data, name_svg, stageId);
-            // console.log('Stages- ' + stages + '  -->  StageId- ' + stageId + ' Idsvg- ' + name_svg + ' Key- ' + key);
-            // let popoverContent = ``;
-            // if ($(this).attr('d') != undefined) {
-            //     console.log('Id- ' + name_svg + '  d- ' + $(this).attr('d'));     
-            // } 
-            // else {
-            //     console.log('Id- ' + name_svg + '  x- ' + $(this).attr('x') + '  y- ' + $(this).attr('y'));     
-                
-            // }
+
             if (stages == stageId && data.properties[key]['name'] == name_svg) {
 
-                // lots.push({id: id, area: Number(title.replace(" m2", "")), price: parseInt((Number(title.replace(" m2", ""))) * 2850).toLocaleString('en-EN') });
                 if (data.properties[key].status_id == 0) {
                     $(this).attr('style', colorNotAvailable);
-                    // $('[data-modal-id="' + name_svg + '"]').addClass('d-none');
-                    // $(this).addClass(' mapsvg-disabled');
-                    // $(this).attr('data-bs-content', " ").attr('data-bs-content', `<b>${data.labels.status}</b>: ${data.properties[key].status}`);
                 } else if (data.properties[key].status_id == 1 || data.properties[key].status_id == 2) {
 
-                    // if (data.properties[key].status_id == 1) {
-                    //     available[stages] = available[stages] + 1;
-                    // }
                     data.properties[key].status_id == 1 ? available[stages] = available[stages] + 1 : available[stages] = available[stages];
                     
-
                     $(this).attr('style', colorStatus[data.properties[key].category_id] || colorStatusDefault);
                     
-                    // if (data.properties[key].category_id === 1) {
-                    //     $(this).attr('style', colorAvailablePremium);
-                    // } else if (data.properties[key].category_id === 2) {
-                    //     $(this).attr('style', colorAvailablePlus);
-                    // } else {
-                    //     $(this).attr('style', colorAvailable);
-                    // }
                     data.properties[key].status_id == 2 ? $(this).attr('style', colorReserved) : '';
-                    // if (data.properties[key].status_id == 2){
-                    //     $(this).attr('style', colorReserved);
-                    // } 
-                    // else {
-                    //     $(this).removeClass(' mapsvg-disabled');
-                    // }
-                    // selectionContainer = ``;
-                    // if ($(this).attr('d') != undefined) {
-                    //     console.log('Id- ' + name_svg + '  d- ' + $(this).attr('d'));    
-                    // } else {
-                    //     console.log('Id- ' + name_svg + '  x- ' + $(this).attr('x') + '  y- ' + $(this).attr('y'));     
-                    // }
 
-                        // selectionContainer = selectionContainer.concat(``);    
-                    // $('[data-id="' + name_svg + '"]').attr('data-bs-toggle', "popover");
                     $('g[data-id="stage_' + stages + '"]').children('[data-id="' + name_svg + '"]').attr('data-bs-toggle', "popover");
                     if(!deviceMovil) {
                         $('g[data-id="stage_' + stages + '"]').children('[data-id="' + name_svg + '"]').attr('data-bs-trigger', "hover");
@@ -870,22 +569,10 @@ function updateLotsMap(data, stageUriShow) {
                     selectionContainer = ``;
                     if (data.properties[key].category_id !== '') {
                         data.properties[key].category_name = categoryName[lang][data.properties[key].category_id]
-
-                        if (lang == 'es') {
-                            // data.properties[key].category_name = categoryName[data.properties[key].category_id]
-                            // data.properties[key].category_id == 3 ? data.properties[key].category_name = 'Estandar' : "";
-                        } else if (lang == 'en'){
-                            // data.properties[key].category_id == 3 ? data.properties[key].category_name = 'Standard' 
-                            // : data.properties[key].category_id == 4 ? data.properties[key].category_name = 'Beachfront' : "";
-                        }
-                            // data.properties[key].category_id == 1 ? data.properties[key].category_name = 'Premium' 
-                            // : data.properties[key].category_id == 2 ? data.properties[key].category_name = 'Plus' : "";
-                        
                         selectionContainer = selectionContainer.concat(`<b>${data.labels.category_name}</b>: ${(data.properties[key].category_name)}<br>`);
                     }
                     if (data.properties[key].status_id !== '') {
                         if (lang == 'es') {
-                            // lot = 'Lote';
                             if (data.properties[key].status_id == 0) {
                                 data.properties[key].status_name = 'Vendido';
                             } else if (data.properties[key].status_id == 1) {
@@ -929,29 +616,12 @@ function updateLotsMap(data, stageUriShow) {
                     if (data.properties[key].description !== '') {
                         selectionContainer = selectionContainer.concat(`<b>${data.labels.description}</b>: ${data.properties[key].description}<br>`);
                     }
-
-                    // selectionContainer = selectionContainer.concat(`"></path>`);
                     $('g[data-id="stage_' + stages + '"]').children('[data-id="' + name_svg + '"]').attr('data-bs-content', " ").attr('data-bs-content', selectionContainer);
-
-                    // let lot = $( '[data-id="' + name_svg + '"]' ).get(0).outerHTML;
-                    // let lot = document.querySelector(`*[data-id=${name_svg}] `).innerHTML;
-                    // console.log($( '[data-id="' + name_svg + '"]' ).get(0).outerHTML);
-                    // lot = lot.replace("data-id", "data-ids");
-                    // console.log(lot);
-                    // $( `<a href="javascript:void(0);" class="input-button input-button-clear" data-modal-id="${name_svg}" data-toggle="modal" data-target="#modal-img">${lot}</a>`).insertAfter( '[data-id="' + name_svg + '"]' );
-                    // $('[data-id="' + name_svg + '"]').remove();
-                    // $( "</a>" ).insertAfter( $( '[data-id="' + name_svg + '"]'  ) );
                 } 
             }
-                // debugger;
         });
-        // console.table(available[stages]);
-        // $("#available-" + stages).text(available[stages]);
     }
-    // let lots_orde = lots.sort(((a, b) => a.id - b.id));
-    // $('#area_selection_1').append(selectionContainer);
-    // console.log($("#svg-1").html());
-    // $('#view-svg-1').append($("#svg-1").html());
+
     if (lang == 'en') {
         $(".lot-standard").text('Standard');
         $(".casa_club").attr('data-bs-original-title', 'Club House');
@@ -963,7 +633,6 @@ function updateLotsMap(data, stageUriShow) {
     $('[data-bs-toggle="popover"]').popover();
     $(".loader-container").addClass('d-none');
     $("#image_site").removeClass('d-none');
-    // console.timeEnd('Load');
 
     function searchIndexId(data, name_svg, stageId) {
         for (let key_search in data.properties) {
@@ -975,7 +644,6 @@ function updateLotsMap(data, stageUriShow) {
     }
 }
 
-// console.log($("#stage-1").html()) ;
 let data = []
 function loadLotsMaps(stageUriShow) {
     
