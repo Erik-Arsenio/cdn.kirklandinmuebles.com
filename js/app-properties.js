@@ -158,7 +158,7 @@
                 `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Inspired by the staggering and layout of the Mayan cities, <b>TO MAKE YOU FEEL LIKE A NATIVE OF THE REGION.</b>"</p>`,
                 `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"It will have numerous amenities in RECREATIONAL, FAMILY and SPORTS areas."</p>`,
                 `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"LARGE ISLANDS DESIGNED FOR SHOPPING CENTERS, SUPERMARKETS, BANKS, HOSPITALS AND SCHOOLS."</p>`,
-                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Each one will have a<b>LARGE COMTEMPLATION PARK AND LAKE"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Each one will have a LARGE COMTEMPLATION PARK AND LAKE"</p>`,
                 `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Even your pets will have fun in our Peek Park"</p>`
                 ]
         },
@@ -173,12 +173,12 @@
             ],
             
             en : [
-                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"<b>LA PRIMERA COMUNIDAD</b> planeada en Chicxulub, Yucatán. <b>EQUILIBRIO PERFECTO</b> entre la infraestructura de la ciudad."</p>`,
-                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Cerca de la playa y cerca de la ciudad, Sorenna se encuentra en una de las zonas de mayor crecimiento en Yucatán"</p>`,
-                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Un desarrollo abierto con lotes de uso de suelo mixto, donde se puede construir desde una residencia hasta un local comercial"</p>`,
-                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Avenida principal pavimentada de 15m de ancho, alumbrado público, energía eléctrica subterránea"</p>`,
-                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Cuatro Glorietas distribuidas en el desarrollo"</p>`,
-                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Alta Plusvalía compuesta por su cercanía con Wayúum"</p>`
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"<b>THE FIRST COMMUNITY</b> planned in Chicxulub, Yucatán. <b>PERFECT BALANCE</b> between the city's infrastructure."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Close to the beach and close to the city, Sorenna is located in one of the fastest growing areas in Yucatán"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"An open development with mixed land use lots, where you can build anything from a residence to a commercial premises."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Paved main avenue 15m wide, public lighting, underground electricity"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Four roundabouts distributed in the development"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"High capital gains compounded by its proximity to Wayúum"</p>`
                 ]
         },
     }
@@ -487,7 +487,9 @@ function updateLotsMap(data, stageUriShow) {
             5: "Regular",
             6: "Avenida Esquina",
             7: "Avenida",
-            8: "Esquina"
+            8: "Esquina",
+            9: "Casa Club",
+            10: "Área verde/esquina"
             },
         en: {  
             1: "Premium",
@@ -497,15 +499,19 @@ function updateLotsMap(data, stageUriShow) {
             5: "Regular",
             6: "Corner Avenue ",
             7: "Avenue",
-            8: "Corner"
+            8: "Corner",
+            9: "Club House",
+            10: "Green area/corner"
             }, 
     };
 
-    if (investment == 'sorenna') {
+    if (investment == 'sorenna' || investment == 'wayuum') {
         colorStatus = {
             6: "fill: rgba(0, 102, 51); stroke: rgba(255, 255, 255); stroke-width: 1.2px;", // colorAvailableAvenueCorner
             7: "fill: rgba(47, 172, 102); stroke: rgba(255, 255, 255); stroke-width: 1.2px;",  // colorAvailableAvenue
             8: "fill: rgba(136, 194, 117); stroke: rgba(255, 255, 255); stroke-width: 1.2px;",  // colorAvailableCorner
+            9: "fill: rgba(0, 102, 51); stroke: rgba(255, 255, 255); stroke-width: 1.2px;",
+            10: "fill: rgba(136, 194, 117); stroke: rgba(255, 255, 255); stroke-width: 1.2px;",
         };
         colorStatusDefault = "fill: rgba(183 245 162); stroke: rgba(255, 255, 255); stroke-width: 1.2px;"; // colorAvailableRegular
         
