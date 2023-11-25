@@ -150,14 +150,14 @@
             ],
             
             en : [
-                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"<b>THE FIRST COMMUNITY</b> planned in Chicxulub, Yucatán. <b>PERFECT BALANCE</b> between the city's infrastructure."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"<b>THE FIRST COMMUNITY</b> planned in Chicxulub, Yucatán. <b>PERFECT BALANCE</b> between it and the infrastructure of a city."</p>`,
                 `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"<b>7 private residential areas</b> that allude to the endemic fauna: Balam (Jaguar), Toh (Momoto Bird), Kaab (Bee), Maax (Monkey), Haleb (Tepezcuintle), Weech (Armadillo) and Turix (Dragon-fly)"</p>`,
                 `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"An exclusive and secure residential development with all the amenities and more"</p>`,
                 `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"The perfect balance between nature and elegance."</p>`,
-                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Large commercial areas with interactive spaces between TRADE AND VEGETATION"</p>`,
-                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Inspired by the staggering and layout of the Mayan cities, <b>TO MAKE YOU FEEL LIKE A NATIVE OF THE REGION.</b>"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Large commercial areas with interactive spaces separated by VEGETATION."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Inspired by the layout of Mayan cities, <b>TO MAKE YOU FEEL LIKE A NATIVE OF THE REGION.</b>"</p>`,
                 `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"It will have numerous amenities in RECREATIONAL, FAMILY and SPORTS areas."</p>`,
-                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"LARGE ISLANDS DESIGNED FOR SHOPPING CENTERS, SUPERMARKETS, BANKS, HOSPITALS AND SCHOOLS."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"LARGE AREAS DESTINED FOR SHOPPING CENTERS, SUPERMARKETS, BANKS, HOSPITALS AND SCHOOLS."</p>`,
                 `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Each one will have a LARGE COMTEMPLATION PARK AND LAKE"</p>`,
                 `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Even your pets will have fun in our Peek Park"</p>`
                 ]
@@ -173,12 +173,12 @@
             ],
             
             en : [
-                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"<b>THE FIRST COMMUNITY</b> planned in Chicxulub, Yucatán. <b>PERFECT BALANCE</b> between the city's infrastructure."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"<b>THE FIRST COMMUNITY</b> planned in Chicxulub, Yucatán. <b>PERFECT BALANCE</b> between it and the infrastructure of a city."</p>`,
                 `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Close to the beach and close to the city, Sorenna is located in one of the fastest growing areas in Yucatán"</p>`,
                 `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"An open development with mixed land use lots, where you can build anything from a residence to a commercial premises."</p>`,
                 `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Paved main avenue 15m wide, public lighting, underground electricity"</p>`,
                 `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Four roundabouts distributed in the development"</p>`,
-                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"High capital gains compounded by its proximity to Wayúum"</p>`
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"High potential capital gains compounded by its proximity to Wayúum"</p>`
                 ]
         },
     }
