@@ -179,6 +179,33 @@
                 `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Paved main avenue 15m wide, public lighting, underground electricity"</p>`,
                 `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Four roundabouts distributed in the development"</p>`,
                 `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"High potential capital gains compounded by its proximity to Wayúum"</p>`
+            ]
+        },
+        mahal : {
+            es :[
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"La arquitectura contemporánea creará el entorno ideal para vivir el momento y disfrutar sin complicaciones"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Dividido en 4 etapas. Contará con Casa Club y 9 amenidades, en régimen de condominio."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Área comercial en el exterior de la privada, facilitando la comodidad y accesibilidad a todos los residentes."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Situada en una zona de alta demanda y creciente plusvalía"</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"Mahal Residencial Contemporánea, revoluciona todo lo que hay en la zona, ya que contará con <b>Plaza Agra</b>, un área comercial ubicada a las afueras de la privada, pensando en la comodidad de sus habitantes."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Motivo de acceso y salida con vigilancia 24/7, control de acceso para tu tranquilidad y la de tus cercanos."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Existen dos parques botánicos con: Espejos de agua, Andador, Mobiliario urbano, Paisajismo y Cajones de estacionamiento"</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"El Parque de usos multiples tendrá: Mobiliario de juegos infantiles, Equipamiento urbano, Área para actividades al aire libre, Sanitarios, Elementos verticales distintivos que armonizan con el motivo de acceso y parques temáticos"</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"Al momento de planear Mahal se pensó en todos, por ello será full pet friendly, contando con equipamiento para tu mascota en toda la privada, ya que sabemos que es parte de la familia."</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"Existirán 2 Social Park que tendrán: Áreas sociales techadas, Cajones de estacionamiento, Paisajismo, Pista de tartán, Mobiliario y equipamiento urbano (bancas y mesas), Sanitarios y Andador"</p>`
+            ],
+            
+            en : [
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Contemporary architecture will create the ideal environment to live in the moment and enjoy without complications"</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"Divided into 4 stages. It will have a Club House and 9 amenities, in a condominium regime."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Commercial area outside the private area, facilitating comfort and accessibility for all residents."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Located in an area of high demand and growing capital gains"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Mahal Residencial Contemporánea revolutionizes everything in the area, since it will have <b>Plaza Agra</b>, a commercial area located on the outskirts of the private area, thinking about the comfort of its inhabitants."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Reason for access and exit with 24/7 surveillance, access control for your peace of mind and that of those close to you."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"There are two botanical parks with: Water mirrors, Walker, Urban furniture, Landscaping and Parking spaces"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"The multi-use Park will have: Children's play furniture, Urban equipment, Area for outdoor activities, Restrooms, Distinctive vertical elements that harmonize with the reason for access and theme parks"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"When planning Mahal, everyone was thought of, which is why it will be full pet friendly, with equipment for your pet throughout the private area, since we know that it is part of the family."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"There will be 2 Social Parks that will have: Covered social areas, Parking spaces, Landscaping, Tartan track, Urban furniture and equipment (benches and tables), Toilets and Walker"</p>`
                 ]
         },
     }
@@ -505,8 +532,10 @@ function updateLotsMap(data, stageUriShow) {
             }, 
     };
 
-    if (investment == 'sorenna' || investment == 'wayuum') {
+    if (investment == 'sorenna' || investment == 'wayuum' || investment == 'mahal') {
         colorStatus = {
+
+            1: "fill: rgba(47, 172, 102); stroke: rgba(255, 255, 255); stroke-width: 1.2px;", // colorAvailableAvenueCorner
             6: "fill: rgba(0, 102, 51); stroke: rgba(255, 255, 255); stroke-width: 1.2px;", // colorAvailableAvenueCorner
             7: "fill: rgba(47, 172, 102); stroke: rgba(255, 255, 255); stroke-width: 1.2px;",  // colorAvailableAvenue
             8: "fill: rgba(136, 194, 117); stroke: rgba(255, 255, 255); stroke-width: 1.2px;",  // colorAvailableCorner
@@ -635,6 +664,13 @@ function updateLotsMap(data, stageUriShow) {
         $(".distintive_entranceway").attr('data-bs-original-title', 'Distintive entranceway');
         $(".amenities").attr('data-bs-original-title', 'Amenities');
         $(".green_area").attr('data-bs-original-title', 'Green area');
+        $(".leyend_casa_club").text('CLUB HOUSE');
+        $(".leyend_pet_park").text('FULL PET FIENDLY PARK');
+        $(".leyend_botanic").text('BOTANIC PARK');
+        $(".leyend_social").text('SOCIAL PARK');
+        $(".leyend_multiple").text('MULTI-USE PARK');
+        $(".leyend_yoga").text('YOGA PARK');
+        $(".leyend_access").text('REASON FOR ACCESS');
     }
     $('[data-bs-toggle="popover"]').popover();
     $(".loader-container").addClass('d-none');
