@@ -320,7 +320,7 @@ $(document).ready(function(){
 
     if (investment == ''){
         //! Para saber cantidad disponible por desarrollo.
-        let projects = ['lakuun', 'anthia', 'marela_life', 'marela_beach', 'marela_celestun', 'wayuum'];
+        let projects = ['lakuun', 'anthia', 'marela_life', 'marela_beach', 'marela_celestun', 'wayuum', 'mahal', 'sorenna', 'gran_telchac'];
         // console.log(projects);
         // let available_project = [];
    
@@ -410,6 +410,10 @@ $(document).ready(function(){
                         es: `<p class="fw-bold text-center">A solo 66 minutos del desarrollo.</p>`,
                         en: `<p class="fw-bold text-center">Only 66 minutes from the development.</p>`
                     },
+                    gran_telchac: {
+                        es: `<p class="fw-bold text-center">A solo 66 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Only 66 minutes from the development.</p>`
+                    },
                     sorenna: {
                         es: `<p class="fw-bold text-center">A solo 66 minutos del desarrollo.</p>`,
                         en: `<p class="fw-bold text-center">Only 66 minutes from the development.</p>`
@@ -470,6 +474,10 @@ $(document).ready(function(){
                         en: `<p class="fw-bold text-center">Just 38 minutes from the development.</p>`
                     },
                     mahal: {
+                        es: `<p class="fw-bold text-center">A solo 38 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 38 minutes from the development.</p>`
+                    },
+                    gran_telchac: {
                         es: `<p class="fw-bold text-center">A solo 38 minutos del desarrollo.</p>`,
                         en: `<p class="fw-bold text-center">Just 38 minutes from the development.</p>`
                     },
@@ -551,6 +559,10 @@ $(document).ready(function(){
                         es: `<p class="fw-bold text-center">A solo 15 minutos del desarrollo.</p>`,
                         en: `<p class="fw-bold text-center">Just 15 minutes away from the development.</p>`
                     },
+                    gran_telchac: {
+                        es: `<p class="fw-bold text-center">A solo 15 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 15 minutes away from the development.</p>`
+                    },
                     sorenna: {
                         es: `<p class="fw-bold text-center">A solo 15 minutos del desarrollo.</p>`,
                         en: `<p class="fw-bold text-center">Just 15 minutes away from the development.</p>`
@@ -609,6 +621,10 @@ $(document).ready(function(){
                         en: `<p class="fw-bold text-center">Just 83 minutes away from the development.</p>`
                     },
                     mahal: {
+                        es: `<p class="fw-bold text-center">A solo 83 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 83 minutes away from the development.</p>`
+                    },
+                    gran_telchac: {
                         es: `<p class="fw-bold text-center">A solo 83 minutos del desarrollo.</p>`,
                         en: `<p class="fw-bold text-center">Just 83 minutes away from the development.</p>`
                     },
@@ -694,6 +710,10 @@ $(document).ready(function(){
                         en: `<p class="fw-bold text-center">Just 20 minutes away from the development.</p>`
                     },
                     mahal: {
+                        es: `<p class="fw-bold text-center">A solo 20 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 20 minutes away from the development.</p>`
+                    },
+                    gran_telchac: {
                         es: `<p class="fw-bold text-center">A solo 20 minutos del desarrollo.</p>`,
                         en: `<p class="fw-bold text-center">Just 20 minutes away from the development.</p>`
                     },

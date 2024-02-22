@@ -196,16 +196,33 @@
             ],
             
             en : [
-                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Contemporary architecture will create the ideal environment to live in the moment and enjoy without complications"</p>`,
-                `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"Divided into 4 stages. It will have a Club House and 9 amenities, in a condominium regime."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Contemporary architecture will create the ideal environment to 'live the moment' and enjoy life without complications."</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"Divided into 4 stages. It will have a Club House and 9 amenities in a condominium regime."</p>`,
                 `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Commercial area outside the private area, facilitating comfort and accessibility for all residents."</p>`,
                 `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Located in an area of high demand and growing capital gains"</p>`,
-                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Mahal Residencial Contemporánea revolutionizes everything in the area, since it will have <b>Plaza Agra</b>, a commercial area located on the outskirts of the private area, thinking about the comfort of its inhabitants."</p>`,
-                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Reason for access and exit with 24/7 surveillance, access control for your peace of mind and that of those close to you."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Mahal Residencial Contemporánea revolutionizes everything in the area, since it will have <b>Plaza Agra</b>, a commercial area located on the outskirts of the 'privada' area, in consideration of the convenience for its inhabitants."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Entrance and exit with 24/7 surveillance, access control for your peace of mind and that of those close to you.."</p>`,
                 `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"There are two botanical parks with: Water mirrors, Walker, Urban furniture, Landscaping and Parking spaces"</p>`,
                 `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"The multi-use Park will have: Children's play furniture, Urban equipment, Area for outdoor activities, Restrooms, Distinctive vertical elements that harmonize with the reason for access and theme parks"</p>`,
-                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"When planning Mahal, everyone was thought of, which is why it will be full pet friendly, with equipment for your pet throughout the private area, since we know that it is part of the family."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"When planning Mahal, everyone was thought of, which is why it will be fully pet friendly, with equipment for your pet throughout the 'privada', since we know that the pet is part of the family."</p>`,
                 `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"There will be 2 Social Parks that will have: Covered social areas, Parking spaces, Landscaping, Tartan track, Urban furniture and equipment (benches and tables), Toilets and Walker"</p>`
+                ]
+        },
+        gran_telchac : {
+            es :[
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">Diseño arquitectónico inspirado en el “Yucatán Moderno”, buscando reflejar a sus residentes el sentimiento de estar en unas vacaciones permanentes.</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"Régimen de condominio conformado por 11 macro privadas, que contarán con servicios que superarán las necesidades básicas, como: energía eléctrica subterránea, alumbrado público, calles pavimentadas, circulación vial y pozos pluviales"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Además de las zonas residenciales, 9 hectáreas del plano que lo componen están destinadas para áreas comerciales, espacios que complementarán el <u>lifestyle</u>."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Situada en una zona de alta demanda y creciente plusvalía"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Cada privada tendrá un motivo de acceso, casa club, parques temáticos y un sub-régimen de condominio."</p>`
+            ],
+            
+            en : [
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">Architectural design inspired by the “Modern Yucatán”, seeking to reflect to its residents the feeling of being on a permanent vacation.</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"Condominium regime made up of 11 macro-areas (privadas), which will have services that will exceed basic needs, such as: underground electricity, public lighting, paved streets, road circulation and rainwater wells."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"In addition to the residential areas, 9 hectares of the plan that comprise it are destined for commercial areas, spaces that will complement the <u>lifestyle</u>."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Located in an area of high demand and growing capital gains"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Each 'private' will have an entranceway, clubhouse, theme parks and a condominium sub-regime"</p>`
                 ]
         },
     }
@@ -516,7 +533,8 @@ function updateLotsMap(data, stageUriShow) {
             7: "Avenida",
             8: "Esquina",
             9: "Casa Club",
-            10: "Área verde/esquina"
+            10: "Área verde/esquina",
+            11: "Lote esquina casa club"
             },
         en: {  
             1: "Premium",
@@ -528,11 +546,12 @@ function updateLotsMap(data, stageUriShow) {
             7: "Avenue",
             8: "Corner",
             9: "Club House",
-            10: "Green area/corner"
+            10: "Green area/corner",
+            11: "Club house corner lot"
             }, 
     };
 
-    if (investment == 'sorenna' || investment == 'wayuum' || investment == 'mahal') {
+    if (investment == 'sorenna' || investment == 'wayuum' || investment == 'mahal' || investment == 'gran_telchac') {
         colorStatus = {
 
             1: "fill: rgba(47, 172, 102); stroke: rgba(255, 255, 255); stroke-width: 1.2px;", // colorAvailableAvenueCorner
@@ -541,6 +560,7 @@ function updateLotsMap(data, stageUriShow) {
             8: "fill: rgba(136, 194, 117); stroke: rgba(255, 255, 255); stroke-width: 1.2px;",  // colorAvailableCorner
             9: "fill: rgba(0, 102, 51); stroke: rgba(255, 255, 255); stroke-width: 1.2px;",
             10: "fill: rgba(136, 194, 117); stroke: rgba(255, 255, 255); stroke-width: 1.2px;",
+            11: "fill: rgba(251, 219, 21); stroke: rgba(255, 255, 255); stroke-width: 1.2px;",
         };
         colorStatusDefault = "fill: rgba(183 245 162); stroke: rgba(255, 255, 255); stroke-width: 1.2px;"; // colorAvailableRegular
         
