@@ -225,6 +225,19 @@
                 `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Each 'private' will have an entranceway, clubhouse, theme parks and a condominium sub-regime"</p>`
                 ]
         },
+        costa_flamingo : {
+            es :[
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">Costa Flamingo es un punto de conexión con la tierra, renovación y pureza, son el centro de las amplias experiencias que este oasis tiene para ofrecer.</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"Conformado por 54 lotes frente a la playa, sin régimen de condominio"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Este destino es ideal para descansar, acampar, observar la naturaleza junto a la especies de la región."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Exclusivo Beach Club con membresía vitalicia incluida."</p>`],
+            
+            en : [
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">Costa Flamingo es un punto de conexión con la tierra, renovación y pureza, son el centro de las amplias experiencias que este oasis tiene para ofrecer.</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"Conformado por 54 lotes frente a la playa, sin régimen de condominio"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Este destino es ideal para descansar, acampar, observar la naturaleza junto a la especies de la región."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Exclusivo Beach Club con membresía vitalicia incluida."</p>`]
+        },
     }
 
     let investment = array[4];
