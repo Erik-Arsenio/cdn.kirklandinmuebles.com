@@ -227,16 +227,29 @@
         },
         costa_flamingo : {
             es :[
-                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">Costa Flamingo es un punto de conexión con la tierra, renovación y pureza, son el centro de las amplias experiencias que este oasis tiene para ofrecer.</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-success-emphasis">Costa Flamingo es un punto de conexión con la tierra, renovación y pureza, son el centro de las amplias experiencias que este oasis tiene para ofrecer.</p>`,
                 `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"Conformado por 54 lotes frente a la playa, sin régimen de condominio"</p>`,
                 `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Este destino es ideal para descansar, acampar, observar la naturaleza junto a la especies de la región."</p>`,
                 `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Exclusivo Beach Club con membresía vitalicia incluida."</p>`],
             
             en : [
-                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">Costa Flamingo es un punto de conexión con la tierra, renovación y pureza, son el centro de las amplias experiencias que este oasis tiene para ofrecer.</p>`,
-                `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"Conformado por 54 lotes frente a la playa, sin régimen de condominio"</p>`,
-                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Este destino es ideal para descansar, acampar, observar la naturaleza junto a la especies de la región."</p>`,
-                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Exclusivo Beach Club con membresía vitalicia incluida."</p>`]
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">Costa Flamingo is a point of connection with the earth, renewal and purity, are the center of the extensive experiences that this oasis has to offer.</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"Consisting of 54 beachfront lots, without condominium regime"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"This destination is ideal for resting, camping, observing nature along with the species of the region."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Exclusive Beach Club with lifetime membership included."</p>`]
+        },
+        galiana : {
+            es :[
+                `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"Un espacio planeado para el sano desarrollo familiar de una comunidad conectada a las mejores ubicaciones, servicios y lugares de Mérida.</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"Una oportunidad única para desarrollar en un espacio privado, exclusivo y con una ubicación envidiable, a minutos de hermosas playas del Norte de Mérida."</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"Distribución estratégica que permite a todos los habitantes disfrutar de una vista y ubicación preferencial, viendo siempre a espacios verdes o amenidades."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Casa Club con barra de servicio, alberca con canal de nado y GYM equipado."</p>`],
+            
+            en : [
+                `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"A space planned for the healthy family development of a community connected to the best locations, services and places in Mérida.</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"A unique opportunity to develop in a private, exclusive space with an enviable location, minutes from beautiful beaches in the North of Mérida."</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"Strategic distribution that allows all inhabitants to enjoy a preferential view and location, always seeing green spaces or amenities."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Club House with service bar, pool with swimming channel and equipped GYM."</p>`]
         },
     }
 
