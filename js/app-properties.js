@@ -233,8 +233,8 @@
                 `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Exclusivo Beach Club con membresía vitalicia incluida."</p>`],
             
             en : [
-                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">Costa Flamingo is a point of connection with the earth, renewal and purity, are the center of the extensive experiences that this oasis has to offer.</p>`,
-                `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"Consisting of 54 beachfront lots, without condominium regime"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">Costa Flamingo is a point of connection with the earth, renewal and purity, are the center of the extensive experiences that this oasis has to offerCosta Flamingo is a point of connection with the land. Renewal and purity are the center of the extensive experiences that this oasis has to offer..</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"Consists of 54 beachfront lots, without condominium regime."</p>`,
                 `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"This destination is ideal for resting, camping, observing nature along with the species of the region."</p>`,
                 `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Exclusive Beach Club with lifetime membership included."</p>`]
         },
@@ -250,6 +250,21 @@
                 `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"A unique opportunity to develop in a private, exclusive space with an enviable location, minutes from beautiful beaches in the North of Mérida."</p>`,
                 `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"Strategic distribution that allows all inhabitants to enjoy a preferential view and location, always seeing green spaces or amenities."</p>`,
                 `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Club House with service bar, pool with swimming channel and equipped GYM."</p>`]
+        },
+        nodo : {
+            es :[
+                `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"<b>Ubicacion Estratégica</b>, cercana a importantes vías de comunicación marítima, terrestre y aérea, lo convierten en un punto estratégico para concebir negocios comerciales.</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"Esta ubicación permite un fácil acceso a una importante red de vías de comunicación, brindando la posibilidad para establecer conexiones efectivas con otros puntos estratégicos del estado, del país y de todo el mundo."</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"Además, la zona se encuentra en una constante expansión y desarrollo, lo que asegura un futuro que es prometedor para cualquier negocio o inversión que se establezca en esta región."</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-success-emphasis">Cerca de NODO se localiza el Puerto de Altura de Progreso, el cual provee infraestructura y servicios necesarios para las operaciones comerciales."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"El puerto cuenta con muelles para el atraque de embarcaciones de diferentes tamaños y dispone de instalaciones para realizar la carga, descarga y almacenamiento de mercancías."</p>`],
+            
+            en : [
+                `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"<b>Strategic Location</b>, close to important maritime, land and air communication routes, make it a strategic point to conceive commercial businesses.</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"This location allows easy access to an important network of communication routes, providing the possibility of establishing effective connections with other strategic points in the state, the country and around the world."</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"Furthermore, the area is in constant expansion and development, which ensures a future that is promising for any business or investment that is established in this region."</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"Near NODO is the Progreso Altura Port, which provides infrastructure and services necessary for commercial operations."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"The port has docks for docking vessels of different sizes and has facilities for loading, unloading and storing goods."</p>`]
         },
     }
 
