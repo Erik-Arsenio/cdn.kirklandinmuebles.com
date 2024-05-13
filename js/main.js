@@ -318,9 +318,9 @@ $(document).ready(function(){
         return suma;
     }
 
-    if (investment == ''){
+    if (investment == '' || investment == 'all'){
         //! Para saber cantidad disponible por desarrollo.
-        let projects = ['lakuun', 'anthia', 'marela_life', 'marela_beach', 'marela_celestun', 'wayuum', 'mahal', 'sorenna', 'gran_telchac'];
+        let projects = ['all', 'lakuun', 'anthia', 'marela_life', 'marela_beach', 'marela_celestun', 'wayuum', 'mahal', 'sorenna', 'gran_telchac'];
         // console.log(projects);
         // let available_project = [];
    
@@ -362,7 +362,7 @@ $(document).ready(function(){
     $(".btn-investments").on("click", function(e) {
         // Globals
         e.stopImmediatePropagation();
-        if (investment == ''){
+        if (investment == '' || investment == 'all'){
             let url_page = '';
             let url_card = $(this).attr('data-href');
             let url_img = $(this).closest('.carousel').attr('data-href');
@@ -421,6 +421,14 @@ $(document).ready(function(){
                     sorenna: {
                         es: `<p class="fw-bold text-center">A solo 66 minutos del desarrollo.</p>`,
                         en: `<p class="fw-bold text-center">Only 66 minutes from the development.</p>`
+                    },
+                    galiana: {
+                        es: `<p class="fw-bold text-center">A solo 20 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 20 minutes away from the development.</p>`
+                    },
+                    nodo: {
+                        es: `<p class="fw-bold text-center">A solo 20 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 20 minutes away from the development.</p>`
                     },
                     marela_beach: {
                         es: `<p class="fw-bold text-center">A solo 77 minutos del desarrollo.</p>`,
@@ -492,6 +500,14 @@ $(document).ready(function(){
                     sorenna: {
                         es: `<p class="fw-bold text-center">A solo 38 minutos del desarrollo.</p>`,
                         en: `<p class="fw-bold text-center">Just 38 minutes from the development.</p>`
+                    },
+                    galiana: {
+                        es: `<p class="fw-bold text-center">A solo 20 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 20 minutes away from the development.</p>`
+                    },
+                    nodo: {
+                        es: `<p class="fw-bold text-center">A solo 20 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 20 minutes away from the development.</p>`
                     },
                     marela_beach: {
                         es: `<p class="fw-bold text-center">A solo 52 minutos del desarrollo.</p>`,
@@ -579,6 +595,14 @@ $(document).ready(function(){
                         es: `<p class="fw-bold text-center">A solo 15 minutos del desarrollo.</p>`,
                         en: `<p class="fw-bold text-center">Just 15 minutes away from the development.</p>`
                     },
+                    galiana: {
+                        es: `<p class="fw-bold text-center">A solo 20 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 20 minutes away from the development.</p>`
+                    },
+                    nodo: {
+                        es: `<p class="fw-bold text-center">A solo 20 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 20 minutes away from the development.</p>`
+                    },
                     marela_beach: {
                         es: `<p class="fw-bold text-center">A solo 87 minutos del desarrollo.</p>`,
                         en: `<p class="fw-bold text-center">Just 87 minutes away from the development.</p>`
@@ -647,6 +671,14 @@ $(document).ready(function(){
                     sorenna: {
                         es: `<p class="fw-bold text-center">A solo 83 minutos del desarrollo.</p>`,
                         en: `<p class="fw-bold text-center">Just 83 minutes away from the development.</p>`
+                    },
+                    galiana: {
+                        es: `<p class="fw-bold text-center">A solo 20 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 20 minutes away from the development.</p>`
+                    },
+                    nodo: {
+                        es: `<p class="fw-bold text-center">A solo 20 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 20 minutes away from the development.</p>`
                     },
                     marela_beach: {
                         es: `<p class="fw-bold text-center">A solo 5 minutos del desarrollo.</p>`,
@@ -741,6 +773,14 @@ $(document).ready(function(){
                         es: `<p class="fw-bold text-center">A solo 20 minutos del desarrollo.</p>`,
                         en: `<p class="fw-bold text-center">Just 20 minutes away from the development.</p>`
                     },
+                    galiana: {
+                        es: `<p class="fw-bold text-center">A solo 20 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 20 minutes away from the development.</p>`
+                    },
+                    nodo: {
+                        es: `<p class="fw-bold text-center">A solo 20 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 20 minutes away from the development.</p>`
+                    },
                     marela_beach: {
                         es: `<p class="fw-bold text-center">A solo 45 minutos del desarrollo.</p>`,
                         en: `<p class="fw-bold text-center">Just 45 minutes away from the development.</p>`
@@ -784,7 +824,7 @@ $(document).ready(function(){
         $('#promoModalContent, #promoModalImages, #promoModalLabel, #promoModalDistance').empty();
         $('#promoModalLabel').append(promo_Modal[locationId].title[lang] );
         $('#promoModalImages').append(promo_Modal[locationId].images );
-        if(investment != '' ) { $('#promoModalDistance').append(promo_Modal[locationId].distance[investment][lang]);}
+        if(investment != '' || investment == 'all' ) { $('#promoModalDistance').append(promo_Modal[locationId].distance[investment][lang]);}
         $('#promoModalContent').append(promo_Modal[locationId].content[lang]);
         if (deviceMovil) { 
             $('.subtle').removeClass('fs-5').addClass('small');

@@ -270,8 +270,10 @@
 
     let investment = array[4];
 
-
-    $(".promo").empty().html(promoHome[investment][lang][0]);
+    if (investment != 'all') {
+        
+        $(".promo").empty().html(promoHome[investment][lang][0]);
+    }
     let count = 1;
 
     function changeTextPromo(){
