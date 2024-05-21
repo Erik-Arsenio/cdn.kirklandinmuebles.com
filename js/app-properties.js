@@ -256,7 +256,7 @@
                 `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"<b>Ubicacion Estratégica</b>, cercana a importantes vías de comunicación marítima, terrestre y aérea, lo convierten en un punto estratégico para concebir negocios comerciales.</p>`,
                 `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"Esta ubicación permite un fácil acceso a una importante red de vías de comunicación, brindando la posibilidad para establecer conexiones efectivas con otros puntos estratégicos del estado, del país y de todo el mundo."</p>`,
                 `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"Además, la zona se encuentra en una constante expansión y desarrollo, lo que asegura un futuro que es prometedor para cualquier negocio o inversión que se establezca en esta región."</p>`,
-                `<p class="fs-5 fst-italic fw-bold text-success-emphasis">Cerca de NODO se localiza el Puerto de Altura de Progreso, el cual provee infraestructura y servicios necesarios para las operaciones comerciales."</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"Cerca de NODO se localiza el Puerto de Altura de Progreso, el cual provee infraestructura y servicios necesarios para las operaciones comerciales."</p>`,
                 `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"El puerto cuenta con muelles para el atraque de embarcaciones de diferentes tamaños y dispone de instalaciones para realizar la carga, descarga y almacenamiento de mercancías."</p>`],
             
             en : [
@@ -265,6 +265,21 @@
                 `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"Furthermore, the area is in constant expansion and development, which ensures a future that is promising for any business or investment that is established in this region."</p>`,
                 `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"Near NODO is the Progreso Altura Port, which provides infrastructure and services necessary for commercial operations."</p>`,
                 `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"The port has docks for docking vessels of different sizes and has facilities for loading, unloading and storing goods."</p>`]
+        },
+        caoba : {
+            es :[
+                `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"Un espacio planeado para el sano desarrollo familiar de una comunidad conectada a las mejores ubicaciones, servicios y lugares de Mérida.</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"Una oportunidad única para desarrollar en un espacio privado, exclusivo y con una ubicación envidiable, a minutos de hermosas playas del Norte de Mérida."</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"Distribución estratégica que permite a todos los habitantes disfrutar de una vista y ubicación preferencial, viendo siempre a espacios verdes o amenidades."</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"Contará con diversos parques, canchas de usos multiples y zonas de esparcimiento en el desarrollo."</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"Alta conectividad a servicios municipales, escuelas y universidades; supermercados, zonas de entretenimiento, parques y transporte urbano."</p>`],
+            
+            en : [
+                `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"A space planned for the healthy family development of a community connected to the best locations, services and places in Mérida.</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"A unique opportunity to develop in a private, exclusive space with an enviable location, minutes from beautiful beaches in the North of Mérida."</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"Strategic distribution that allows all inhabitants to enjoy a preferential view and location, always seeing green spaces or amenities."</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"It will have various parks, multi-use fields and recreation areas in the development."</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"High connectivity to municipal services, schools and universities; supermarkets, entertainment areas, parks and urban transportation."</p>`]
         },
     }
 

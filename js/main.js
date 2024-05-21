@@ -430,6 +430,10 @@ $(document).ready(function(){
                         es: `<p class="fw-bold text-center">A solo 20 minutos del desarrollo.</p>`,
                         en: `<p class="fw-bold text-center">Just 20 minutes away from the development.</p>`
                     },
+                    caoba: {
+                        es: `<p class="fw-bold text-center">A solo 20 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 20 minutes away from the development.</p>`
+                    },
                     marela_beach: {
                         es: `<p class="fw-bold text-center">A solo 77 minutos del desarrollo.</p>`,
                         en: `<p class="fw-bold text-center">Only 77 minutes from the development.</p>`
@@ -506,6 +510,10 @@ $(document).ready(function(){
                         en: `<p class="fw-bold text-center">Just 20 minutes away from the development.</p>`
                     },
                     nodo: {
+                        es: `<p class="fw-bold text-center">A solo 20 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 20 minutes away from the development.</p>`
+                    },
+                    caoba: {
                         es: `<p class="fw-bold text-center">A solo 20 minutos del desarrollo.</p>`,
                         en: `<p class="fw-bold text-center">Just 20 minutes away from the development.</p>`
                     },
@@ -603,6 +611,10 @@ $(document).ready(function(){
                         es: `<p class="fw-bold text-center">A solo 20 minutos del desarrollo.</p>`,
                         en: `<p class="fw-bold text-center">Just 20 minutes away from the development.</p>`
                     },
+                    caoba: {
+                        es: `<p class="fw-bold text-center">A solo 20 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 20 minutes away from the development.</p>`
+                    },
                     marela_beach: {
                         es: `<p class="fw-bold text-center">A solo 87 minutos del desarrollo.</p>`,
                         en: `<p class="fw-bold text-center">Just 87 minutes away from the development.</p>`
@@ -677,6 +689,10 @@ $(document).ready(function(){
                         en: `<p class="fw-bold text-center">Just 20 minutes away from the development.</p>`
                     },
                     nodo: {
+                        es: `<p class="fw-bold text-center">A solo 20 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 20 minutes away from the development.</p>`
+                    },
+                    caoba: {
                         es: `<p class="fw-bold text-center">A solo 20 minutos del desarrollo.</p>`,
                         en: `<p class="fw-bold text-center">Just 20 minutes away from the development.</p>`
                     },
@@ -778,6 +794,10 @@ $(document).ready(function(){
                         en: `<p class="fw-bold text-center">Just 20 minutes away from the development.</p>`
                     },
                     nodo: {
+                        es: `<p class="fw-bold text-center">A solo 20 minutos del desarrollo.</p>`,
+                        en: `<p class="fw-bold text-center">Just 20 minutes away from the development.</p>`
+                    },
+                    caoba: {
                         es: `<p class="fw-bold text-center">A solo 20 minutos del desarrollo.</p>`,
                         en: `<p class="fw-bold text-center">Just 20 minutes away from the development.</p>`
                     },
