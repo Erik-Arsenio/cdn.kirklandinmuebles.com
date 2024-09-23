@@ -281,6 +281,23 @@
                 `<p class="fs-5 fst-italic fw-bold text-success-emphasis">"It will have various parks, multi-use fields and recreation areas in the development."</p>`,
                 `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"High connectivity to municipal services, schools and universities; supermarkets, entertainment areas, parks and urban transportation."</p>`]
         },
+        salama : {
+            es :[
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">Diseño arquitectónico inspirado en el “Yucatán Moderno”, buscando reflejar a sus residentes el sentimiento de estar en unas vacaciones permanentes.</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"Régimen de condominio conformado por 11 macro privadas, que contarán con servicios que superarán las necesidades básicas, como: energía eléctrica subterránea, alumbrado público, calles pavimentadas, circulación vial y pozos pluviales"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Además de las zonas residenciales, 9 hectáreas del plano que lo componen están destinadas para áreas comerciales, espacios que complementarán el <u>lifestyle</u>."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Situada en una zona de alta demanda y creciente plusvalía"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Cada privada tendrá un motivo de acceso, casa club, parques temáticos y un sub-régimen de condominio."</p>`
+            ],
+            
+            en : [
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">Architectural design inspired by the “Modern Yucatán”, seeking to reflect to its residents the feeling of being on a permanent vacation.</p>`,
+                `<p class="fs-5 fst-italic fw-bold text-primary-emphasis">"Condominium regime made up of 11 macro-areas (privadas), which will have services that will exceed basic needs, such as: underground electricity, public lighting, paved streets, road circulation and rainwater wells."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"In addition to the residential areas, 9 hectares of the plan that comprise it are destined for commercial areas, spaces that will complement the <u>lifestyle</u>."</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-primary-emphasis">"Located in an area of high demand and growing capital gains"</p>`,
+                `<p class="fs-4 fst-italic fw-bold text-success-emphasis">"Each 'private' will have an entranceway, clubhouse, theme parks and a condominium sub-regime"</p>`
+                ]
+        },
     }
 
     let investment = array[4];
@@ -573,252 +590,280 @@
             $(".loader-container-img").addClass('d-none');
             $(".load-image").removeClass('d-none');
 
-function updateLotsMap(data, stageUriShow) {
-    console.log('Desarrollo- ' + investment)
-    let selectionContainer = "";
-    const colorNotAvailable = "fill: rgba(228, 22, 66); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
-    const colorReserved = "fill: rgba(57, 249, 230); stroke: rgba(255, 255, 255); stroke-width: 1.2px;"
-    let colorStatus = {};
-    let colorStatusDefault = "";
-    let categoryName =  {
-        es: { 
-            1: "Premium",
-            2: "Plus",
-            3: "Estandar",
-            4: "Frente al mar", 
-            5: "Regular",
-            6: "Avenida Esquina",
-            7: "Avenida",
-            8: "Esquina",
-            9: "Casa Club",
-            10: "Área verde/esquina",
-            11: "Lote esquina casa club"
-            },
-        en: {  
-            1: "Premium",
-            2: "Plus",
-            3: "Standard",
-            4: "Beachfront",
-            5: "Regular",
-            6: "Corner Avenue ",
-            7: "Avenue",
-            8: "Corner",
-            9: "Club House",
-            10: "Green area/corner",
-            11: "Club house corner lot"
-            }, 
-    };
-
-    if (investment == 'sorenna' || investment == 'wayuum' || investment == 'mahal' || investment == 'gran_telchac') {
-        colorStatus = {
-
-            1: "fill: rgba(47, 172, 102); stroke: rgba(255, 255, 255); stroke-width: 1.2px;", // colorAvailableAvenueCorner
-            6: "fill: rgba(0, 102, 51); stroke: rgba(255, 255, 255); stroke-width: 1.2px;", // colorAvailableAvenueCorner
-            7: "fill: rgba(47, 172, 102); stroke: rgba(255, 255, 255); stroke-width: 1.2px;",  // colorAvailableAvenue
-            8: "fill: rgba(136, 194, 117); stroke: rgba(255, 255, 255); stroke-width: 1.2px;",  // colorAvailableCorner
-            9: "fill: rgba(0, 102, 51); stroke: rgba(255, 255, 255); stroke-width: 1.2px;",
-            10: "fill: rgba(136, 194, 117); stroke: rgba(255, 255, 255); stroke-width: 1.2px;",
-            11: "fill: rgba(251, 219, 21); stroke: rgba(255, 255, 255); stroke-width: 1.2px;",
+    function updateLotsMap(data, stageUriShow) {
+        console.log('Desarrollo- ' + investment)
+        let selectionContainer = "";
+        const colorNotAvailable = "fill: rgba(228, 22, 66); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
+        const colorReserved = "fill: rgba(57, 249, 230); stroke: rgba(255, 255, 255); stroke-width: 1.2px;"
+        let colorStatus = {};
+        let colorStatusDefault = "";
+        let categoryName =  {
+            es: { 
+                1: "Premium",
+                2: "Plus",
+                3: "Estandar",
+                4: "Frente al mar", 
+                5: "Regular",
+                6: "Avenida Esquina",
+                7: "Avenida",
+                8: "Esquina",
+                9: "Casa Club",
+                10: "Área verde/esquina",
+                11: "Lote esquina casa club"
+                },
+            en: {  
+                1: "Premium",
+                2: "Plus",
+                3: "Standard",
+                4: "Beachfront",
+                5: "Regular",
+                6: "Corner Avenue ",
+                7: "Avenue",
+                8: "Corner",
+                9: "Club House",
+                10: "Green area/corner",
+                11: "Club house corner lot"
+                }, 
         };
-        colorStatusDefault = "fill: rgba(183 245 162); stroke: rgba(255, 255, 255); stroke-width: 1.2px;"; // colorAvailableRegular
-        
-    } else {
 
-        colorStatus = {
-            1: "fill: rgba(5, 110, 57); stroke: rgba(255, 255, 255); stroke-width: 1.2px;", // colorAvailablePremium
-            2: "fill: rgba(47, 172, 102); stroke: rgba(255, 255, 255); stroke-width: 1.2px;",  // colorAvailablePlus
-        };
-        colorStatusDefault = "fill: rgba(136, 194, 117); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
-        
-    }
+        if (investment == 'sorenna' || investment == 'wayuum' || investment == 'mahal' || investment == 'gran_telchac') {
+            colorStatus = {
 
-    let available = [0,0,0,0,0];
-    let lot = '';
-    if (lang == 'es') {
-        lot = 'Lote';
-    } else if (lang == 'en'){
-        lot = 'Lot';
-        data.labels.available = 'Available';
-        data.labels.not_available = 'Sold';
-        data.labels.reserved = 'Reserved';
-        data.labels.category_name = 'Type';
-        data.labels.status_name = 'Status';
-        data.labels.area = 'Area';
-        data.labels.price = 'Price';
-        data.labels.financing = 'Financing';
-        data.labels.hitch = 'Down payment';
-    }
+                1: "fill: rgba(47, 172, 102); stroke: rgba(255, 255, 255); stroke-width: 1.2px;", // colorAvailableAvenueCorner
+                6: "fill: rgba(0, 102, 51); stroke: rgba(255, 255, 255); stroke-width: 1.2px;", // colorAvailableAvenueCorner
+                7: "fill: rgba(47, 172, 102); stroke: rgba(255, 255, 255); stroke-width: 1.2px;",  // colorAvailableAvenue
+                8: "fill: rgba(136, 194, 117); stroke: rgba(255, 255, 255); stroke-width: 1.2px;",  // colorAvailableCorner
+                9: "fill: rgba(0, 102, 51); stroke: rgba(255, 255, 255); stroke-width: 1.2px;",
+                10: "fill: rgba(136, 194, 117); stroke: rgba(255, 255, 255); stroke-width: 1.2px;",
+                11: "fill: rgba(251, 219, 21); stroke: rgba(255, 255, 255); stroke-width: 1.2px;",
+            };
+            colorStatusDefault = "fill: rgba(183 245 162); stroke: rgba(255, 255, 255); stroke-width: 1.2px;"; // colorAvailableRegular
+            
+        } else {
 
-    for (let stages = stageUriShow; stages <= stageUriShow; stages++) {
+            colorStatus = {
+                1: "fill: rgba(5, 110, 57); stroke: rgba(255, 255, 255); stroke-width: 1.2px;", // colorAvailablePremium
+                2: "fill: rgba(47, 172, 102); stroke: rgba(255, 255, 255); stroke-width: 1.2px;",  // colorAvailablePlus
+            };
+            colorStatusDefault = "fill: rgba(136, 194, 117); stroke: rgba(255, 255, 255); stroke-width: 1.2px;";
+            
+        }
 
-        $('g[id="stage_' + stages + '"] >[class*="mapsvg-region"]').each(function(){
+        let available = [0,0,0,0,0];
+        let lot = '';
+        if (lang == 'es') {
+            lot = 'Lote';
+        } else if (lang == 'en'){
+            lot = 'Lot';
+            data.labels.available = 'Available';
+            data.labels.not_available = 'Sold';
+            data.labels.reserved = 'Reserved';
+            data.labels.category_name = 'Type';
+            data.labels.status_name = 'Status';
+            data.labels.area = 'Area';
+            data.labels.price = 'Price';
+            data.labels.financing = 'Financing';
+            data.labels.hitch = 'Down payment';
+        }
 
-            let name_svg = $(this).attr('id');
-            let stageId = Number($(this).closest("g").prop("id").substr(-1, 1));
-            let key = searchIndexId(data, name_svg, stageId);
+        for (let stages = stageUriShow; stages <= stageUriShow; stages++) {
 
-            if (stages == stageId && data.properties[key]['name'] == name_svg) {
+            $('g[id="stage_' + stages + '"] >[class*="mapsvg-region"]').each(function(){
 
-                if (data.properties[key].status_id == 0) {
-                    $(this).attr('style', colorNotAvailable);
-                } else if (data.properties[key].status_id == 1 || data.properties[key].status_id == 2) {
+                let name_svg = $(this).attr('id');
+                let stageId = Number($(this).closest("g").prop("id").substr(-1, 1));
+                let key = searchIndexId(data, name_svg, stageId);
 
-                    data.properties[key].status_id == 1 ? available[stages] = available[stages] + 1 : available[stages] = available[stages];
-                    
-                    $(this).attr('style', colorStatus[data.properties[key].category_id] || colorStatusDefault);
-                    
-                    data.properties[key].status_id == 2 ? $(this).attr('style', colorReserved) : '';
+                if (stages == stageId && data.properties[key]['name'] == name_svg) {
 
-                    $('g[data-id="stage_' + stages + '"]').children('[data-id="' + name_svg + '"]').attr('data-bs-toggle', "popover");
-                    if(!deviceMovil) {
-                        $('g[data-id="stage_' + stages + '"]').children('[data-id="' + name_svg + '"]').attr('data-bs-trigger', "hover");
-                    } else {
-                        $('[data-id="' + name_svg + '"]').attr('data-bs-trigger', "focus");
-                    }
-                    
-                    $('g[data-id="stage_' + stages + '"]').children('[data-id="' + name_svg + '"]').attr('data-bs-placement', "auto");
-                    $('g[data-id="stage_' + stages + '"]').children('[data-id="' + name_svg + '"]').attr('title', " ").attr('title', `<b>${lot}</b> - ` + name_svg);
-                    $('g[data-id="stage_' + stages + '"]').children('[data-id="' + name_svg + '"]').attr('data-bs-html', " ").attr('data-bs-html', "true" );
-                    selectionContainer = ``;
-                    if (data.properties[key].category_id !== '') {
-                        data.properties[key].category_name = categoryName[lang][data.properties[key].category_id]
-                        selectionContainer = selectionContainer.concat(`<b>${data.labels.category_name}</b>: ${(data.properties[key].category_name)}<br>`);
-                    }
-                    if (data.properties[key].status_id !== '') {
-                        if (lang == 'es') {
-                            if (data.properties[key].status_id == 0) {
-                                data.properties[key].status_name = 'Vendido';
-                            } else if (data.properties[key].status_id == 1) {
-                                data.properties[key].status_name = 'Disponible';
-                            } else if (data.properties[key].status_id == 2) {
-                                data.properties[key].status_name = 'Reservado';
-                            }
-                        } else if (lang == 'en'){
-                            if (data.properties[key].status_id == 0) {
-                                data.properties[key].status_name = 'Sold';
-                            } else if (data.properties[key].status_id == 1) {
-                                data.properties[key].status_name = 'Available';
-                            } else if (data.properties[key].status_id == 2) {
-                                data.properties[key].status_name = 'Reserved';
-                            }
+                    if (data.properties[key].status_id == 0) {
+                        $(this).attr('style', colorNotAvailable);
+                    } else if (data.properties[key].status_id == 1 || data.properties[key].status_id == 2) {
 
+                        data.properties[key].status_id == 1 ? available[stages] = available[stages] + 1 : available[stages] = available[stages];
+                        
+                        $(this).attr('style', colorStatus[data.properties[key].category_id] || colorStatusDefault);
+                        
+                        data.properties[key].status_id == 2 ? $(this).attr('style', colorReserved) : '';
+
+                        $('g[data-id="stage_' + stages + '"]').children('[data-id="' + name_svg + '"]').attr('data-bs-toggle', "popover");
+                        if(!deviceMovil) {
+                            $('g[data-id="stage_' + stages + '"]').children('[data-id="' + name_svg + '"]').attr('data-bs-trigger', "hover");
+                        } else {
+                            $('[data-id="' + name_svg + '"]').attr('data-bs-trigger', "focus");
                         }
-                        selectionContainer = selectionContainer.concat(`<b>${data.labels.status_name}</b>: ${data.properties[key].status_name}<br>`);
-                    }
-                    if (data.properties[key].area !== '') {
-                        selectionContainer = selectionContainer.concat(`<b>${data.labels.area}</b>: ${data.properties[key].area} m<sup>2</sup><br>`);
-                    }
-                    if (data.properties[key].price !== '') {
-                        selectionContainer = selectionContainer.concat(`<b>${data.labels.price}</b>: ${(parseInt((Number(data.properties[key].area) * data.properties[key].price))).toLocaleString('en-EN')} MXN<br>`);
-                    }
-                    if (data.properties[key].financing !== '') {
-                        let upto = '';
-                        let upto_type = '';
-                        if (lang == 'es') {
-                            upto = 'Hasta';
-                            upto_type = 'MSI';
-                        } else if (lang == 'en'){
-                            upto = 'Up to';
-                            upto_type = 'months';
+                        
+                        $('g[data-id="stage_' + stages + '"]').children('[data-id="' + name_svg + '"]').attr('data-bs-placement', "auto");
+                        $('g[data-id="stage_' + stages + '"]').children('[data-id="' + name_svg + '"]').attr('title', " ").attr('title', `<b>${lot}</b> - ` + name_svg);
+                        $('g[data-id="stage_' + stages + '"]').children('[data-id="' + name_svg + '"]').attr('data-bs-html', " ").attr('data-bs-html', "true" );
+                        selectionContainer = ``;
+                        if (data.properties[key].category_id !== '') {
+                            data.properties[key].category_name = categoryName[lang][data.properties[key].category_id]
+                            selectionContainer = selectionContainer.concat(`<b>${data.labels.category_name}</b>: ${(data.properties[key].category_name)}<br>`);
                         }
-                        selectionContainer = selectionContainer.concat(`<b>${data.labels.financing}</b>: ${upto} ${data.properties[key].financ} ${upto_type}<br>`);
-                    }
-                    if (data.properties[key].enganche !== '') {
-                        selectionContainer = selectionContainer.concat(`<b>${data.labels.hitch}</b>: ${data.properties[key].enganche}<br>`);
-                    }
-                    if (data.properties[key].description !== '') {
-                        selectionContainer = selectionContainer.concat(`<b>${data.labels.description}</b>: ${data.properties[key].description}<br>`);
-                    }
-                    $('g[data-id="stage_' + stages + '"]').children('[data-id="' + name_svg + '"]').attr('data-bs-content', " ").attr('data-bs-content', selectionContainer);
-                } 
-            }
-        });
-    }
+                        if (data.properties[key].status_id !== '') {
+                            if (lang == 'es') {
+                                if (data.properties[key].status_id == 0) {
+                                    data.properties[key].status_name = 'Vendido';
+                                } else if (data.properties[key].status_id == 1) {
+                                    data.properties[key].status_name = 'Disponible';
+                                } else if (data.properties[key].status_id == 2) {
+                                    data.properties[key].status_name = 'Reservado';
+                                }
+                            } else if (lang == 'en'){
+                                if (data.properties[key].status_id == 0) {
+                                    data.properties[key].status_name = 'Sold';
+                                } else if (data.properties[key].status_id == 1) {
+                                    data.properties[key].status_name = 'Available';
+                                } else if (data.properties[key].status_id == 2) {
+                                    data.properties[key].status_name = 'Reserved';
+                                }
 
-    if (lang == 'en') {
-        $(".lot-standard").text('Standard');
-        $(".casa_club").attr('data-bs-original-title', 'Club House');
-        $(".visitor_parking").attr('data-bs-original-title', 'Visitor parking');
-        $(".distintive_entranceway").attr('data-bs-original-title', 'Distintive entranceway');
-        $(".amenities").attr('data-bs-original-title', 'Amenities');
-        $(".green_area").attr('data-bs-original-title', 'Green area');
-        $(".leyend_casa_club").text('CLUB HOUSE');
-        $(".leyend_pet_park").text('FULL PET FIENDLY PARK');
-        $(".leyend_botanic").text('BOTANIC PARK');
-        $(".leyend_social").text('SOCIAL PARK');
-        $(".leyend_multiple").text('MULTI-USE PARK');
-        $(".leyend_yoga").text('YOGA PARK');
-        $(".leyend_access").text('REASON FOR ACCESS');
-    }
-    $('[data-bs-toggle="popover"]').popover();
-    $(".loader-container").addClass('d-none');
-    $("#image_site").removeClass('d-none');
+                            }
+                            selectionContainer = selectionContainer.concat(`<b>${data.labels.status_name}</b>: ${data.properties[key].status_name}<br>`);
+                        }
+                        if (data.properties[key].area !== '') {
+                            selectionContainer = selectionContainer.concat(`<b>${data.labels.area}</b>: ${data.properties[key].area} m<sup>2</sup><br>`);
+                        }
+                        if (data.properties[key].price !== '') {
+                            selectionContainer = selectionContainer.concat(`<b>${data.labels.price}</b>: ${(parseInt((Number(data.properties[key].area) * data.properties[key].price))).toLocaleString('en-EN')} MXN<br>`);
+                        }
+                        if (data.properties[key].financing !== '') {
+                            let upto = '';
+                            let upto_type = '';
+                            if (lang == 'es') {
+                                upto = 'Hasta';
+                                upto_type = 'MSI';
+                            } else if (lang == 'en'){
+                                upto = 'Up to';
+                                upto_type = 'months';
+                            }
+                            selectionContainer = selectionContainer.concat(`<b>${data.labels.financing}</b>: ${upto} ${data.properties[key].financ} ${upto_type}<br>`);
+                        }
+                        if (data.properties[key].enganche !== '') {
+                            selectionContainer = selectionContainer.concat(`<b>${data.labels.hitch}</b>: ${data.properties[key].enganche}<br>`);
+                        }
+                        if (data.properties[key].description !== '') {
+                            selectionContainer = selectionContainer.concat(`<b>${data.labels.description}</b>: ${data.properties[key].description}<br>`);
+                        }
+                        $('g[data-id="stage_' + stages + '"]').children('[data-id="' + name_svg + '"]').attr('data-bs-content', " ").attr('data-bs-content', selectionContainer);
+                    } 
+                }
+            });
+        }
 
-    function searchIndexId(data, name_svg, stageId) {
-        for (let key_search in data.properties) {
-            if (data.properties[key_search]['name'] === name_svg && data.properties[key_search]['stage'] === stageId) {
-                return Number(key_search);
-                
+        if (lang == 'en') {
+            $(".lot-standard").text('Standard');
+            $(".casa_club").attr('data-bs-original-title', 'Club House');
+            $(".visitor_parking").attr('data-bs-original-title', 'Visitor parking');
+            $(".distintive_entranceway").attr('data-bs-original-title', 'Distintive entranceway');
+            $(".amenities").attr('data-bs-original-title', 'Amenities');
+            $(".green_area").attr('data-bs-original-title', 'Green area');
+            $(".leyend_casa_club").text('CLUB HOUSE');
+            $(".leyend_pet_park").text('FULL PET FIENDLY PARK');
+            $(".leyend_botanic").text('BOTANIC PARK');
+            $(".leyend_social").text('SOCIAL PARK');
+            $(".leyend_multiple").text('MULTI-USE PARK');
+            $(".leyend_yoga").text('YOGA PARK');
+            $(".leyend_access").text('REASON FOR ACCESS');
+        }
+        $('[data-bs-toggle="popover"]').popover();
+        $(".loader-container").addClass('d-none');
+        $("#image_site").removeClass('d-none');
+
+        function searchIndexId(data, name_svg, stageId) {
+            for (let key_search in data.properties) {
+                if (data.properties[key_search]['name'] === name_svg && data.properties[key_search]['stage'] === stageId) {
+                    return Number(key_search);
+                    
+                }
             }
         }
     }
-}
 
-let data = []
-function loadLotsMaps(stageUriShow) {
-    
-    if ($('#image_site').hasClass('lots')) {
-        $(".loader-container").removeClass('d-none');
-    
-        //Globals
-        let uri = $('#data_url').val();
-    
-        $.ajax({
-            url: uri ,
-            type : 'GET',
-            dataType: "json"
-        }).done(function (datas) {
-            if (data !== null) {
-                //Globals
-                data = datas;
-                console.log(data);
-            }
-            // console.log('Desarrollo- ' + investment)
-            // if (investment == 'marela_life' || investment == 'lakuun' || investment == 'anthia' || investment == 'marela_beach') {
-                
-                let dataMap = "";
-                let urlInvestment = $('#data_url').val().slice(0, -5) + '_map-' + stageUriShow + '.txt';
-                console.log(urlInvestment)
-                $.ajax({
-                    url : urlInvestment,
-                    dataType: "text",
-                    success : function (data_map) {
-                        dataMap = data_map;
-                        // console.log(lang);
-                        $("#stage-" + stageUriShow).html(dataMap);
-                        // console.log(dataMap)
-                        if (document.getElementById("stage-" + stageUriShow) !== null) {
-                            // alert("The element exists");
-                            updateLotsMap(data, stageUriShow);
-                            $("#collapseStage-" + stageUriShow).addClass(' show');
-                            $("#stage-" + stageUriShow).addClass(' map-painted');
-                            $("#stage-" + stageUriShow).removeClass('d-none');
-    
+    let data = []
+    function loadLotsMaps(stageUriShow) {
+        
+        if ($('#image_site').hasClass('lots')) {
+            $(".loader-container").removeClass('d-none');
+        
+            //Globals
+            let uri = $('#data_url').val();
+        
+            $.ajax({
+                url: uri ,
+                type : 'GET',
+                dataType: "json"
+            }).done(function (datas) {
+                if (data !== null) {
+                    //Globals
+                    data = datas;
+                    console.log(data);
+                }
+                // console.log('Desarrollo- ' + investment)
+                // if (investment == 'marela_life' || investment == 'lakuun' || investment == 'anthia' || investment == 'marela_beach') {
+                    
+                    let dataMap = "";
+                    let urlInvestment = $('#data_url').val().slice(0, -5) + '_map-' + stageUriShow + '.txt';
+                    console.log(urlInvestment)
+                    $.ajax({
+                        url : urlInvestment,
+                        dataType: "text",
+                        success : function (data_map) {
+                            dataMap = data_map;
+                            // console.log(lang);
+                            $("#stage-" + stageUriShow).html(dataMap);
+                            // console.log(dataMap)
+                            if (document.getElementById("stage-" + stageUriShow) !== null) {
+                                // alert("The element exists");
+                                updateLotsMap(data, stageUriShow);
+                                $("#collapseStage-" + stageUriShow).addClass(' show');
+                                $("#stage-" + stageUriShow).addClass(' map-painted');
+                                $("#stage-" + stageUriShow).removeClass('d-none');
+        
+                            }
+                            else {
+                                alert("The element does not exist");
+                            }
+                            // $( "div[class*='map-svg']" ).change(function() {
+                            //     let btnId = $(this).attr('id');
+                            //     console.log('Change map- ' + btnId)
+                            // });
                         }
-                        else {
-                            alert("The element does not exist");
-                        }
-                        // $( "div[class*='map-svg']" ).change(function() {
-                        //     let btnId = $(this).attr('id');
-                        //     console.log('Change map- ' + btnId)
-                        // });
-                    }
-                });
-            // } else {
-            //     updateLotsMap(data, stageUriShow);
-            // }
-    
-        });
+                    });
+                // } else {
+                //     updateLotsMap(data, stageUriShow);
+                // }
+        
+            });
+        }
     }
-}
 
+$(document).ready(function(){
+    // Para trabajar con Mapa de Google y las ubicaciones de los desarrollos
+    const mapExist = document.getElementById('map');
+    if (mapExist) {
+
+         // Seleccionar el iframe por su ID
+    var mapIframe = document.getElementById('map');
+
+    // Añadir un evento 'load' al iframe
+    mapIframe.addEventListener('load', function() {
+        console.log('El mapa está completamente cargado y listo.');
+        // Aquí puedes añadir cualquier lógica que necesites ejecutar después de que el mapa esté cargado
+    });
+    window.addEventListener('message', function(event) {
+        if (event.data === 'mapClicked') {
+            console.log('Mapa clicado dentro del iframe.');
+            // Aquí puedes añadir la lógica que necesites cuando el mapa es clicado
+        }
+    });
+    mapIframe.addEventListener('click', function (event) {
+        console.log('Click en el mapa');
+
+
+    });
+        // console.log('El mapa existe');
+
+    }
+});
